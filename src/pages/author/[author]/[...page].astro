@@ -9,7 +9,7 @@ import Base from '../../../layouts/base.astro'
 import PageHero from '../../../components/pagehero.astro'
 import BlogRoll from '../../../components/blogroll.astro'
 import PaginateControl from '../../../components/paginatecontrol.astro'
-import coverSVG from '../../../assets/svg/undraw/undraw_short_bio.svg'
+import coverImage from '../../../assets/svg/undraw/undraw_short_bio.svg'
 import socialImage from '../../../assets/undraw/undraw_short_bio.png'
 
 export interface Props {
@@ -36,7 +36,7 @@ const frontmatter: Frontmatter = {
     ' (total ' +
     page.total +
     ')',
-  coverSVG: coverSVG,
+  coverImage: coverImage,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -50,7 +50,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 
   return authors.map((author) => {
     return paginate(
-      posts.filter((post) => post.data.author!.slug == author.slug),
+      posts.filter((post) => post.data.author && post.data.author.slug == author.slug),
       {
         params: { author: author.slug },
         pageSize: PAGE_SIZE
@@ -65,7 +65,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}>
       <Image
         src={detail!.data.image}

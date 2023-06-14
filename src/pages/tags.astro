@@ -4,8 +4,8 @@ import type { Frontmatter, TagType } from '../config'
 import { SiteMetadata } from '../config'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
-import coverSVG from '../assets/svg/undraw/undraw_add_notes.svg'
-import socialImage from '../assets/undraw/undraw_add_notes.png'
+import coverImage from '../assets/svg/undraw/undraw_scrum_board.svg'
+import socialImage from '../assets/undraw/undraw_scrum_board.png'
 import {
   jupiter,
   cutout,
@@ -95,7 +95,7 @@ const patterns = [
 const frontmatter: Frontmatter = {
   title: 'Tags',
   description: 'Articles by tags',
-  coverSVG: coverSVG,
+  coverImage: coverImage,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -128,7 +128,7 @@ const tags = Array.from(tagmap.values())
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}
     />
   </header>

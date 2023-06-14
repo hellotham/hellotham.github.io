@@ -5,18 +5,31 @@ import { z, defineCollection, reference } from 'astro:content'
 const blogCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
-      draft: z.boolean().optional(),
+      draft: z.boolean().default(false).optional(),
       title: z.string(),
       description: z.string(),
       author: reference('author').optional(),
       publishDate: z.date(),
-      coverSVG: image().optional(),
       coverImage: image().optional(),
       socialImage: image().optional(),
       images: z.array(image()).optional(),
       gallery: z.string().optional(),
       categories: z.array(reference('category')).optional(),
       tags: z.array(z.string()).optional(),
+      extra: z.array(z.enum(['math', 'markmap', 'mermaid', 'gallery'])).optional(),
+      minutesRead: z.string().optional()
+    })
+})
+
+const pageCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      draft: z.boolean().default(false).optional(),
+      featuredpost: z.boolean().default(false).optional(),
+      title: z.string(),
+      description: z.string(),
+      coverImage: image().optional(),
+      socialImage: image().optional(),
       extra: z.array(z.enum(['math', 'markmap', 'mermaid', 'gallery'])).optional(),
       minutesRead: z.string().optional()
     })
@@ -40,7 +53,7 @@ const categoryCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      coverSVG: image(),
+      coverImage: image(),
       socialImage: image()
     })
 })
@@ -52,6 +65,17 @@ const authorCollection = defineCollection({
       description: z.string(),
       image: image(),
       contact: z.string()
+    })
+})
+
+const partnerCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      image: image(),
+      status: z.string(),
+      link: z.string().url(),
+      description: z.string()
     })
 })
 
@@ -67,8 +91,10 @@ const socialCollection = defineCollection({
 // 3. Export multiple collections to register them
 export const collections = {
   blog: blogCollection,
+  page: pageCollection,
   doc: docCollection,
   category: categoryCollection,
   author: authorCollection,
+  partner: partnerCollection,
   social: socialCollection
 }

@@ -5,6 +5,7 @@ interface Props {
   src: ImageMetadata
   alt: string
   cls?: string
+  loading?: string
 }
 
 const { src, alt, cls } = Astro.props
@@ -14,6 +15,6 @@ const { src, alt, cls } = Astro.props
   src.format == 'svg' ? (
     <img src={src.src} {alt} class={cls} loading="lazy" />
   ) : (
-    <Image src={src} {alt} class={cls} loading="lazy" />
+    <Image {src} {alt} class={cls} loading="lazy" />
   )
 }

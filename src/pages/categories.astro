@@ -4,13 +4,13 @@ import type { Frontmatter } from '../config'
 import { SiteMetadata } from '../config'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
-import coverSVG from '../assets/svg/undraw/undraw_windows.svg'
+import coverImage from '../assets/svg/undraw/undraw_windows.svg'
 import socialImage from '../assets/undraw/undraw_windows.png'
 
 const frontmatter: Frontmatter = {
   title: 'Categories',
   description: 'Categories for articles',
-  coverSVG: coverSVG,
+  coverImage: coverImage,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -23,7 +23,7 @@ const categories = await getCollection('category')
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}
     />
   </header>
@@ -36,7 +36,7 @@ const categories = await getCollection('category')
               <div class="group relative">
                 <div class="relative mb-4 h-80 w-full overflow-hidden rounded-lg bg-purple-100 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 dark:bg-purple-600 sm:h-64">
                   <img
-                    src={category.data.coverSVG.src}
+                    src={category.data.coverImage.src}
                     alt={category.data.description}
                     class="h-full w-full object-cover object-center"
                     loading="lazy"

@@ -7,14 +7,13 @@ import Hero from '../components/hero.astro'
 import Features from '../components/features.astro'
 import FindOutMore from '../components/findoutmore.astro'
 import LatestArticles from '../components/latestarticles.astro'
-import CTA from '../components/cta.astro'
-import coverSVG from '../assets/svg/undraw/undraw_design_inspiration.svg'
-import socialImage from '../assets/undraw/undraw_design_inspiration.png'
+import coverImage from '../assets/svg/undraw/undraw_ideas_flow.svg'
+import socialImage from '../assets/undraw/undraw_ideas_flow.png'
 
 const frontmatter: Frontmatter = {
   title: SiteMetadata.title,
   description: SiteMetadata.description,
-  coverSVG: coverSVG,
+  coverImage: coverImage,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -30,6 +29,5 @@ const latestPosts = posts.sort((a, b) => +b.data.publishDate - +a.data.publishDa
   <Features />
   <FindOutMore />
   <LatestArticles posts={latestPosts} />
-  <CTA />
   <div class="bg-white p-24 dark:bg-black md:p-12"></div>
 </Base>

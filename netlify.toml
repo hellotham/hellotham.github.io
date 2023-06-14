@@ -1,0 +1,13 @@
+[dev]
+  targetPort = 3000
+  command = "pnpm run dev"
+
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"

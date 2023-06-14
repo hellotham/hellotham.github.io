@@ -29,8 +29,7 @@ const image = await getImage({
   format: 'jpg'
 })
 const logo = LogoImage
-const publishDate = new Date(frontmatter.publishDate)
-
+const publishDate = frontmatter.publishDate || SiteMetadata.buildTime
 const openGraph = {
   basic: {
     title: frontmatter.title,

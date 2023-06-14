@@ -6,21 +6,31 @@ import Layout from '../../layouts/blog.astro'
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog', ({ data }) => {
+  let posts = await getCollection('blog', ({ data }) => {
     return data.draft !== true
   })
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry }
-  }))
+  posts = posts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+  return (
+    posts &&
+    posts.map((entry, i) => ({
+      params: { slug: entry.slug },
+      props: {
+        entry,
+        prev: i > 0 && posts[i - 1],
+        next: i < posts.length - 1 && posts[i + 1]
+      }
+    }))
+  )
 }
 
 type Props = {
   entry: CollectionEntry<'blog'>
+  prev: CollectionEntry<'blog'>
+  next: CollectionEntry<'blog'>
 }
 
 // 2. When its time to render, you can get the entry directly from the prop
-const { entry } = Astro.props
+const { entry, prev, next } = Astro.props
 
 // @ts-ignore
 const { Content, remarkPluginFrontmatter } = await entry.render()
@@ -32,6 +42,6 @@ if (rfm) {
 }
 ---
 
-<Layout frontmatter={fm}>
+<Layout frontmatter={fm} {prev} {next}>
   <Content />
 </Layout>

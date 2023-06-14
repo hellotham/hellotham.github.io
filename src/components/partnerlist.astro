@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+const partners = await getCollection('partner')
+---
+
+{
+  partners.map((partner) => (
+    <div class="mb-4 w-full shrink-0 grow-0 basis-auto">
+      <div class="flex items-start">
+        <div class="w-64 shrink-0 grow-0">
+          <Image
+            src={partner.data.image}
+            alt={partner.data.title}
+            width={256}
+            class="object-contain"
+          />
+        </div>
+        <div class="not-prose ml-4 grow border-l-2 border-pink-300 pl-4 dark:lg:border-pink-900">
+          <p>
+            <a
+              href={partner.data.link}
+              class="text-xl font-bold text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300">
+              {partner.data.title}
+            </a>
+          </p>
+          <p class="text-sm italic">{partner.data.status}</p>
+          <p class="mt-2 text-base text-gray-700">{partner.data.description}</p>
+        </div>
+      </div>
+    </div>
+  ))
+}

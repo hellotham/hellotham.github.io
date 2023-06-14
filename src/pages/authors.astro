@@ -5,13 +5,13 @@ import type { Frontmatter } from '../config'
 import { SiteMetadata } from '../config'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
-import coverSVG from '../assets/svg/undraw/undraw_windows.svg'
+import coverImage from '../assets/svg/undraw/undraw_windows.svg'
 import socialImage from '../assets/undraw/undraw_windows.png'
 
 const frontmatter: Frontmatter = {
   title: 'Authors',
   description: 'Contributors to this website',
-  coverSVG: coverSVG,
+  coverImage: coverImage,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -24,7 +24,7 @@ const authors = await getCollection('author')
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}
     />
   </header>

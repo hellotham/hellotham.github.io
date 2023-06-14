@@ -13,21 +13,21 @@ const { base, page } = Astro.props
 ---
 
 <div class="mt-4 flex items-center">
-  <a
+  <!-- <a
     href={import.meta.env.BASE_URL + 'categories'}
     class="inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg">
     Categories
-  </a>
+  </a> -->
   <a
     href={import.meta.env.BASE_URL + 'tags'}
     class="ml-4 inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg">
     Tags
   </a>
-  <a
+  <!-- <a
     href={import.meta.env.BASE_URL + 'authors'}
     class="ml-4 inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg">
     Authors
-  </a>
+  </a> -->
   {
     page.size < page.total && (
       <div class="ml-4">

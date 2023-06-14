@@ -1,6 +1,6 @@
 ---
-title: 'Hello Astro'
-image: ../../assets/astro/astro-icon-dark.png
+title: 'Hello Tham'
+image: ./default.png
 contact: 'info@hellotham.com'
-description: 'Astronaut'
+description: 'Hello Tham'
 ---

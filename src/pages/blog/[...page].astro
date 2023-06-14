@@ -8,8 +8,7 @@ import Base from '../../layouts/base.astro'
 import PageHero from '../../components/pagehero.astro'
 import BlogRoll from '../../components/blogroll.astro'
 import PaginateControl from '../../components/paginatecontrol.astro'
-import coverSVG from '../../assets/svg/undraw/undraw_my_feed.svg'
-import socialImage from '../../assets/undraw/undraw_my_feed.png'
+import coverImage from '../../assets/blog.jpg'
 
 export interface Props {
   page: Page<CollectionEntry<'blog'>>
@@ -22,8 +21,7 @@ const frontmatter: Frontmatter = {
     'Blog' +
     (page.size < page.total ? ' (page ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
   description: 'View our articles.',
-  coverSVG: coverSVG,
-  socialImage: socialImage,
+  coverImage: coverImage,
   publishDate: SiteMetadata.buildTime
 }
 
@@ -43,7 +41,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}>
       <PaginateControl base={currentPage} page={page} />
     </PageHero>

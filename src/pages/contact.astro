@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon'
+import Base from '../layouts/base.astro'
+import Map from '../components/map.astro'
+import PageHero from '../components/pagehero.astro'
+import { SiteMetadata } from '../config'
+import coverSVG from '../assets/svg/undraw/undraw_contact_us.svg'
+import socialImage from '../assets/undraw/undraw_contact_us.png'
+import { getCollection } from 'astro:content'
+
+const frontmatter = {
+  title: 'Contact',
+  description: 'Our presence is real and digital. Contact us through the following ways.',
+  coverSVG: coverSVG,
+  socialImage: socialImage,
+  publishDate: SiteMetadata.buildTime
+}
+
+const social = await getCollection('social')
+---
+
+<Base frontmatter={frontmatter}>
+  <header>
+    <PageHero
+      title={frontmatter.title}
+      description={frontmatter.description}
+      coverSVG={coverSVG}
+      socialImage={socialImage}
+    />
+  </header>
+  <main>
+    <section class="mx-auto mb-20 max-w-7xl text-gray-800 dark:text-gray-100">
+      <div class="block bg-white dark:bg-gray-900 lg:my-8">
+        <div class="flex flex-wrap items-center">
+          <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+            <div class="w-full">
+              <Map loc={SiteMetadata.latlng} zoom={11} />
+            </div>
+          </div>
+          <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+            <div class="flex flex-wrap pt-8 lg:pt-0">
+              {
+                social.map(
+                  (method) =>
+                    method.data.link && (
+                      <div class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
+                        <div class="flex items-start">
+                          <div class="shrink-0">
+                            <Icon
+                              pack="bi"
+                              name={method.data.icon}
+                              class="flex h-14 w-14 items-center justify-center rounded-md bg-purple-600 p-4 text-white shadow-md"
+                            />
+                          </div>
+                          <div class="ml-6 grow">
+                            <p class="mb-1 font-bold">{method.data.name}</p>
+                            <p>
+                              {' '}
+                              <a
+                                href={method.data.link}
+                                class="text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300">
+                                {method.data.link}
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

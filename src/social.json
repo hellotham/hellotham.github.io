@@ -1,0 +1,38 @@
+[
+  {
+    "id": "email",
+    "name": "Email",
+    "link": "mailto:info@hellothamcom",
+    "icon": "envelope"
+  },
+  {
+    "id": "facebook",
+    "name": "Facebook",
+    "link": "https://www.facebook.com/hellothamcom",
+    "icon": "facebook"
+  },
+  {
+    "id": "github",
+    "name": "Github",
+    "link": "https://github.com/orgs/hellotham",
+    "icon": "github"
+  },
+  {
+    "id": "instagram",
+    "name": "Instagram",
+    "link": "https://www.instagram.com/hellothamcom",
+    "icon": "instagram"
+  },
+  {
+    "id": "linkedIn",
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/company/17950469",
+    "icon": "linkedin"
+  },
+  {
+    "id": "twitter",
+    "name": "Twitter",
+    "link": "https://twitter.com/hellothamcom",
+    "icon": "twitter"
+  }
+]

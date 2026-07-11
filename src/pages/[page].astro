@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection, render } from 'astro:content'
+import Layout from '../layouts/page.astro'
+
+export interface Props {
+  page: CollectionEntry<'page'>
+}
+
+const { page } = Astro.props
+
+const { Content, remarkPluginFrontmatter } = await render(page)
+let fm = page.data
+const rfm = remarkPluginFrontmatter as any
+if (rfm) {
+  fm.extra = rfm.extra
+}
+
+export async function getStaticPaths() {
+  const pages = await getCollection('page')
+
+  return pages.map((page) => ({
+    params: { page: page.id },
+    props: { page }
+  }))
+}
+---
+
+<Layout frontmatter={page.data}>
+  <Content />
+</Layout>

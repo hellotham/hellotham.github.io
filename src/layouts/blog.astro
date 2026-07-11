@@ -1,38 +1,34 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import type { Frontmatter } from '../config'
 import Base from '../layouts/base.astro'
 import BlogHero from '../components/bloghero.astro'
 import NextPrev from '../components/nextprev.astro'
 import Images from '../components/images.astro'
 
 export interface Props {
-  frontmatter: Frontmatter
+  post: CollectionEntry<'blog'>
   prev?: CollectionEntry<'blog'>
   next?: CollectionEntry<'blog'>
 }
 
-const { frontmatter, prev, next } = Astro.props
+const { post, prev, next } = Astro.props
+
+const baseUrl = import.meta.env.BASE_URL
 ---
 
-<Base frontmatter={frontmatter}>
-  <main class='dark:bg-black'>
-    <article class='post'>
+<Base frontmatter={post.data}>
+  <main class="dark:bg-black">
+    <article class="post">
       <header>
-        <BlogHero frontmatter={frontmatter} />
+        <BlogHero {post} />
       </header>
       <section
-        class='prose prose-gray mx-auto my-8 max-w-screen-lg px-4 dark:prose-invert lg:prose-xl lg:px-0'
+        class="prose prose-purple dark:prose-invert lg:prose-xl mx-auto my-8 max-w-(--breakpoint-lg) px-4 lg:px-0"
       >
-        {frontmatter.images && <Images images={frontmatter.images} />}
-        <slot />
+        {post.data.images && <Images images={post.data.images} />}
+        <slot itemprop="articleBody" />
       </section>
     </article>
   </main>
-  <NextPrev
-    slot='before-footer'
-    base={import.meta.env.BASE_URL + 'blog/'}
-    prev={prev}
-    next={next}
-  />
+  <NextPrev slot="before-footer" base={baseUrl + 'blog/'} prev={prev} next={next} />
 </Base>

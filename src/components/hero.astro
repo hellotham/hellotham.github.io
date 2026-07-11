@@ -1,62 +1,64 @@
 ---
 import { FeaturedSVG } from '../config'
 import HelloTham from '../assets/site/hellotham.svg'
+
+const baseUrl = import.meta.env.BASE_URL
 ---
 
-<div class='relative overflow-hidden bg-white dark:bg-gray-900'>
-  <div class='mx-auto max-w-7xl'>
+<div class="relative overflow-hidden bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl">
     <div
-      class='relative z-10 bg-white pb-8 dark:bg-gray-900 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32'
+      class="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32 dark:bg-gray-900"
     >
       <svg
-        class='absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white dark:text-gray-900 lg:block'
-        fill='currentColor'
-        viewBox='0 0 100 100'
-        preserveAspectRatio='none'
-        aria-hidden='true'
+        class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block dark:text-gray-900"
+        fill="currentColor"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
       >
-        <polygon points='50,0 100,0 50,100 0,100'></polygon>
+        <polygon points="50,0 100,0 50,100 0,100"></polygon>
       </svg>
       <main
-        class='mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-12 md:pt-16 lg:px-8 lg:pt-20 xl:pt-28'
+        class="mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-12 md:pt-16 lg:px-8 lg:pt-20 xl:pt-28"
       >
-        <div class='text-center sm:text-left'>
-          <img src={HelloTham.src} width='350' alt='Hello Tham logo' />
+        <div class="text-center sm:text-left">
+          <img src={HelloTham.src} width="350" alt="Hello Tham logo" />
           <h1
-            class='text-left text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl'
+            class="text-left text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-gray-100"
           >
-            <span class='block xl:inline'>Visualise Your</span>{' '}
-            <span class='block text-purple-700 dark:text-purple-300 xl:inline'>Future</span>
+            <span class="block xl:inline">Visualise Your</span>{' '}
+            <span class="block text-purple-700 xl:inline dark:text-purple-300">Future</span>
           </h1>
           <p
-            class='mt-3 text-base text-gray-600 dark:text-gray-300 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0'
+            class="mt-3 text-base text-gray-600 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 dark:text-gray-300"
           >
             Hello Tham is a boutique management consulting firm.
           </p>
           <p
-            class='mt-3 text-base text-gray-600 dark:text-gray-300 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0'
+            class="mt-3 text-base text-gray-600 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 dark:text-gray-300"
           >
             We specialise in Business and IT strategies, operating models, strategic roadmaps,
             enterprise architecture, analytics and business process design.
           </p>
           <p
-            class='mt-3 text-base text-gray-600 dark:text-gray-300 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0'
+            class="mt-3 text-base text-gray-600 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 dark:text-gray-300"
           >
             We also assist our clients in implementing recommendations, models and strategies.
           </p>
-          <div class='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
-            <div class='rounded-md shadow'>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div class="rounded-md shadow">
               <a
-                href='/about'
-                class='flex w-full items-center justify-center rounded-md border border-transparent bg-purple-600 px-8 py-3 text-base font-medium text-white hover:bg-pink-600 dark:bg-purple-300 dark:text-black dark:hover:bg-pink-300 md:px-10 md:py-4 md:text-lg'
+                href={baseUrl + 'about'}
+                class="flex w-full items-center justify-center rounded-md border border-transparent bg-purple-600 px-8 py-3 text-base font-medium text-white hover:bg-pink-600 md:px-10 md:py-4 md:text-lg dark:bg-purple-300 dark:text-black dark:hover:bg-pink-300"
               >
                 About Us
               </a>
             </div>
-            <div class='mt-3 sm:ml-3 sm:mt-0'>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
               <a
-                href='/contact'
-                class='flex w-full items-center justify-center rounded-md border border-transparent bg-purple-100 px-8 py-3 text-base font-medium text-purple-800 hover:bg-pink-200 dark:bg-purple-900 dark:text-purple-100 dark:hover:bg-pink-900 md:px-10 md:py-4 md:text-lg'
+                href={baseUrl + 'contact'}
+                class="flex w-full items-center justify-center rounded-md border border-transparent bg-purple-100 px-8 py-3 text-base font-medium text-purple-800 hover:bg-pink-200 md:px-10 md:py-4 md:text-lg dark:bg-purple-900 dark:text-purple-100 dark:hover:bg-pink-900"
               >
                 Contact Us
               </a>
@@ -66,11 +68,11 @@ import HelloTham from '../assets/site/hellotham.svg'
       </main>
     </div>
   </div>
-  <div class='bg-pink-100 dark:bg-purple-500 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
+  <div class="bg-pink-100 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 dark:bg-purple-500">
     <img
-      class='h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full'
+      class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
       src={FeaturedSVG.src}
-      alt='featured'
+      alt="featured"
     />
   </div>
 </div>

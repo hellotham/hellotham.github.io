@@ -13,8 +13,8 @@ const { src, alt, cls } = Astro.props
 
 {
   src.format == 'svg' ? (
-    <img src={src.src} {alt} class={cls} loading='lazy' />
+    <img src={src.src} {alt} class={cls} loading="lazy" />
   ) : (
-    <Image {src} {alt} class={cls} loading='lazy' />
+    <Image {src} {alt} class={cls} loading="lazy" />
   )
 }

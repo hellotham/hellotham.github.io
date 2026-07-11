@@ -1,10 +1,9 @@
-name: Github Pages Astro CI
+name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
+  # Trigger the workflow every time you push to the `master` branch
   push:
-    branches: [main]
+    branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -19,13 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
-      - name: Install, build, and upload your site
-        uses: withastro/action@v0
-        with:
-          package-manager: pnpm
-          node-version: 18
-          # path: . # The root location of your Astro project inside the repository. (optional)
+        uses: actions/checkout@v6
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v6
 
   deploy:
     needs: build
@@ -36,4 +31,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,4 @@
-import type { CollectionEntry } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 
 export type Frontmatter = CollectionEntry<'blog'>['data']
 
@@ -64,4 +64,13 @@ export const SIDEBAR: Sidebar = {
     { text: 'Page 3', link: 'doc/page-3' }
   ],
   'Another Section': [{ text: 'Page 4', link: 'doc/page-4' }]
+}
+
+export async function getPosts() {
+  const posts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true
+  })
+  return posts.sort((a, b) =>
+    a.data.publishDate && b.data.publishDate ? +b.data.publishDate - +a.data.publishDate : 0
+  )
 }

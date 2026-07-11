@@ -1,9 +1,9 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 import type { TwitterCardType } from 'astro-seo'
 import { SEO } from 'astro-seo'
 import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
-import type { Frontmatter } from '../config'
 import type {
   Article,
   BreadcrumbList,
@@ -15,45 +15,52 @@ import type {
 import { SiteMetadata, DefaultImage, LogoImage } from '../config'
 
 export interface Props {
-  frontmatter: Frontmatter
+  frontmatter: CollectionEntry<'blog'>['data'] | CollectionEntry<'page'>['data']
 }
 
 const { frontmatter } = Astro.props
+const fm = frontmatter as any
 
 const social = await getCollection('social')
 const siteurl = new URL(import.meta.env.BASE_URL, Astro.url)
 const type = Astro.url.toString().includes('blog') ? 'post' : 'page'
 const year = SiteMetadata.buildTime.getFullYear()
 const image = await getImage({
-  src: frontmatter.socialImage || frontmatter.coverImage || DefaultImage,
+  src: fm.socialImage || fm.coverImage || DefaultImage,
   width: 1200,
   format: 'jpg'
 })
 const logo = LogoImage
-const publishDate = frontmatter.publishDate || SiteMetadata.buildTime
+const pubDate = fm.publishDate || fm.pubDate || SiteMetadata.buildTime
+const author = fm.author ? fm.author.id : 'default'
 const openGraph = {
   basic: {
-    title: frontmatter.title,
-    type: 'website',
-    image: new URL(image.src, Astro.url).toString()
+    title: fm.title!,
+    type: type === 'post' ? 'article' : 'website',
+    image: new URL(image.src, siteurl).toString()
   },
   optional: {
-    description: frontmatter.description,
+    description: fm.description,
     siteName: SiteMetadata.title
   },
   image: {
-    alt: frontmatter.title,
+    alt: fm.title!,
     height: image.attributes.height,
     width: image.attributes.width
   },
-  article: {
-    author: frontmatter.author,
-    publishedTime: SiteMetadata.buildTime.toISOString(),
-    tags: frontmatter.tags
-  }
+  ...(type === 'post'
+    ? {
+        article: {
+          authors: [author],
+          publishedTime: pubDate.toISOString(),
+          modifiedTime: SiteMetadata.buildTime.toISOString(),
+          tags: fm.tags
+        }
+      }
+    : {})
 }
 const twitter = {
-  card: frontmatter.socialImage ? 'summary_large_image' : ('summary' as TwitterCardType),
+  card: (fm.socialImage ? 'summary_large_image' : 'summary') as TwitterCardType,
   site: SiteMetadata.org.twitter,
   creator: SiteMetadata.author.twitter
 }
@@ -79,7 +86,7 @@ const website: WithContext<WebSite> = {
   description: SiteMetadata.description,
   image: {
     '@type': 'ImageObject',
-    url: new URL(image.src, Astro.url).toString()
+    url: new URL(image.src, siteurl).toString()
   },
   inLanguage: 'en',
   name: SiteMetadata.title,
@@ -101,7 +108,7 @@ const organization: WithContext<Organization> = {
   description: SiteMetadata.org.summary,
   email: SiteMetadata.org.email,
   founder: {
-    '@id': SiteMetadata.author.email
+    '@id': SiteMetadata.author.url
   },
   location: SiteMetadata.location,
   image: {
@@ -113,7 +120,7 @@ const organization: WithContext<Organization> = {
     url: new URL(logo.src, siteurl).toString()
   },
   name: SiteMetadata.org.name,
-  sameAs: Object.values(social.map((social) => social.data.link)),
+  sameAs: social.map((social) => social.data.link),
   url: SiteMetadata.org.url
 }
 
@@ -134,7 +141,7 @@ const breadcrumbList: WithContext<BreadcrumbList> = {
       '@type': 'ListItem',
       item: {
         '@id': Astro.url.toString(),
-        name: frontmatter.title
+        name: fm.title
       },
       position: 2
     }
@@ -169,19 +176,19 @@ const article: WithContext<Article> = {
   creator: {
     '@id': SiteMetadata.author.url
   },
-  dateCreated: publishDate.toISOString(),
+  dateCreated: pubDate.toISOString(),
   dateModified: SiteMetadata.buildTime.toISOString(),
-  datePublished: publishDate.toISOString(),
-  description: frontmatter.description,
-  headline: frontmatter.title,
-  keywords: frontmatter.tags && frontmatter.tags.join(', '),
+  datePublished: pubDate.toISOString(),
+  description: fm.description,
+  headline: fm.title,
+  keywords: fm.tags && fm.tags.join(', '),
   image: {
     '@type': 'ImageObject',
-    url: new URL(image.src, Astro.url).toString()
+    url: new URL(image.src, siteurl).toString()
   },
   inLanguage: 'en',
   mainEntityOfPage: SiteMetadata.org.url,
-  name: frontmatter.title,
+  name: fm.title,
   publisher: {
     '@id': SiteMetadata.org.url
   },
@@ -190,13 +197,17 @@ const article: WithContext<Article> = {
 ---
 
 <SEO
-  title={SiteMetadata.title + ' | ' + frontmatter.title}
-  description={frontmatter.description}
+  title={SiteMetadata.title + ' | ' + fm.title}
+  description={fm.description}
   {openGraph}
   {twitter}
 />
-<script is:inline set:html={JSON.stringify(website)} type='application/ld+json' />
-<script is:inline set:html={JSON.stringify(organization)} type='application/ld+json' />
-<script is:inline set:html={JSON.stringify(breadcrumbList)} type='application/ld+json' />
-<script is:inline set:html={JSON.stringify(person)} type='application/ld+json' />
-<script is:inline set:html={JSON.stringify(article)} type='application/ld+json' />
+<script is:inline set:html={JSON.stringify(website)} type="application/ld+json" />
+<script is:inline set:html={JSON.stringify(organization)} type="application/ld+json" />
+<script is:inline set:html={JSON.stringify(breadcrumbList)} type="application/ld+json" />
+<script is:inline set:html={JSON.stringify(person)} type="application/ld+json" />
+{
+  type === 'post' && (
+    <script is:inline set:html={JSON.stringify(article)} type="application/ld+json" />
+  )
+}

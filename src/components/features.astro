@@ -12,7 +12,7 @@ const features = [
     name: 'Enterprise Architecture',
     description:
       'Enterprise analysis, design, planning, and implementation for the successful development and execution of a strategy',
-    icon: 'puzzle'
+    icon: 'puzzle-piece'
   },
   {
     name: 'Analytics and Data Science',
@@ -28,42 +28,38 @@ const features = [
 ]
 ---
 
-<div class='bg-purple-100 py-12 dark:bg-gray-800'>
-  <div class='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-    <div class='lg:text-center'>
+<div class="bg-purple-100 py-12 dark:bg-gray-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
       <h2
-        class='text-base font-semibold uppercase tracking-wide text-purple-800 dark:text-purple-300'
+        class="text-base font-semibold tracking-wide text-purple-800 uppercase dark:text-purple-300"
       >
         Our Services
       </h2>
       <p
-        class='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl'
+        class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100"
       >
         Vision into Reality
       </p>
-      <p class='mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 lg:mx-auto'>
+      <p class="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto dark:text-gray-300">
         We help organisations around the world define and implement their vision and objectives.
       </p>
     </div>
 
-    <div class='mt-10'>
-      <dl class='space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0'>
+    <div class="mt-10">
+      <dl class="space-y-10 md:grid md:grid-cols-2 md:space-y-0 md:gap-x-8 md:gap-y-10">
         {
           features.map((feature) => (
-            <div class='relative'>
+            <div class="relative">
               <dt>
-                <div class='absolute flex h-12 w-12 items-center justify-center rounded-md bg-purple-500 text-white dark:bg-purple-400 dark:text-black'>
-                  <Icon
-                    class='h-6 w-6'
-                    aria-hidden='true'
-                    name={'heroicons-outline:' + feature.icon}
-                  />
+                <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-purple-500 text-white dark:bg-purple-400 dark:text-black">
+                  <Icon class="h-6 w-6" aria-hidden="true" name={'heroicons:' + feature.icon} />
                 </div>
-                <p class='ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-gray-200'>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                   {feature.name}
                 </p>
               </dt>
-              <dd class='ml-16 mt-2 text-base text-gray-600 dark:text-gray-400'>
+              <dd class="mt-2 ml-16 text-base text-gray-600 dark:text-gray-400">
                 {feature.description}
               </dd>
             </div>

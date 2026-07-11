@@ -2,9 +2,8 @@
 import type { PaginateFunction, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { getEntry } from 'astro:content'
-import type { Frontmatter } from '../../../config'
 import { getCollection } from 'astro:content'
-import { SiteMetadata, PAGE_SIZE } from '../../../config'
+import { PAGE_SIZE, getPosts } from '../../../config'
 import Base from '../../../layouts/base.astro'
 import PageHero from '../../../components/pagehero.astro'
 import BlogRoll from '../../../components/blogroll.astro'
@@ -19,23 +18,22 @@ const { page } = Astro.props
 
 const detail = await getEntry('category', category!)
 
-const frontmatter: Frontmatter = {
+const frontmatter: CollectionEntry<'page'>['data'] = {
   title:
     'Category: ' +
     category +
     (page.size < page.total ? ' (page ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
   description: detail!.data.description,
+  coverSVG: detail!.data.coverSVG,
   coverImage: detail!.data.coverImage,
-  socialImage: detail!.data.socialImage,
-  publishDate: SiteMetadata.buildTime
+  socialImage: detail!.data.socialImage
 }
 
 const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   const categories = await getCollection('category')
-  const allPosts = await getCollection('blog', (post) => !post.data.draft)
-  const posts = allPosts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+  const posts = await getPosts()
 
   return categories.flatMap((category) => {
     return paginate(
@@ -43,10 +41,10 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
         (post) =>
           category &&
           post.data.categories &&
-          post.data.categories.map((category) => category.slug).includes(category.slug)
+          post.data.categories.map((c) => c.id).includes(category.id)
       ),
       {
-        params: { category: category.slug },
+        params: { category: category.id },
         pageSize: PAGE_SIZE
       }
     )
@@ -54,18 +52,19 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 }
 ---
 
-<Base frontmatter={frontmatter}>
+<Base frontmatter={frontmatter} schema="CollectionPage">
   <header>
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
+      coverSVG={frontmatter.coverSVG}
       coverImage={frontmatter.coverImage}
       socialImage={frontmatter.socialImage}
     >
       <PaginateControl base={currentPage} page={page} />
     </PageHero>
   </header>
-  <main class='mt-10 bg-gray-100 dark:bg-gray-900'>
+  <main itemprop="mainContentOfPage" class="mt-10 bg-gray-100 dark:bg-gray-900">
     <BlogRoll posts={page.data} />
   </main>
 </Base>

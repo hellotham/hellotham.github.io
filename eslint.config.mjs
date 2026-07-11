@@ -78,6 +78,7 @@ export default defineConfig([
     ignores: [
       'dist/**',
       '.astro/**',
+      '.netlify/**',
       'node_modules/**',
       'pnpm-lock.yaml',
       '**/*.d.ts',

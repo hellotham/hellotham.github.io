@@ -1,55 +1,75 @@
 ---
-import type { PaginateFunction, Page } from 'astro'
+export const prerender = false
+
+import type { Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { getEntry } from 'astro:content'
-import { getCollection } from 'astro:content'
 import { PAGE_SIZE, getPosts } from '../../../config'
 import Base from '../../../layouts/base.astro'
 import PageHero from '../../../components/pagehero.astro'
 import BlogRoll from '../../../components/blogroll.astro'
 import PaginateControl from '../../../components/paginatecontrol.astro'
 
-export interface Props {
-  page: Page<CollectionEntry<'blog'>>
-}
-
-const { category } = Astro.params
-const { page } = Astro.props
+const { category, page: pageParam } = Astro.params
+const currentPageNum = pageParam ? parseInt(pageParam, 10) : 1
 
 const detail = await getEntry('category', category!)
+if (!detail) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
+}
+
+const posts = await getPosts()
+const filteredPosts = posts.filter(
+  (post) => post.data.categories && post.data.categories.map((c) => c.id).includes(detail.id)
+)
+
+const total = filteredPosts.length
+const lastPage = Math.max(1, Math.ceil(total / PAGE_SIZE))
+
+if (currentPageNum < 1 || (currentPageNum > lastPage && lastPage > 0)) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
+}
+
+const start = (currentPageNum - 1) * PAGE_SIZE
+const end = Math.min(start + PAGE_SIZE, total)
+const data = filteredPosts.slice(start, end)
+
+const baseUrl = import.meta.env.BASE_URL + `category/${category}/`
+
+const page = {
+  data,
+  start,
+  end: end - 1,
+  size: PAGE_SIZE,
+  total,
+  currentPage: currentPageNum,
+  lastPage,
+  url: {
+    current: currentPageNum === 1 ? baseUrl : `${baseUrl}${currentPageNum}/`,
+    prev:
+      currentPageNum > 1
+        ? currentPageNum === 2
+          ? baseUrl
+          : `${baseUrl}${currentPageNum - 1}/`
+        : undefined,
+    next: currentPageNum < lastPage ? `${baseUrl}${currentPageNum + 1}/` : undefined,
+    first: baseUrl,
+    last: lastPage > 1 ? `${baseUrl}${lastPage}/` : baseUrl
+  }
+} as Page<CollectionEntry<'blog'>>
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
   title:
     'Category: ' +
     category +
     (page.size < page.total ? ' (page ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
-  description: detail!.data.description,
-  coverSVG: detail!.data.coverSVG,
-  coverImage: detail!.data.coverImage,
-  socialImage: detail!.data.socialImage
+  description: detail.data.description,
+  coverSVG: detail.data.coverSVG,
+  coverImage: detail.data.coverImage,
+  socialImage: detail.data.socialImage
 }
 
 const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
-
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const categories = await getCollection('category')
-  const posts = await getPosts()
-
-  return categories.flatMap((category) => {
-    return paginate(
-      posts.filter(
-        (post) =>
-          category &&
-          post.data.categories &&
-          post.data.categories.map((c) => c.id).includes(category.id)
-      ),
-      {
-        params: { category: category.id },
-        pageSize: PAGE_SIZE
-      }
-    )
-  })
-}
 ---
 
 <Base frontmatter={frontmatter} schema="CollectionPage">

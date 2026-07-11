@@ -67,8 +67,14 @@ export const SIDEBAR: Sidebar = {
 }
 
 export async function getPosts() {
+  const now = new Date()
   const posts = await getCollection('blog', ({ data }) => {
-    return data.draft !== true
+    const isDraft = data.draft === true
+    const isFuture = data.publishDate > now
+    if (import.meta.env.PROD) {
+      return !isDraft && !isFuture
+    }
+    return !isDraft
   })
   return posts.sort((a, b) =>
     a.data.publishDate && b.data.publishDate ? +b.data.publishDate - +a.data.publishDate : 0

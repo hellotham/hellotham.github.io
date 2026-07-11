@@ -10,9 +10,12 @@ import { satteri } from '@astrojs/markdown-satteri'
 import { satteriReadingTime } from './satteri-plugins/satteri-reading-time.mjs'
 import { satteriDiagram } from './satteri-plugins/satteri-diagram.mjs'
 import { satteriEmoji } from './satteri-plugins/satteri-emoji.mjs'
+import netlify from '@astrojs/netlify'
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  adapter: netlify(),
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {

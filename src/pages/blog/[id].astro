@@ -1,31 +1,29 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import { render } from 'astro:content'
+export const prerender = false
+
+import { getEntry, render } from 'astro:content'
 import Layout from '../../layouts/blog.astro'
 import { getPosts } from '../../config'
 
-// 1. Generate a new path for every collection entry
-export async function getStaticPaths() {
-  const posts = await getPosts()
-
-  return posts.map((post, i) => ({
-    params: { id: post.id },
-    props: {
-      post,
-      prev: i > 0 ? posts[i - 1] : undefined,
-      next: i < posts.length - 1 ? posts[i + 1] : undefined
-    }
-  }))
+const { id } = Astro.params
+if (!id) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
 }
 
-export interface Props {
-  post: CollectionEntry<'blog'>
-  prev: CollectionEntry<'blog'>
-  next: CollectionEntry<'blog'>
+const post = await getEntry('blog', id)
+if (!post) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
 }
 
-// 2. When its time to render, you can get the entry directly from the prop
-const { post, prev, next } = Astro.props
+const now = new Date()
+if (post.data.draft || post.data.publishDate > now) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
+}
+
+const posts = await getPosts()
+const index = posts.findIndex((p) => p.id === post.id)
+const prev = index > 0 ? posts[index - 1] : undefined
+const next = index < posts.length - 1 ? posts[index + 1] : undefined
 
 const { Content, remarkPluginFrontmatter } = await render(post)
 let fm = post.data

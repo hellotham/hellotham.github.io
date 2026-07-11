@@ -2,7 +2,7 @@
   "name": "hellotham-website",
   "private": true,
   "description": "Hello Tham Website in Astro",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "author": "Hello Tham <info@hellotham.com>",
   "bugs": {
     "url": "https://github.com/hellotham/hellotham-website/issues"
@@ -59,6 +59,7 @@
     "@astrojs/markdoc": "^2.0.3",
     "@astrojs/markdown-satteri": "^0.3.3",
     "@astrojs/mdx": "^7.0.2",
+    "@astrojs/netlify": "^8.1.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@iconify-json/bi": "^1.2.7",

@@ -1,3 +1,5 @@
+export const prerender = false
+
 import rss from '@astrojs/rss'
 import { getImage } from 'astro:assets'
 import { getEntries, getEntry } from 'astro:content'

@@ -1,5 +1,7 @@
 ---
-import type { Page, PaginateFunction } from 'astro'
+export const prerender = false
+
+import type { Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { PAGE_SIZE, getPosts } from '../../config'
 import Base from '../../layouts/base.astro'
@@ -9,11 +11,44 @@ import PaginateControl from '../../components/paginatecontrol.astro'
 import coverSVG from '../../assets/svg/undraw/undraw_my_feed.svg'
 import socialImage from '../../assets/undraw/undraw_my_feed.png'
 
-export interface Props {
-  page: Page<CollectionEntry<'blog'>>
+const { page: pageParam } = Astro.params
+const currentPageNum = pageParam ? parseInt(pageParam, 10) : 1
+
+const posts = await getPosts()
+const total = posts.length
+const lastPage = Math.ceil(total / PAGE_SIZE)
+
+if (currentPageNum < 1 || (currentPageNum > lastPage && lastPage > 0)) {
+  return new Response(null, { status: 404, statusText: 'Not found' })
 }
 
-const { page } = Astro.props
+const start = (currentPageNum - 1) * PAGE_SIZE
+const end = Math.min(start + PAGE_SIZE, total)
+const data = posts.slice(start, end)
+
+const baseUrl = import.meta.env.BASE_URL + 'blog/'
+
+const page = {
+  data,
+  start,
+  end: end - 1,
+  size: PAGE_SIZE,
+  total,
+  currentPage: currentPageNum,
+  lastPage,
+  url: {
+    current: currentPageNum === 1 ? baseUrl : `${baseUrl}${currentPageNum}/`,
+    prev:
+      currentPageNum > 1
+        ? currentPageNum === 2
+          ? baseUrl
+          : `${baseUrl}${currentPageNum - 1}/`
+        : undefined,
+    next: currentPageNum < lastPage ? `${baseUrl}${currentPageNum + 1}/` : undefined,
+    first: baseUrl,
+    last: lastPage > 1 ? `${baseUrl}${lastPage}/` : baseUrl
+  }
+} as Page<CollectionEntry<'blog'>>
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
   title:
@@ -25,11 +60,6 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
 }
 
 const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const posts = await getPosts()
-
-  return paginate(posts, { pageSize: PAGE_SIZE })
-}
 ---
 
 <Base frontmatter={frontmatter}>

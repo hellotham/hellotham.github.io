@@ -3,7 +3,7 @@ draft: false
 title: 'Financial Analysis and Portfolio Optimisation (Part 3): My Quantitative Pipeline'
 description: 'An overview of my quantitative analysis pipeline: data ingestion, benchmarking with QuantStats, and executing Mean-Variance, Semivariance, and Hierarchical Risk Parity (HRP) optimizations.'
 author: chris-tham
-publishDate: 2026-08-10T00:00:00.000Z
+publishDate: 2026-07-24T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/20141020-DSC07931-Edit.jpg
 tags:
@@ -15,7 +15,7 @@ tags:
   - QuantStats
 ---
 
-In [Part 2](/blog/2026-08-03-challenges-of-building-a-portfolio-optimiser/) of this series, we discussed the software engineering challenges of setting up price feeds, consolidating transactions, and working with modern "reloaded" quantitative packages.
+In [Part 2](/blog/2026-07-22-challenges-of-building-a-portfolio-optimiser/) of this series, we discussed the software engineering challenges of setting up price feeds, consolidating transactions, and working with modern "reloaded" quantitative packages.
 
 Moving from infrastructure to execution, I designed a quantitative analysis and portfolio rebalancing pipeline in Python. Rather than focusing on individual files, this article outlines the modular approach I took to manage, benchmark, and optimize my investment portfolio, including the challenges of data accuracy.
 

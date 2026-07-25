@@ -3,7 +3,7 @@ draft: false
 title: Financial Analysis and Portfolio Optimisation (Part 1)
 description: Our new series of articles on financial analysis and portfolio optimisation using Python.
 author: chris-tham
-publishDate: 2026-07-27T00:00:00.000Z
+publishDate: 2026-07-20T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/20141020-DSC07931-Edit.jpg
 tags:

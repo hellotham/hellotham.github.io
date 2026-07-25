@@ -2,7 +2,7 @@
 title: 'The Evolution of Hello Astro: My Personal Learning Journey with Astro'
 description: Reflecting on my first Astro project—migrating from Gatsby/Next.js, building a popular starter template, and partnering with Antigravity for a major v7 overhaul.
 author: chris-tham
-publishDate: 2026-07-20T00:00:00.000Z
+publishDate: 2026-07-18T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/site/screenshot.png
 tags:

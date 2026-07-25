@@ -2,7 +2,7 @@
 title: Major Upgrade to Astro v7 and Dynamic Future-Dating
 description: An overview of the major website overhaul, shifting to Astro v7, Tailwind CSS v4, and dynamic on-demand rendering using Netlify serverless functions.
 author: chris-tham
-publishDate: 2026-07-13T00:00:00.000Z
+publishDate: 2026-07-16T00:00:00.000Z
 featuredpost: true
 coverImage: ../../assets/site/screenshot.png
 tags:

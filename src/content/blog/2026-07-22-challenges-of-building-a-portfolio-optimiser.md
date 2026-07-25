@@ -3,7 +3,7 @@ draft: false
 title: 'Financial Analysis and Portfolio Optimisation (Part 2): Engineering Challenges'
 description: 'Practical engineering challenges of building a portfolio optimiser: importing data from multiple brokerages, retrieving clean price feeds, and navigating deprecated quantitative libraries.'
 author: chris-tham
-publishDate: 2026-08-03T00:00:00.000Z
+publishDate: 2026-07-22T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/20141020-DSC07931-Edit.jpg
 tags:
@@ -14,7 +14,7 @@ tags:
   - yfinance
 ---
 
-In [Part 1](/blog/2026-07-27-python-finance-1-intro/) of this series, we explored the mathematical foundations of Harry Markowitz's Modern Portfolio Theory (MPT) and how the Efficient Frontier behaves in theory.
+In [Part 1](/blog/2026-07-20-python-finance-1-intro/) of this series, we explored the mathematical foundations of Harry Markowitz's Modern Portfolio Theory (MPT) and how the Efficient Frontier behaves in theory.
 
 However, translating textbook mathematics into a working, real-world portfolio optimiser introduces several distinct software engineering challenges. When I set out to build a custom portfolio rebalancer in a Jupyter Notebook, I ran into hurdles ranging from fragmented data sources and unreliable price feeds to deprecated quantitative libraries.
 

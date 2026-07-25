@@ -1,6 +1,4 @@
 ---
-export const prerender = false
-
 import type { Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { PAGE_SIZE, getPosts } from '../../config'
@@ -10,6 +8,21 @@ import BlogRoll from '../../components/blogroll.astro'
 import PaginateControl from '../../components/paginatecontrol.astro'
 import coverSVG from '../../assets/svg/undraw/undraw_my_feed.svg'
 import socialImage from '../../assets/undraw/undraw_my_feed.png'
+
+export async function getStaticPaths() {
+  const posts = await getPosts()
+  const total = posts.length
+  const lastPage = Math.max(1, Math.ceil(total / PAGE_SIZE))
+
+  return Array.from({ length: lastPage }, (_, index) => {
+    const currentPageNum = index + 1
+    return {
+      params: {
+        page: currentPageNum === 1 ? undefined : String(currentPageNum)
+      }
+    }
+  })
+}
 
 const { page: pageParam } = Astro.params
 const currentPageNum = pageParam ? parseInt(pageParam, 10) : 1

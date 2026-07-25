@@ -59,6 +59,58 @@ import '../styles/global.css'
       }
       setDarkMode() //initial navigation
       document.addEventListener('astro:after-swap', setDarkMode) // Runs on view transitions navigation
+
+      const applyFutureUnlock = () => {
+        const now = Date.now()
+        document.querySelectorAll('[data-publish-date]').forEach((el) => {
+          const publishDateAttr = el.getAttribute('data-publish-date')
+          if (!publishDateAttr) return
+          const publishTime = Date.parse(publishDateAttr)
+          if (Number.isNaN(publishTime)) return
+
+          const isReleased = publishTime <= now
+          const mode = el.getAttribute('data-future-mode') || 'show'
+
+          if (mode === 'show') {
+            if (isReleased) {
+              el.classList.remove('future-hidden')
+            } else {
+              el.classList.add('future-hidden')
+            }
+            return
+          }
+
+          if (mode === 'lock') {
+            const lockPane = el.querySelector('[data-future-lock]')
+            const contentPane = el.querySelector('[data-future-content]')
+            if (isReleased) {
+              lockPane?.classList.add('hidden')
+              contentPane?.classList.remove('hidden')
+            } else {
+              lockPane?.classList.remove('hidden')
+              contentPane?.classList.add('hidden')
+            }
+          }
+        })
+
+        document.querySelectorAll('[data-future-list]').forEach((list) => {
+          const cards = list.querySelectorAll('[data-future-mode="show"][data-publish-date]')
+          const visibleCards = Array.from(cards).filter(
+            (card) => !card.classList.contains('future-hidden')
+          )
+          const emptyBanner = list.querySelector('[data-future-empty]')
+          if (!emptyBanner) return
+
+          if (cards.length > 0 && visibleCards.length === 0) {
+            emptyBanner.classList.remove('hidden')
+          } else {
+            emptyBanner.classList.add('hidden')
+          }
+        })
+      }
+
+      applyFutureUnlock()
+      document.addEventListener('astro:after-swap', applyFutureUnlock)
     </script>
     <style is:inline>
       [x-cloak] {
@@ -67,6 +119,9 @@ import '../styles/global.css'
       .markmap > svg {
         width: 100%;
         height: 400px;
+      }
+      .future-hidden {
+        display: none !important;
       }
     </style>
     {fm.extra?.includes('math') && <style>@import "katex/dist/katex.min.css";</style>}

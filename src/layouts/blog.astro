@@ -14,20 +14,36 @@ export interface Props {
 const { post, prev, next } = Astro.props
 
 const baseUrl = import.meta.env.BASE_URL
+const postDate = post.data.publishDate || post.data.pubDate
 ---
 
 <Base frontmatter={post.data}>
   <main class="dark:bg-black">
-    <article class="post">
-      <header>
-        <BlogHero {post} />
-      </header>
-      <section
-        class="prose prose-purple dark:prose-invert lg:prose-xl mx-auto my-8 max-w-(--breakpoint-lg) px-4 lg:px-0"
+    <article
+      class="post"
+      data-future-mode="lock"
+      data-publish-date={postDate ? postDate.toISOString() : undefined}
+    >
+      <div
+        data-future-lock
+        class="mx-auto my-12 hidden max-w-(--breakpoint-lg) rounded-lg border border-purple-200 bg-purple-50 p-6 text-purple-900 dark:border-purple-700 dark:bg-gray-800 dark:text-purple-100"
       >
-        {post.data.images && <Images images={post.data.images} />}
-        <slot itemprop="articleBody" />
-      </section>
+        <h1 class="text-2xl font-bold">This article is not yet published</h1>
+        <p class="mt-2">
+          It will unlock automatically on {postDate ? postDate.toUTCString() : 'its publish date'}.
+        </p>
+      </div>
+      <div data-future-content>
+        <header>
+          <BlogHero {post} />
+        </header>
+        <section
+          class="prose prose-purple dark:prose-invert lg:prose-xl mx-auto my-8 max-w-(--breakpoint-lg) px-4 lg:px-0"
+        >
+          {post.data.images && <Images images={post.data.images} />}
+          <slot itemprop="articleBody" />
+        </section>
+      </div>
     </article>
   </main>
   <NextPrev slot="before-footer" base={baseUrl + 'blog/'} prev={prev} next={next} />

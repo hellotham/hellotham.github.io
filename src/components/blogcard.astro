@@ -34,7 +34,9 @@ const postDate = post.data.publishDate || post.data.pubDate
 
 <section class="p-4 md:w-1/2 lg:w-1/3">
   <div
-    class="h-full overflow-hidden rounded-lg border border-gray-200 bg-white p-2 shadow-xl dark:border-gray-700 dark:bg-gray-800"
+    data-future-mode="show"
+    data-publish-date={postDate ? postDate.toISOString() : undefined}
+    class="future-hidden h-full overflow-hidden rounded-lg border border-gray-200 bg-white p-2 shadow-xl dark:border-gray-700 dark:bg-gray-800"
   >
     <a href={baseUrl + 'blog/' + post.id}>
       <Image

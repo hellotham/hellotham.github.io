@@ -10,10 +10,17 @@ const { posts } = Astro.props
 ---
 
 <div
+  data-future-list
   itemprop="mainEntity"
   itemscope
   itemtype="https://schema.org/Article"
   class="flex flex-wrap space-y-12 lg:space-y-0 dark:bg-gray-900"
 >
+  <div
+    data-future-empty
+    class="hidden w-full rounded-lg border border-purple-200 bg-purple-50 p-4 text-purple-900 dark:border-purple-700 dark:bg-gray-800 dark:text-purple-100"
+  >
+    No articles are available yet for the current date. Please check back soon.
+  </div>
   {posts.map((post) => <BlogCard post={post} />)}
 </div>

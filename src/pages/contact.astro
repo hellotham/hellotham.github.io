@@ -97,7 +97,14 @@ const social = await getCollection('social')
           </div>
 
           <div class="mt-5 lg:col-span-2 lg:mt-0">
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form
+              name="contact"
+              method="POST"
+              action="https://hellotham.netlify.app/"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <p class="hidden">
                 <label>
                   Don’t fill this out if you’re human: <input name="bot-field" />

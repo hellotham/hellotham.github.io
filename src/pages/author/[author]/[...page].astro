@@ -1,9 +1,7 @@
 ---
-export const prerender = false
-
 import type { Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
-import { getEntry } from 'astro:content'
+import { getCollection, getEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import { PAGE_SIZE, getPosts } from '../../../config'
 import Base from '../../../layouts/base.astro'
@@ -12,6 +10,28 @@ import BlogRoll from '../../../components/blogroll.astro'
 import PaginateControl from '../../../components/paginatecontrol.astro'
 import coverSVG from '../../../assets/svg/undraw/undraw_short_bio.svg'
 import socialImage from '../../../assets/undraw/undraw_short_bio.png'
+
+export async function getStaticPaths() {
+  const [authors, posts] = await Promise.all([getCollection('author'), getPosts()])
+
+  return authors.flatMap((author) => {
+    const filteredPosts = posts.filter(
+      (post) => post.data.author && post.data.author.id === author.id
+    )
+    const total = filteredPosts.length
+    const lastPage = Math.max(1, Math.ceil(total / PAGE_SIZE))
+
+    return Array.from({ length: lastPage }, (_, index) => {
+      const currentPageNum = index + 1
+      return {
+        params:
+          currentPageNum === 1
+            ? { author: author.id }
+            : { author: author.id, page: String(currentPageNum) }
+      }
+    })
+  })
+}
 
 const { author, page: pageParam } = Astro.params
 const currentPageNum = pageParam ? parseInt(pageParam, 10) : 1

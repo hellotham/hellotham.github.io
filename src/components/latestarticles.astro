@@ -12,6 +12,7 @@ const { posts } = Astro.props
 
 const newestPost = posts[0]
 const otherPosts = posts.slice(1, 5)
+const newestPostDate = newestPost.data.publishDate || newestPost.data.pubDate
 
 const baseUrl = import.meta.env.BASE_URL
 ---
@@ -43,7 +44,11 @@ const baseUrl = import.meta.env.BASE_URL
         </a>
       </div>
       <div class="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:space-y-0 lg:gap-x-6 xl:grid-cols-3">
-        <div class="relative mb-4 block rounded p-4 lg:mb-0 lg:p-0 xl:col-span-2">
+        <div
+          data-future-mode="show"
+          data-publish-date={newestPostDate ? newestPostDate.toISOString() : undefined}
+          class="future-hidden relative mb-4 block rounded p-4 lg:mb-0 lg:p-0 xl:col-span-2"
+        >
           <a href={baseUrl + 'blog/' + newestPost.id}>
             <span class="sr-only">{newestPost.data.title}</span>
             {
@@ -75,10 +80,8 @@ const baseUrl = import.meta.env.BASE_URL
             </h1>
           </a>
           {
-            (newestPost.data.publishDate || newestPost.data.pubDate) && (
-              <p class="mb-4 text-gray-600 dark:text-gray-400">
-                {(newestPost.data.publishDate || newestPost.data.pubDate).toDateString()}
-              </p>
+            newestPostDate && (
+              <p class="mb-4 text-gray-600 dark:text-gray-400">{newestPostDate.toDateString()}</p>
             )
           }
           <p class="mb-4 text-gray-600 dark:text-gray-400">
@@ -95,7 +98,15 @@ const baseUrl = import.meta.env.BASE_URL
         <div class="w-full">
           {
             otherPosts.map((post) => (
-              <div class="mb-10 w-full rounded md:grid md:grid-cols-3">
+              <div
+                data-future-mode="show"
+                data-publish-date={
+                  post.data.publishDate || post.data.pubDate
+                    ? (post.data.publishDate || post.data.pubDate).toISOString()
+                    : undefined
+                }
+                class="future-hidden mb-10 w-full rounded md:grid md:grid-cols-3"
+              >
                 <a href={new URL(baseUrl + 'blog/' + post.id, Astro.url)}>
                   {post.data.coverSVG ? (
                     <img

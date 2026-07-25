@@ -98,6 +98,9 @@ importers:
       schema-dts:
         specifier: ^2.0.0
         version: 2.0.0(typescript@6.0.3)
+      sharp:
+        specifier: ^0.35.3
+        version: 0.35.3(@types/node@26.1.1)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -12440,7 +12443,6 @@ snapshots:
       '@img/sharp-win32-ia32': 0.35.3
       '@img/sharp-win32-x64': 0.35.3
       '@types/node': 26.1.1
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:

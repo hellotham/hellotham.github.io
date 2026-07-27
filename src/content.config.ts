@@ -35,6 +35,7 @@ const page = defineCollection({
       coverImage: image().optional(),
       coverSVG: image().optional(),
       socialImage: image().optional(),
+      noindex: z.boolean().optional(),
       extra: z.array(z.enum(['math', 'markmap', 'mermaid', 'gallery'])).optional(),
       minutesRead: z.string().optional()
     })

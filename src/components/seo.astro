@@ -199,6 +199,7 @@ const article: WithContext<Article> = {
 <SEO
   title={SiteMetadata.title + ' | ' + fm.title}
   description={fm.description}
+  noindex={fm.noindex ?? false}
   {openGraph}
   {twitter}
 />

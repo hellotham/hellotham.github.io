@@ -53,7 +53,7 @@ export default defineConfig({
   integrations: [
     icon(),
     // Placeholder starter docs are excluded until real documentation lands
-    sitemap({ filter: (page) => !page.includes('/doc/') }),
+    sitemap({ filter: (page) => !page.includes('/doc/') && !page.endsWith('/thanks/') }),
     robotsTxt({
       sitemap: [
         'https://hellotham.com/sitemap-index.xml',

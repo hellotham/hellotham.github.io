@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Base from '../layouts/base.astro'
+import ContactLight from '../assets/svg/rosely/undraw_contact-light.svg'
+import ContactDark from '../assets/svg/rosely/undraw_contact-dark.svg'
+import socialImage from '../assets/undraw/undraw_contact_us.png'
+
+// Netlify processes the form, so this page is landed on at the Netlify
+// deployment. Links point back at the canonical site.
+const siteUrl = 'https://hellotham.com/'
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Thank you',
+  description: 'Your message has been sent',
+  socialImage: socialImage,
+  noindex: true
+}
+---
+
+<Base {frontmatter}>
+  <div class="dark:bg-ink bg-white">
+    <div
+      class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 sm:px-10 lg:grid-cols-2 lg:px-14 lg:py-24"
+    >
+      <div>
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+          Message sent
+        </p>
+        <h1
+          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl"
+        >
+          Thank you — we have your message.
+        </h1>
+        <p class="text-slate dark:text-fog mt-6 max-w-[560px] text-lg leading-relaxed">
+          Your enquiry has reached us and will be read personally by our Principal. We normally
+          reply within one business day.
+        </p>
+        <p class="text-slate dark:text-fog mt-4 max-w-[560px] text-[15px] leading-relaxed">
+          If your message is urgent, you can also email us directly at{' '}
+          <a
+            href="mailto:info@hellotham.com"
+            class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
+          >
+            info@hellotham.com
+          </a>.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a
+            href={siteUrl}
+            class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink rounded px-7 py-3.5 text-[15px] font-semibold dark:hover:bg-white"
+          >
+            Back to home
+          </a>
+          <a
+            href={siteUrl + 'work'}
+            class="text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz border-ink rounded border px-7 py-3.5 text-[15px] font-semibold"
+          >
+            See our work
+          </a>
+        </div>
+      </div>
+      <div
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border p-8 sm:p-12"
+      >
+        <img
+          src={ContactLight.src}
+          alt=""
+          class="max-h-[300px] w-full object-contain dark:hidden"
+        />
+        <img
+          src={ContactDark.src}
+          alt=""
+          class="hidden max-h-[300px] w-full object-contain dark:block"
+        />
+      </div>
+    </div>
+  </div>
+</Base>

@@ -20,6 +20,7 @@ export default defineConfig({
       name: 'Noto Sans',
       cssVariable: '--font-noto-sans',
       weights: ['100 900'],
+      display: 'swap',
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-sans-serif', 'system-ui', 'sans-serif']
     },
@@ -28,6 +29,7 @@ export default defineConfig({
       name: 'Noto Serif',
       cssVariable: '--font-noto-serif',
       weights: ['100 900'],
+      display: 'swap',
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-serif', 'Georgia', 'serif']
     },
@@ -36,6 +38,7 @@ export default defineConfig({
       name: 'Noto Sans Mono',
       cssVariable: '--font-noto-sans-mono',
       weights: ['100 900'],
+      display: 'swap',
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-monospace', 'SFMono-Regular', 'monospace']
     }

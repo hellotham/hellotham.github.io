@@ -2,7 +2,7 @@
   "name": "hellotham-website",
   "private": true,
   "description": "Hello Tham Website in Astro",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": "Hello Tham <info@hellotham.com>",
   "bugs": {
     "url": "https://github.com/hellotham/hellotham-website/issues"

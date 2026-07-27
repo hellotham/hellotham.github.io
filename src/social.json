@@ -2,7 +2,7 @@
   {
     "id": "email",
     "name": "Email",
-    "link": "mailto:info@hellothamcom",
+    "link": "mailto:info@hellotham.com",
     "icon": "envelope"
   },
   {
@@ -30,9 +30,9 @@
     "icon": "linkedin"
   },
   {
-    "id": "twitter",
-    "name": "Twitter",
-    "link": "https://twitter.com/hellothamcom",
-    "icon": "twitter"
+    "id": "x",
+    "name": "X",
+    "link": "https://x.com/hellothamcom",
+    "icon": "twitter-x"
   }
 ]

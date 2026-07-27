@@ -1,0 +1,628 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1485" height="1050" viewBox="0 0 1485 1050">
+  <defs>
+    <style>
+      .cls-1, .cls-11 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-Rosely_Colour_System);
+      }
+
+      .cls-12, .cls-3 {
+        fill: #615f5f;
+      }
+
+      .cls-3 {
+        font-size: 48px;
+      }
+
+      .cls-3, .cls-4, .cls-7 {
+        font-family: HelveticaNeue, Helvetica Neue;
+      }
+
+      .cls-10, .cls-15, .cls-4 {
+        fill: #85677b;
+      }
+
+      .cls-4 {
+        font-size: 24px;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: #27272a;
+      }
+
+      .cls-7 {
+        font-size: 20px;
+      }
+
+      .cls-10, .cls-8 {
+        font-size: 12px;
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+        font-weight: 700;
+      }
+
+      .cls-9 {
+        font-size: 10px;
+        font-family: HelveticaNeue-Light, Helvetica Neue;
+        font-weight: 300;
+      }
+
+      .cls-11 {
+        stroke: #615f5f;
+      }
+
+      .cls-13 {
+        fill: #a49e9e;
+      }
+
+      .cls-14 {
+        fill: #f4eee8;
+      }
+
+      .cls-16 {
+        fill: #b565a7;
+      }
+
+      .cls-17 {
+        fill: #be9cc1;
+      }
+
+      .cls-18 {
+        fill: #d2c4d6;
+      }
+
+      .cls-19 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-20 {
+        fill: #dd4124;
+      }
+
+      .cls-21 {
+        fill: #009473;
+      }
+
+      .cls-22 {
+        fill: #dfc160;
+      }
+
+      .cls-23 {
+        fill: #0f4c81;
+      }
+
+      .cls-24 {
+        fill: #5f4b8b;
+      }
+
+      .cls-25 {
+        fill: #45b5aa;
+      }
+
+      .cls-26 {
+        fill: #d94f70;
+      }
+
+      .cls-27 {
+        fill: #88b04b;
+      }
+
+      .cls-28 {
+        fill: #f5df4d;
+      }
+
+      .cls-29 {
+        fill: #93a9d1;
+      }
+
+      .cls-30 {
+        fill: #ca4286;
+      }
+
+      .cls-31 {
+        fill: #c3ddd6;
+      }
+
+      .cls-32 {
+        fill: #ec809e;
+      }
+
+      .cls-33 {
+        fill: #f7caca;
+      }
+
+      .cls-34 {
+        fill: #f8d7dd;
+      }
+
+      .cls-35 {
+        fill: #f4dede;
+      }
+
+      .cls-36 {
+        fill: #d2386c;
+      }
+
+      .cls-37 {
+        fill: #64bfa4;
+      }
+
+      .cls-38 {
+        fill: #3cadd4;
+      }
+
+      .cls-39 {
+        fill: #eada4f;
+      }
+
+      .cls-40 {
+        stroke: none;
+      }
+
+      .cls-41 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="541" height="175"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect class="cls-1" width="1101" height="371"/>
+    </clipPath>
+    <clipPath id="clip-Rosely_Colour_System">
+      <rect width="1485" height="1050"/>
+    </clipPath>
+  </defs>
+  <g id="Rosely_Colour_System" data-name="Rosely Colour System" class="cls-2">
+    <rect class="cls-41" width="1485" height="1050"/>
+    <text id="Rosely_Colour_System_" data-name="Rosely Colour System " class="cls-3" transform="translate(40 86)"><tspan x="0" y="0">Rosely Colour System </tspan></text>
+    <g id="Component_2_1" data-name="Component 2 – 1" transform="translate(40 120)">
+      <text id="Greys" class="cls-4" transform="translate(0 23)"><tspan x="0" y="0">Greys</tspan></text>
+      <g id="Repeat_Grid_7" data-name="Repeat Grid 7" class="cls-5" transform="translate(0 40)">
+        <g transform="translate(-40 -160)">
+          <g id="Swatch" transform="translate(40 160)">
+            <rect id="Colour" class="cls-6" width="120" height="100"/>
+            <text id="rosely0" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely0</tspan></text>
+            <text id="Black_Beauty" data-name="Black Beauty" class="cls-8" transform="translate(60 135)"><tspan x="-37.668" y="0">Black Beauty</tspan></text>
+            <text id="_19-3911_TCX" data-name="19-3911 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">19-3911 TCX</tspan></text>
+            <text id="_27272A" data-name="#27272A" class="cls-10" transform="translate(60 162)"><tspan x="-24.126" y="0">#27272A</tspan></text>
+            <g id="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 -160)">
+          <g id="Swatch-2" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-2" data-name="Colour" class="cls-12" width="120" height="100"/>
+            <text id="rosely1" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely1</tspan></text>
+            <text id="Granite_Gray" data-name="Granite Gray" class="cls-8" transform="translate(60 135)"><tspan x="-36.108" y="0">Granite Gray</tspan></text>
+            <text id="_18-5204_TCX" data-name="18-5204 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-5204 TCX</tspan></text>
+            <text id="_615F5F" data-name="#615F5F" class="cls-10" transform="translate(60 162)"><tspan x="-23.796" y="0">#615F5F</tspan></text>
+            <g id="Box-2" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 -160)">
+          <g id="Swatch-3" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-3" data-name="Colour" class="cls-13" width="120" height="100"/>
+            <text id="rosely2" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely2</tspan></text>
+            <text id="Opal_Gray" data-name="Opal Gray" class="cls-8" transform="translate(60 135)"><tspan x="-28.44" y="0">Opal Gray</tspan></text>
+            <text id="_16-3801_TCX" data-name="16-3801 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">16-3801 TCX</tspan></text>
+            <text id="_A49E9E" data-name="#A49E9E" class="cls-10" transform="translate(60 162)"><tspan x="-25.23" y="0">#A49E9E</tspan></text>
+            <g id="Box-3" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 -160)">
+          <g id="Swatch-4" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-4" data-name="Colour" class="cls-14" width="120" height="100"/>
+            <text id="rosely3" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely3</tspan></text>
+            <text id="Sugar_Swizzle" data-name="Sugar Swizzle" class="cls-8" transform="translate(60 135)"><tspan x="-40.11" y="0">Sugar Swizzle</tspan></text>
+            <text id="_11-0607_TCX" data-name="11-0607 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">11-0607 TCX</tspan></text>
+            <text id="_F4EEE8" data-name="#F4EEE8" class="cls-10" transform="translate(60 162)"><tspan x="-25.23" y="0">#F4EEE8</tspan></text>
+            <g id="Box-4" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Component_2_4" data-name="Component 2 – 4" transform="translate(40 359)">
+      <text id="Purples" class="cls-4" transform="translate(0 23)"><tspan x="0" y="0">Purples</tspan></text>
+      <g id="Repeat_Grid_7-2" data-name="Repeat Grid 7" class="cls-5" transform="translate(0 40)">
+        <g transform="translate(-40 -160)">
+          <g id="Swatch-5" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-5" data-name="Colour" class="cls-15" width="120" height="100"/>
+            <text id="rosely8" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely8</tspan></text>
+            <text id="Grapeade" class="cls-8" transform="translate(60 135)"><tspan x="-27.996" y="0">Grapeade</tspan></text>
+            <text id="_18-3211_TCX" data-name="18-3211 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-3211 TCX</tspan></text>
+            <text id="_85677B" data-name="#85677B" class="cls-10" transform="translate(60 162)"><tspan x="-24.24" y="0">#85677B</tspan></text>
+            <g id="Box-5" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 -160)">
+          <g id="Swatch-6" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-6" data-name="Colour" class="cls-16" d="M0,0H120V100H0Z"/>
+            <text id="rosely9" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely9</tspan></text>
+            <text id="Radiant_Orchid" data-name="Radiant Orchid" class="cls-8" transform="translate(60 135)"><tspan x="-42.882" y="0">Radiant Orchid</tspan></text>
+            <text id="_18-3224_TCX" data-name="18-3224 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-3224 TCX</tspan></text>
+            <text id="_B565A7" data-name="#B565A7" class="cls-10" transform="translate(60 162)"><tspan x="-25.014" y="0">#B565A7</tspan></text>
+            <g id="Box-6" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 -160)">
+          <g id="Swatch-7" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-7" data-name="Colour" class="cls-17" d="M0,0H120V100H0Z"/>
+            <text id="roselyA" class="cls-7" transform="translate(60 119)"><tspan x="-32.96" y="0">roselyA</tspan></text>
+            <text id="Lupine" class="cls-8" transform="translate(60 135)"><tspan x="-19.332" y="0">Lupine</tspan></text>
+            <text id="_16-3521_TCX" data-name="16-3521 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">16-3521 TCX</tspan></text>
+            <text id="_BE9CC1" data-name="#BE9CC1" class="cls-10" transform="translate(60 162)"><tspan x="-27.012" y="0">#BE9CC1</tspan></text>
+            <g id="Box-7" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 -160)">
+          <g id="Swatch-8" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-8" data-name="Colour" class="cls-18" width="120" height="100"/>
+            <text id="roselyB" class="cls-7" transform="translate(60 119)"><tspan x="-33.33" y="0">roselyB</tspan></text>
+            <text id="Lavender_Fog" data-name="Lavender Fog" class="cls-8" transform="translate(60 135)"><tspan x="-39.126" y="0">Lavender Fog</tspan></text>
+            <text id="_13-3820_TCX_" data-name="13-3820 TCX
+" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">13-3820 TCX</tspan><tspan x="0" y="12"></tspan></text>
+            <text id="_D2C4D6" data-name="#D2C4D6" class="cls-10" transform="translate(60 162)"><tspan x="-26.682" y="0">#D2C4D6</tspan></text>
+            <g id="Box-8" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Component_2_5" data-name="Component 2 – 5" transform="translate(40 598)">
+      <text id="ANSI" class="cls-4" transform="translate(0 23)"><tspan x="0" y="0">ANSI</tspan></text>
+      <g id="Repeat_Grid_7-3" data-name="Repeat Grid 7" class="cls-19" transform="translate(0 40)">
+        <g transform="translate(-40 -160)">
+          <g id="Swatch-9" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-9" data-name="Colour" class="cls-6" width="120" height="100"/>
+            <text id="black" class="cls-7" transform="translate(60 119)"><tspan x="-24.08" y="0">black</tspan></text>
+            <text id="Black_Beauty-2" data-name="Black Beauty" class="cls-8" transform="translate(60 135)"><tspan x="-37.668" y="0">Black Beauty</tspan></text>
+            <text id="_19-3911_TCX-2" data-name="19-3911 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">19-3911 TCX</tspan></text>
+            <text id="_27272A-2" data-name="#27272A" class="cls-10" transform="translate(60 162)"><tspan x="-24.126" y="0">#27272A</tspan></text>
+            <g id="Box-9" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 -160)">
+          <g id="Swatch-10" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-10" data-name="Colour" class="cls-20" d="M0,0H120V100H0Z"/>
+            <text id="red" class="cls-7" transform="translate(60 119)"><tspan x="-14.45" y="0">red</tspan></text>
+            <text id="Tangerine_Tango" data-name="Tangerine Tango" class="cls-8" transform="translate(60 135)"><tspan x="-46.998" y="0">Tangerine Tango</tspan></text>
+            <text id="_17-1463_TCX" data-name="17-1463 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">17-1463 TCX</tspan></text>
+            <text id="_DD4124" data-name="#DD4124" class="cls-10" transform="translate(60 162)"><tspan x="-25.572" y="0">#DD4124</tspan></text>
+            <g id="Box-10" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 -160)">
+          <g id="Swatch-11" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-11" data-name="Colour" class="cls-21" d="M0,0H120V100H0Z"/>
+            <text id="green" class="cls-7" transform="translate(60 119)"><tspan x="-25.19" y="0">green</tspan></text>
+            <text id="Emerald" class="cls-8" transform="translate(60 135)"><tspan x="-23.76" y="0">Emerald</tspan></text>
+            <text id="_17-5641_TCX" data-name="17-5641 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">17-5641 TCX</tspan></text>
+            <text id="_009473" data-name="#009473" class="cls-10" transform="translate(60 162)"><tspan x="-23.352" y="0">#009473</tspan></text>
+            <g id="Box-11" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 -160)">
+          <g id="Swatch-12" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-12" data-name="Colour" class="cls-22" width="120" height="100"/>
+            <text id="yellow" class="cls-7" transform="translate(60 119)"><tspan x="-28.13" y="0">yellow</tspan></text>
+            <text id="Cream_Gold" data-name="Cream Gold" class="cls-8" transform="translate(60 135)"><tspan x="-34.098" y="0">Cream Gold</tspan></text>
+            <text id="_13-0739_TCX" data-name="13-0739 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">13-0739 TCX</tspan></text>
+            <text id="_DFC160" data-name="#DFC160" class="cls-10" transform="translate(60 162)"><tspan x="-25.794" y="0">#DFC160</tspan></text>
+            <g id="Box-12" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(520 -160)">
+          <g id="Swatch-13" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-13" data-name="Colour" class="cls-23" width="120" height="100"/>
+            <text id="blue" class="cls-7" transform="translate(60 119)"><tspan x="-19.08" y="0">blue</tspan></text>
+            <text id="Classic_Blue" data-name="Classic Blue" class="cls-8" transform="translate(60 135)"><tspan x="-35.316" y="0">Classic Blue</tspan></text>
+            <text id="_9-4052_TCX" data-name="9-4052 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-26.31" y="0">9-4052 TCX</tspan></text>
+            <text id="_0F4C81" data-name="#0F4C81" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#0F4C81</tspan></text>
+            <g id="Box-13" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(660 -160)">
+          <g id="Swatch-14" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-14" data-name="Colour" class="cls-24" width="120" height="100"/>
+            <text id="magenta" class="cls-7" transform="translate(60 119)"><tspan x="-39.09" y="0">magenta</tspan></text>
+            <text id="Ultra_Violet" data-name="Ultra Violet" class="cls-8" transform="translate(60 135)"><tspan x="-31.542" y="0">Ultra Violet</tspan></text>
+            <text id="_18-3838_TCX" data-name="18-3838 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-3838 TCX</tspan></text>
+            <text id="_5F4B8B" data-name="#5F4B8B" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#5F4B8B</tspan></text>
+            <g id="Box-14" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(800 -160)">
+          <g id="Swatch-15" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-15" data-name="Colour" class="cls-25" width="120" height="100"/>
+            <text id="cyan" class="cls-7" transform="translate(60 119)"><tspan x="-21.3" y="0">cyan</tspan></text>
+            <text id="Turquoise" class="cls-8" transform="translate(60 135)"><tspan x="-28.002" y="0">Turquoise</tspan></text>
+            <text id="_15-5519_TCX" data-name="15-5519 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">15-5519 TCX</tspan></text>
+            <text id="_45B5AA" data-name="#45B5AA" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#45B5AA</tspan></text>
+            <g id="Box-15" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(940 -160)">
+          <g id="Swatch-16" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-16" data-name="Colour" class="cls-13" d="M0,0H120V100H0Z"/>
+            <text id="white" class="cls-7" transform="translate(60 119)"><tspan x="-23.88" y="0">white</tspan></text>
+            <text id="Opal_Gray-2" data-name="Opal Gray" class="cls-8" transform="translate(60 135)"><tspan x="-28.44" y="0">Opal Gray</tspan></text>
+            <text id="_16-3801_TCX-2" data-name="16-3801 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">16-3801 TCX</tspan></text>
+            <text id="_A49E9E-2" data-name="#A49E9E" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#A49E9E</tspan></text>
+            <g id="Box-16" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(-40 35)">
+          <g id="Swatch-17" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-17" data-name="Colour" class="cls-12" width="120" height="100"/>
+            <text id="bblack" class="cls-7" transform="translate(60 119)"><tspan x="-30.01" y="0">bblack</tspan></text>
+            <text id="Granite_Gray-2" data-name="Granite Gray" class="cls-8" transform="translate(60 135)"><tspan x="-36.108" y="0">Granite Gray</tspan></text>
+            <text id="_18-5204_TCX-2" data-name="18-5204 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-5204 TCX</tspan></text>
+            <text id="_615F5F-2" data-name="#615F5F" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#615F5F</tspan></text>
+            <g id="Box-17" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 35)">
+          <g id="Swatch-18" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-18" data-name="Colour" class="cls-26" d="M0,0H120V100H0Z"/>
+            <text id="bred" class="cls-7" transform="translate(60 119)"><tspan x="-20.38" y="0">bred</tspan></text>
+            <text id="Honeysuckle" class="cls-8" transform="translate(60 135)"><tspan x="-36.888" y="0">Honeysuckle</tspan></text>
+            <text id="_18-2120_TCX" data-name="18-2120 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-2120 TCX</tspan></text>
+            <text id="_D94F70" data-name="#D94F70" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#D94F70</tspan></text>
+            <g id="Box-18" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 35)">
+          <g id="Swatch-19" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-19" data-name="Colour" class="cls-27" d="M0,0H120V100H0Z"/>
+            <text id="bgreen" class="cls-7" transform="translate(60 119)"><tspan x="-31.12" y="0">bgreen</tspan></text>
+            <text id="Greenery" class="cls-8" transform="translate(60 135)"><tspan x="-26.118" y="0">Greenery</tspan></text>
+            <text id="_15-0343_TCX" data-name="15-0343 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">15-0343 TCX</tspan></text>
+            <text id="_88B04B" data-name="#88B04B" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#88B04B</tspan></text>
+            <g id="Box-19" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 35)">
+          <g id="Swatch-20" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-20" data-name="Colour" class="cls-28" d="M0,0H120V100H0Z"/>
+            <text id="byellow" class="cls-7" transform="translate(60 119)"><tspan x="-34.06" y="0">byellow</tspan></text>
+            <text id="Illuminating" class="cls-8" transform="translate(60 135)"><tspan x="-33.294" y="0">Illuminating</tspan></text>
+            <text id="_13-0647_TCX" data-name="13-0647 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">13-0647 TCX</tspan></text>
+            <text id="_F5DF4D" data-name="#F5DF4D" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#F5DF4D</tspan></text>
+            <g id="Box-20" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(520 35)">
+          <g id="Swatch-21" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-21" data-name="Colour" class="cls-29" width="120" height="100"/>
+            <text id="bblue" class="cls-7" transform="translate(60 119)"><tspan x="-25.01" y="0">bblue</tspan></text>
+            <text id="Serenity" class="cls-8" transform="translate(60 135)"><tspan x="-23.34" y="0">Serenity</tspan></text>
+            <text id="_15-3919_TCX" data-name="15-3919 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">15-3919 TCX</tspan></text>
+            <text id="_93A9D1" data-name="#93A9D1" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#93A9D1</tspan></text>
+            <g id="Box-21" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(660 35)">
+          <g id="Swatch-22" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-22" data-name="Colour" class="cls-30" width="120" height="100"/>
+            <text id="bmagenta" class="cls-7" transform="translate(60 119)"><tspan x="-45.02" y="0">bmagenta</tspan></text>
+            <text id="Fuchsia_Fedora" data-name="Fuchsia Fedora" class="cls-8" transform="translate(60 135)"><tspan x="-44.112" y="0">Fuchsia Fedora</tspan></text>
+            <text id="_18-2330_TCX" data-name="18-2330 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-2330 TCX</tspan></text>
+            <text id="_CA4286" data-name="#CA4286" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#CA4286</tspan></text>
+            <g id="Box-22" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(800 35)">
+          <g id="Swatch-23" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-23" data-name="Colour" class="cls-31" width="120" height="100"/>
+            <text id="bcyan" class="cls-7" transform="translate(60 119)"><tspan x="-27.23" y="0">bcyan</tspan></text>
+            <text id="Opal_Blue" data-name="Opal Blue" class="cls-8" transform="translate(60 135)"><tspan x="-27.768" y="0">Opal Blue</tspan></text>
+            <text id="_12-5406_TCX" data-name="12-5406 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">12-5406 TCX</tspan></text>
+            <text id="_C3DDD6" data-name="#C3DDD6" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#C3DDD6</tspan></text>
+            <g id="Box-23" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(940 35)">
+          <g id="Swatch-24" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-24" data-name="Colour" class="cls-14" d="M0,0H120V100H0Z"/>
+            <text id="bwhite" class="cls-7" transform="translate(60 119)"><tspan x="-29.81" y="0">bwhite</tspan></text>
+            <text id="Sugar_Swizzle-2" data-name="Sugar Swizzle" class="cls-8" transform="translate(60 135)"><tspan x="-40.11" y="0">Sugar Swizzle</tspan></text>
+            <text id="_11-0607_TCX-2" data-name="11-0607 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">11-0607 TCX</tspan></text>
+            <text id="_F4EEE8-2" data-name="#F4EEE8" class="cls-10" transform="translate(37 162)"><tspan x="0" y="0">#F4EEE8</tspan></text>
+            <g id="Box-24" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Component_2_2" data-name="Component 2 – 2" transform="translate(743 120)">
+      <text id="Pinks" class="cls-4" transform="translate(0 23)"><tspan x="0" y="0">Pinks</tspan></text>
+      <g id="Repeat_Grid_7-4" data-name="Repeat Grid 7" class="cls-5" transform="translate(0 40)">
+        <g transform="translate(-40 -160)">
+          <g id="Swatch-25" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-25" data-name="Colour" class="cls-32" width="120" height="100"/>
+            <text id="rosely4" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely4</tspan></text>
+            <text id="Morning_Glory" data-name="Morning Glory" class="cls-8" transform="translate(60 135)"><tspan x="-40.764" y="0">Morning Glory</tspan></text>
+            <text id="_15-1920_TCX" data-name="15-1920 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">15-1920 TCX</tspan></text>
+            <text id="_EC809E" data-name="#EC809E" class="cls-10" transform="translate(60 162)"><tspan x="-25.566" y="0">#EC809E</tspan></text>
+            <g id="Box-25" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 -160)">
+          <g id="Swatch-26" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-26" data-name="Colour" class="cls-33" width="120" height="100"/>
+            <text id="rosely5" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely5</tspan></text>
+            <text id="Rose_Quartz" data-name="Rose Quartz" class="cls-8" transform="translate(60 135)"><tspan x="-35.562" y="0">Rose Quartz</tspan></text>
+            <text id="_13-1520_TCX" data-name="13-1520 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">13-1520 TCX</tspan></text>
+            <text id="_F7CACA" data-name="#F7CACA" class="cls-10" transform="translate(60 162)"><tspan x="-27.342" y="0">#F7CACA</tspan></text>
+            <g id="Box-26" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 -160)">
+          <g id="Swatch-27" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-27" data-name="Colour" class="cls-34" d="M0,0H120V100H0Z"/>
+            <text id="rosely6" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely6</tspan></text>
+            <text id="Barely_Pink" data-name="Barely Pink" class="cls-8" transform="translate(60 135)"><tspan x="-32.22" y="0">Barely Pink</tspan></text>
+            <text id="_12-2906_TCX" data-name="12-2906 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">12-2906 TCX</tspan></text>
+            <text id="_F8D7DD" data-name="#F8D7DD" class="cls-10" transform="translate(60 162)"><tspan x="-26.904" y="0">#F8D7DD</tspan></text>
+            <g id="Box-27" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 -160)">
+          <g id="Swatch-28" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-28" data-name="Colour" class="cls-35" width="120" height="100"/>
+            <text id="rosely7" class="cls-7" transform="translate(60 119)"><tspan x="-32.04" y="0">rosely7</tspan></text>
+            <text id="Heavenly_Pink" data-name="Heavenly Pink" class="cls-8" transform="translate(60 135)"><tspan x="-40.338" y="0">Heavenly Pink</tspan></text>
+            <text id="_12-1305_TCX" data-name="12-1305 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">12-1305 TCX</tspan></text>
+            <text id="_F4DEDE" data-name="#F4DEDE" class="cls-10" transform="translate(60 162)"><tspan x="-26.898" y="0">#F4DEDE</tspan></text>
+            <g id="Box-28" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Component_2_3" data-name="Component 2 – 3" transform="translate(743 359)">
+      <text id="Colourful" class="cls-4" transform="translate(0 23)"><tspan x="0" y="0">Colourful</tspan></text>
+      <g id="Repeat_Grid_7-5" data-name="Repeat Grid 7" class="cls-5" transform="translate(0 40)">
+        <g transform="translate(-40 -160)">
+          <g id="Swatch-29" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-29" data-name="Colour" class="cls-36" width="120" height="100"/>
+            <text id="roselyC" class="cls-7" transform="translate(60 119)"><tspan x="-33.7" y="0">roselyC</tspan></text>
+            <text id="Raspberry_Sorbet" data-name="Raspberry Sorbet" class="cls-8" transform="translate(60 135)"><tspan x="-50.34" y="0">Raspberry Sorbet</tspan></text>
+            <text id="_18-2043_TCX" data-name="18-2043 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">18-2043 TCX</tspan></text>
+            <text id="_D2386C" data-name="#D2386C" class="cls-10" transform="translate(60 162)"><tspan x="-25.572" y="0">#D2386C</tspan></text>
+            <g id="Box-29" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(100 -160)">
+          <g id="Swatch-30" data-name="Swatch" transform="translate(40 160)">
+            <rect id="Colour-30" data-name="Colour" class="cls-37" width="120" height="100"/>
+            <text id="roselyD" class="cls-7" transform="translate(60 119)"><tspan x="-33.52" y="0">roselyD</tspan></text>
+            <text id="Spearmint" class="cls-8" transform="translate(60 135)"><tspan x="-29.436" y="0">Spearmint</tspan></text>
+            <text id="_15-5819_TCX" data-name="15-5819 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">15-5819 TCX</tspan></text>
+            <text id="_64BFA4" data-name="#64BFA4" class="cls-10" transform="translate(60 162)"><tspan x="-24.906" y="0">#64BFA4</tspan></text>
+            <g id="Box-30" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(240 -160)">
+          <g id="Swatch-31" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-31" data-name="Colour" class="cls-38" d="M0,0H120V100H0Z"/>
+            <text id="roselyE" class="cls-7" transform="translate(60 119)"><tspan x="-32.59" y="0">roselyE</tspan></text>
+            <text id="Aquarius" class="cls-8" transform="translate(60 135)"><tspan x="-25.44" y="0">Aquarius</tspan></text>
+            <text id="_16-4530_TCX" data-name="16-4530 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">16-4530 TCX</tspan></text>
+            <text id="_3CADD4" data-name="#3CADD4" class="cls-10" transform="translate(60 162)"><tspan x="-27.456" y="0">#3CADD4</tspan></text>
+            <g id="Box-31" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+        <g transform="translate(380 -160)">
+          <g id="Swatch-32" data-name="Swatch" transform="translate(40 160)">
+            <path id="Colour-32" data-name="Colour" class="cls-39" d="M0,0H120V100H0Z"/>
+            <text id="roselyF" class="cls-7" transform="translate(60 119)"><tspan x="-32.22" y="0">roselyF</tspan></text>
+            <text id="Meadowlark" class="cls-8" transform="translate(60 135)"><tspan x="-35.316" y="0">Meadowlark</tspan></text>
+            <text id="_13-0646_TCX" data-name="13-0646 TCX" class="cls-9" transform="translate(60 148)"><tspan x="-29.09" y="0">13-0646 TCX</tspan></text>
+            <text id="_EADA4F" data-name="#EADA4F" class="cls-10" transform="translate(60 162)"><tspan x="-26.784" y="0">#EADA4F</tspan></text>
+            <g id="Box-32" data-name="Box" class="cls-11">
+              <rect class="cls-40" width="120" height="175"/>
+              <rect class="cls-1" x="0.5" y="0.5" width="119" height="174"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,60 +1,79 @@
 ---
-import Partners from '../assets/svg/undraw/undraw_features_overview.svg'
-import Work from '../assets/svg/undraw/undraw_all_the_data.svg'
-import People from '../assets/svg/undraw/undraw_team_page.svg'
+import TeamLight from '../assets/svg/rosely/undraw_team_page-light.svg'
+import TeamDark from '../assets/svg/rosely/undraw_team_page-dark.svg'
+import PartnersLight from '../assets/svg/rosely/undraw_features_overview-light.svg'
+import PartnersDark from '../assets/svg/rosely/undraw_features_overview-dark.svg'
+import WorkLight from '../assets/svg/rosely/undraw_all_the_data-light.svg'
+import WorkDark from '../assets/svg/rosely/undraw_all_the_data-dark.svg'
+import AppsLight from '../assets/svg/rosely/undraw_apps-light.svg'
+import AppsDark from '../assets/svg/rosely/undraw_apps-dark.svg'
+
+const baseUrl = import.meta.env.BASE_URL
 
 const callouts = [
   {
     name: 'People',
-    description: 'Find out more about our consultants',
-    imageSrc: People,
-    imageAlt: 'People drawing',
-    href: '/consultants'
+    description: 'The consultants who do the work, and the experience they bring.',
+    light: TeamLight,
+    dark: TeamDark,
+    href: 'consultants'
   },
   {
     name: 'Partners',
-    description: 'Find out more about our partners',
-    imageSrc: Partners,
-    imageAlt: 'Partners drawing',
-    href: '/partners'
+    description: 'AWS, Microsoft, Domo and Netlify — the platforms we build and advise on.',
+    light: PartnersLight,
+    dark: PartnersDark,
+    href: 'partners'
   },
   {
     name: 'Achievements',
-    description: 'Recent work we have performed for our clients',
-    imageSrc: Work,
-    imageAlt: 'Recent work drawing',
-    href: '/work'
+    description: 'Recent engagements delivered for enterprise and government clients.',
+    light: WorkLight,
+    dark: WorkDark,
+    href: 'work'
+  },
+  {
+    name: 'Apps',
+    description: 'HelloNotes and FinvestLens — the native apps we design and publish ourselves.',
+    light: AppsLight,
+    dark: AppsDark,
+    href: 'apps'
   }
 ]
 ---
 
-<div class="bg-pink-100 dark:bg-gray-700">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-      <h2 class="text-4xl font-extrabold text-purple-800 dark:text-purple-100">Find Out More</h2>
-      <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
-        {
-          callouts.map((callout) => (
-            <div class="group relative">
-              <div class="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:h-64 dark:bg-purple-600">
-                <img
-                  src={callout.imageSrc.src}
-                  alt={callout.imageAlt}
-                  class="h-full w-full object-contain object-center"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="mt-6 text-2xl text-purple-500 dark:text-purple-300">
-                <a href={callout.href}>
-                  <span class="absolute inset-0" />
-                  {callout.name}
-                </a>
-              </h3>
-              <p class="text-base text-gray-900 dark:text-gray-100">{callout.description}</p>
+<div class="dark:border-ink-soft dark:bg-ink-deep border-line bg-cream border-t border-b">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-14 lg:py-18">
+    <h2 class="text-ink dark:text-cream mb-8 font-serif text-3xl font-medium lg:text-[34px]">
+      Find out more
+    </h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        callouts.map((c) => (
+          <a href={baseUrl + c.href} class="group block">
+            <div class="dark:border-ink-soft dark:bg-plum border-line flex h-[220px] items-center justify-center border bg-white p-7">
+              <img
+                src={c.light.src}
+                alt={c.name + ' illustration'}
+                class="max-h-full max-w-full object-contain dark:hidden"
+                loading="lazy"
+              />
+              <img
+                src={c.dark.src}
+                alt=""
+                class="hidden max-h-full max-w-full object-contain dark:block"
+                loading="lazy"
+              />
             </div>
-          ))
-        }
-      </div>
+            <div class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream mt-4 font-serif text-[22px] font-medium">
+              {c.name}
+            </div>
+            <div class="dark:text-fog text-slate mt-2 text-[15px] leading-relaxed">
+              {c.description}
+            </div>
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>

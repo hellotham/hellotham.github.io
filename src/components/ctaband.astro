@@ -1,0 +1,25 @@
+---
+const baseUrl = import.meta.env.BASE_URL
+---
+
+<div class="dark:bg-plum bg-ink">
+  <div
+    class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-16 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14 lg:py-18"
+  >
+    <div>
+      <h2 class="text-cream font-serif text-3xl font-medium lg:text-4xl">
+        Start with the services.
+      </h2>
+      <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+        See how strategy, architecture and delivery fit together — and where your engagement would
+        begin.
+      </p>
+    </div>
+    <a
+      href={baseUrl + 'services'}
+      class="bg-quartz text-ink rounded px-9 py-4.5 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+    >
+      Explore services
+    </a>
+  </div>
+</div>

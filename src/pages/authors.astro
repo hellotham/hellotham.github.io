@@ -28,7 +28,7 @@ const baseUrl = import.meta.env.BASE_URL
       socialImage={frontmatter.socialImage}
     />
   </header>
-  <main class="mt-8 bg-white dark:bg-gray-900">
+  <div class="dark:bg-ink mt-8 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl pb-72 sm:pb-32 lg:max-w-none lg:pb-24">
         <div class="mt-6 grid grid-cols-2 gap-x-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
@@ -42,18 +42,18 @@ const baseUrl = import.meta.env.BASE_URL
                     class="h-full w-full object-cover object-center"
                   />
                 </div>
-                <h3 class="inline-block rounded bg-purple-600 px-3 py-1 text-xs font-medium tracking-tight text-white uppercase hover:bg-pink-600">
+                <h3 class="dark:border-grape dark:text-grape border-mulberry text-mulberry inline-block border px-2.5 py-1 font-mono text-[10px] tracking-[.12em] uppercase">
                   <a href={`${baseUrl}author/${author.id}/`}>
                     <span class="absolute inset-0" />
                     {author.data.title}
                   </a>
                 </h3>
-                <p class="text-base text-gray-900 dark:text-gray-400">{author.data.description}</p>
+                <p class="text-ink dark:text-fog text-base">{author.data.description}</p>
               </div>
             ))
           }
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </Base>

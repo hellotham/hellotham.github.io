@@ -3,10 +3,14 @@ import type { CollectionEntry } from 'astro:content'
 import { SiteMetadata, getPosts } from '../config'
 import Base from '../layouts/base.astro'
 import Hero from '../components/hero.astro'
+import Stats from '../components/stats.astro'
 import Features from '../components/features.astro'
 import FindOutMore from '../components/findoutmore.astro'
+import PartnerStrip from '../components/partnerstrip.astro'
+import Achievements from '../components/achievements.astro'
 import LatestArticles from '../components/latestarticles.astro'
-import coverImage from '../assets/svg/undraw/undraw_ideas_flow.svg'
+import CtaBand from '../components/ctaband.astro'
+import coverImage from '../assets/svg/rosely/undraw_ideas_flow-light.svg'
 import socialImage from '../assets/undraw/undraw_ideas_flow.png'
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
@@ -21,8 +25,11 @@ const posts = await getPosts()
 
 <Base frontmatter={frontmatter}>
   <Hero />
+  <Stats />
   <Features />
   <FindOutMore />
+  <PartnerStrip />
+  <Achievements />
   <LatestArticles {posts} />
-  <div class="bg-white p-24 md:p-12 dark:bg-black"></div>
+  <CtaBand />
 </Base>

@@ -1,8 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Image } from 'astro:assets'
-import Categories from '../components/categories.astro'
-import { DefaultImage } from '../config'
 
 export interface Props {
   posts: CollectionEntry<'blog'>[]
@@ -10,141 +7,46 @@ export interface Props {
 
 const { posts } = Astro.props
 
-const newestPost = posts[0]
-const otherPosts = posts.slice(1, 5)
-const newestPostDate = newestPost.data.publishDate || newestPost.data.pubDate
+const latest = posts.slice(0, 6)
 
 const baseUrl = import.meta.env.BASE_URL
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' })
 ---
 
-<div class="bg-white dark:bg-gray-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:max-w-none lg:py-16">
-      <div class="flex flex-row items-center">
-        <h2 class="text-2xl font-extrabold text-purple-800 md:text-4xl dark:text-purple-200">
-          Our Latest Articles
-        </h2>
-        <a
-          href={baseUrl + 'blog'}
-          class="mt-2 ml-4 inline-block rounded-md bg-purple-600 px-2 py-2 text-base font-bold text-white hover:bg-pink-600 md:px-6 md:py-3 md:text-lg dark:bg-purple-300 dark:text-black dark:hover:bg-pink-300"
-        >
-          All Articles
-        </a>
-        <a
-          href={baseUrl + 'categories'}
-          class="mt-2 ml-4 inline-block rounded-md bg-purple-100 px-2 py-2 text-base font-bold text-purple-800 hover:bg-pink-200 md:px-6 md:py-3 md:text-lg dark:bg-purple-900 dark:text-purple-100 dark:hover:bg-pink-900"
-        >
-          Categories
-        </a>
-        <a
-          href={baseUrl + 'tags'}
-          class="mt-2 ml-4 inline-block rounded-md bg-purple-100 px-2 py-2 text-base font-bold text-purple-800 hover:bg-pink-200 md:px-6 md:py-3 md:text-lg dark:bg-purple-900 dark:text-purple-100 dark:hover:bg-pink-900"
-        >
-          Tags
-        </a>
-      </div>
-      <div class="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:space-y-0 lg:gap-x-6 xl:grid-cols-3">
-        <div
-          data-future-mode="show"
-          data-publish-date={newestPostDate ? newestPostDate.toISOString() : undefined}
-          class="future-hidden relative mb-4 block rounded p-4 lg:mb-0 lg:p-0 xl:col-span-2"
-        >
-          <a href={baseUrl + 'blog/' + newestPost.id}>
-            <span class="sr-only">{newestPost.data.title}</span>
-            {
-              newestPost.data.coverSVG ? (
-                <img
-                  src={newestPost.data.coverSVG.src}
-                  alt={newestPost.data.title + ' featured image'}
-                  class="h-64 w-full rounded-md bg-purple-100 object-cover md:h-80 dark:bg-purple-800"
-                  loading="lazy"
-                />
-              ) : (
-                <Image
-                  src={newestPost.data.coverImage || newestPost.data.socialImage || DefaultImage}
-                  alt={newestPost.data.title + ' featured image'}
-                  class="h-64 w-full rounded-md bg-purple-100 object-cover md:h-80 dark:bg-purple-800"
-                  loading="lazy"
-                />
-              )
-            }
-          </a>
-          <div class="mt-4">
-            {newestPost.data.categories && <Categories categories={newestPost.data.categories} />}
-          </div>
-          <a href={baseUrl + 'blog/' + newestPost.id}>
-            <h1
-              class="mt-2 text-4xl leading-tight font-bold text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+<div class="dark:border-ink-soft dark:bg-ink-deep border-line bg-cream border-t">
+  <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+    <div class="mb-7 flex flex-wrap items-baseline justify-between gap-4">
+      <h2 class="text-ink dark:text-cream font-serif text-2xl font-medium lg:text-3xl">Insights</h2>
+      <a
+        href={baseUrl + 'blog'}
+        class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+      >
+        All articles →
+      </a>
+    </div>
+    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        latest.map((post) => {
+          const postDate = post.data.publishDate || post.data.pubDate
+          return (
+            <a
+              href={baseUrl + 'blog/' + post.id}
+              data-future-mode="show"
+              data-publish-date={postDate ? postDate.toISOString() : undefined}
+              class="future-hidden group dark:border-ink-soft border-line block border-t pt-4"
             >
-              {newestPost.data.title}
-            </h1>
-          </a>
-          {
-            newestPostDate && (
-              <p class="mb-4 text-gray-600 dark:text-gray-400">{newestPostDate.toDateString()}</p>
-            )
-          }
-          <p class="mb-4 text-gray-600 dark:text-gray-400">
-            {newestPost.data.description}
-          </p>
-          <a
-            href={baseUrl + 'blog/' + newestPost.id}
-            class="mt-2 inline-block rounded-md bg-purple-600 px-6 py-3 text-white hover:bg-pink-600 dark:bg-purple-300 dark:text-black dark:hover:bg-pink-300"
-          >
-            Read more
-            <span class="sr-only">{newestPost.data.title}</span>
-          </a>
-        </div>
-        <div class="w-full">
-          {
-            otherPosts.map((post) => (
-              <div
-                data-future-mode="show"
-                data-publish-date={
-                  post.data.publishDate || post.data.pubDate
-                    ? (post.data.publishDate || post.data.pubDate).toISOString()
-                    : undefined
-                }
-                class="future-hidden mb-10 w-full rounded md:grid md:grid-cols-3"
-              >
-                <a href={new URL(baseUrl + 'blog/' + post.id, Astro.url)}>
-                  {post.data.coverSVG ? (
-                    <img
-                      src={post.data.coverSVG.src}
-                      alt={post.data.title + ' featured image'}
-                      class="block h-64 w-full rounded-md bg-purple-100 object-cover p-4 md:h-32 md:p-0 lg:block dark:bg-purple-800"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <Image
-                      src={post.data.coverImage || post.data.socialImage || DefaultImage}
-                      alt={post.data.title + ' featured image'}
-                      class="block h-64 w-full rounded-md bg-purple-100 object-cover p-4 md:h-32 md:p-0 lg:block dark:bg-purple-800"
-                      loading="lazy"
-                    />
-                  )}
-                </a>
-                <div class="rounded bg-white px-4 md:col-span-2 dark:bg-gray-800">
-                  {post.data.categories && <Categories categories={post.data.categories} />}
-                  <a href={baseUrl + 'blog/' + post.id}>
-                    <div class="text-xl font-semibold text-gray-800 md:mt-1 dark:text-gray-100">
-                      {post.data.title}
-                    </div>
-                  </a>
-                  {(post.data.publishDate || post.data.pubDate) && (
-                    <p class="block text-sm text-gray-600 dark:text-gray-300">
-                      {(post.data.publishDate || post.data.pubDate).toDateString()}
-                    </p>
-                  )}
-                  <p class="block text-sm text-gray-600 md:hidden dark:text-gray-300">
-                    {post.data.description}
-                  </p>
-                </div>
+              <div class="dark:text-fog text-slate mb-2.5 font-mono text-[11px]">
+                {postDate && formatDate(postDate)}
               </div>
-            ))
-          }
-        </div>
-      </div>
+              <div class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream font-serif text-[19px] leading-snug font-medium">
+                {post.data.title}
+              </div>
+            </a>
+          )
+        })
+      }
     </div>
   </div>
 </div>

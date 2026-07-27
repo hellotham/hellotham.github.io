@@ -1,0 +1,20 @@
+---
+import { Stats } from '../config'
+---
+
+<div class="dark:border-ink-soft dark:bg-ink-deep border-line border-b bg-white">
+  <div class="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
+    {
+      Stats.map((s) => (
+        <div class="dark:border-ink-soft border-line px-6 py-8 max-lg:odd:border-r sm:px-10 lg:border-r lg:py-9 lg:last:border-r-0 max-lg:[&:nth-child(n+3)]:border-t">
+          <div class="dark:text-quartz text-ink font-serif text-4xl leading-none font-medium lg:text-[42px]">
+            {s.n}
+          </div>
+          <div class="dark:text-fog text-slate mt-2.5 font-mono text-[11px] tracking-[.14em] uppercase">
+            {s.l}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

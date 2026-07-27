@@ -1,6 +1,7 @@
 ---
 // import { ViewTransitions } from 'astro:transitions'
 import type { CollectionEntry } from 'astro:content'
+import { Font } from 'astro:assets'
 import SEO from '../components/seo.astro'
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
@@ -16,16 +17,13 @@ export interface Props {
 const { frontmatter, schema = 'WebPage' } = Astro.props
 const fm = frontmatter as any
 
+const baseUrl = import.meta.env.BASE_URL
+
 import '../styles/global.css'
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  itemscope
-  itemtype={`https://schema.org/${schema}`}
-  data-base-url={import.meta.env.BASE_URL}
->
+<html lang="en" itemscope itemtype={`https://schema.org/${schema}`} data-base-url={baseUrl}>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -33,11 +31,11 @@ import '../styles/global.css'
       content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.plantuml.com https://*.tile.openstreetmap.org; font-src 'self'; connect-src 'self';"
     />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} sizes="any" />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
-    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}apple-touchicon.png`} />
-    <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
-    <link rel="sitemap" href={`${Astro.site}sitemap-indexxml`} />
+    <link rel="icon" href={`${baseUrl}favicon.ico`} sizes="any" />
+    <link rel="icon" href={`${baseUrl}favicon.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`${baseUrl}apple-touchicon.png`} />
+    <link rel="manifest" href={`${baseUrl}site.webmanifest`} />
+    <link rel="sitemap" href={`${Astro.site}sitemap-index.xml`} />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -45,6 +43,9 @@ import '../styles/global.css'
       href={`${Astro.site}rss.xml`}
     />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-noto-sans" preload />
+    <Font cssVariable="--font-noto-serif" preload />
+    <Font cssVariable="--font-noto-sans-mono" preload />
     <SEO frontmatter={frontmatter} />
     <script is:inline>
       const setDarkMode = () => {
@@ -109,7 +110,11 @@ import '../styles/global.css'
         })
       }
 
-      applyFutureUnlock()
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyFutureUnlock)
+      } else {
+        applyFutureUnlock()
+      }
       document.addEventListener('astro:after-swap', applyFutureUnlock)
     </script>
     <style is:inline>
@@ -127,11 +132,19 @@ import '../styles/global.css'
     {fm.extra?.includes('math') && <style>@import "katex/dist/katex.min.css";</style>}
     <slot name="in-head" />
   </head>
-  <body class="dark:bg-gray-900">
+  <body class="dark:bg-ink bg-white">
+    <a
+      href="#main"
+      class="bg-ink text-cream fixed -top-20 left-4 z-60 rounded px-4 py-2 focus:top-4"
+    >
+      Skip to content
+    </a>
     <Header />
-    <slot />
-    {fm.gallery && <Gallery folder={fm.gallery} />}
-    <slot name="before-footer" />
+    <main id="main">
+      <slot />
+      {fm.gallery && <Gallery folder={fm.gallery} />}
+      <slot name="before-footer" />
+    </main>
     <Footer />
     {fm.extra?.includes('markmap') && <MarkmapLoader />}
   </body>

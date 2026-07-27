@@ -16,17 +16,17 @@ const partners = await getCollection('partner')
             class="object-contain"
           />
         </div>
-        <div class="not-prose ml-4 grow border-l-2 border-pink-300 pl-4 dark:lg:border-pink-900">
+        <div class="not-prose border-line dark:lg:border-ink-soft ml-4 grow border-l-2 pl-4">
           <p>
             <a
               href={partner.data.link}
-              class="text-xl font-bold text-purple-600 hover:text-pink-600 dark:text-purple-300 dark:hover:text-pink-300"
+              class="text-mulberry hover:text-rose dark:text-quartz text-xl font-bold dark:hover:text-white"
             >
               {partner.data.title}
             </a>
           </p>
           <p class="text-sm italic">{partner.data.status}</p>
-          <p class="mt-2 text-base text-gray-700">{partner.data.description}</p>
+          <p class="text-slate mt-2 text-base">{partner.data.description}</p>
         </div>
       </div>
     </div>

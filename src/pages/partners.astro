@@ -1,0 +1,118 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from '../layouts/base.astro'
+import FeaturesOverviewLight from '../assets/svg/rosely/undraw_features_overview-light.svg'
+import FeaturesOverviewDark from '../assets/svg/rosely/undraw_features_overview-dark.svg'
+import socialImage from '../assets/partners.jpg'
+
+const baseUrl = import.meta.env.BASE_URL
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Our Partners',
+  description: 'The platforms we build and advise on',
+  socialImage: socialImage
+}
+
+const partners = (await getCollection('partner')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+)
+---
+
+<Base {frontmatter}>
+  <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
+      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+          Partners
+        </p>
+        <h1
+          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+        >
+          The platforms we build on.
+        </h1>
+        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+          We currently have partnerships with the following organisations, listed in alphabetical
+          order, in delivering our services.
+        </p>
+      </div>
+      <div
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+      >
+        <img
+          src={FeaturesOverviewLight.src}
+          alt=""
+          class="max-h-[260px] w-full object-contain dark:hidden"
+        />
+        <img
+          src={FeaturesOverviewDark.src}
+          alt=""
+          class="hidden max-h-[260px] w-full object-contain dark:block"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-ink-deep bg-cream">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <div class="grid gap-8 md:grid-cols-2">
+        {
+          partners.map((p) => (
+            <a
+              href={p.data.link}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="group dark:border-ink-soft dark:bg-ink border-line flex flex-col overflow-hidden border bg-white"
+            >
+              <div class="dark:border-ink-soft border-line flex h-28 items-center justify-center border-b bg-white p-6">
+                <Image
+                  src={p.data.image}
+                  alt={p.data.title + ' logo'}
+                  width={360}
+                  class="max-h-full w-auto max-w-[220px] object-contain"
+                />
+              </div>
+              <div class="flex grow flex-col p-7">
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <span class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream font-serif text-2xl font-medium">
+                    {p.data.title}
+                  </span>
+                  <span class="text-mulberry border-mulberry dark:text-grape dark:border-grape border px-1.5 py-0.5 font-mono text-[10px] tracking-[.12em] uppercase">
+                    {p.data.status}
+                  </span>
+                </div>
+                <span class="text-slate dark:text-fog mt-3 grow text-[15px] leading-relaxed">
+                  {p.data.description}
+                </span>
+                <span class="dark:text-quartz text-ink group-hover:text-mulberry mt-5 font-mono text-xs tracking-[.14em] uppercase dark:group-hover:text-white">
+                  Visit site →
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-plum bg-ink">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-14 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14"
+    >
+      <div>
+        <h2 class="text-cream font-serif text-3xl font-medium">Building on these platforms?</h2>
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+          We advise on and deliver with AWS, Microsoft, Domo and Netlify — from strategy through to
+          running solutions.
+        </p>
+      </div>
+      <a
+        href={baseUrl + 'contact'}
+        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+      >
+        Contact us
+      </a>
+    </div>
+  </div>
+</Base>

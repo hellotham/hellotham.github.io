@@ -3,11 +3,11 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div class="flex justify-center">
-  <div class="w-48">
+  <div class="w-28 sm:w-48 lg:w-32 xl:w-48">
     <div class="input-group relative flex w-full items-stretch">
       <input
         type="search"
-        class="form-control relative m-0 block w-full max-w-xs min-w-0 flex-auto rounded border border-solid border-purple-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-500 transition ease-in-out focus:border-purple-500 focus:text-gray-700 focus:outline-none dark:border-purple-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-purple-600 dark:focus:text-gray-100"
+        class="form-control dark:border-ink-soft dark:bg-ink-deep dark:text-fog border-line text-slate focus:border-mulberry focus:text-ink dark:focus:border-quartz dark:focus:text-cream relative m-0 block w-full max-w-xs min-w-0 flex-auto rounded border border-solid bg-white bg-clip-padding px-3 py-1.5 text-base font-normal transition ease-in-out focus:outline-none"
         id="search-input"
         name="q"
         maxlength="255"
@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon/components'
         aria-describedby="search-button"
       />
       <button
-        class="btn inline-block items-center rounded bg-purple-600 px-2 py-2 text-xs leading-tight font-medium text-white uppercase shadow-md transition duration-150 ease-in-out hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:ring-0 focus:outline-none active:bg-purple-800 active:shadow-lg"
+        class="btn dark:bg-quartz bg-ink text-cream hover:bg-mulberry focus:bg-mulberry active:bg-mulberry dark:text-ink inline-block items-center rounded px-2 py-2 text-xs leading-tight font-medium uppercase transition duration-150 ease-in-out focus:ring-0 focus:outline-none dark:hover:bg-white"
         type="button"
         name="search"
         id="search-button"
@@ -69,7 +69,7 @@ import { Icon } from 'astro-icon/components'
           >
             <button
               type="button"
-              class="rounded-md text-purple-300 hover:text-pink-300 focus:ring-2 focus:ring-white focus:outline-none"
+              class="text-quartz rounded-md hover:text-white focus:ring-2 focus:ring-white focus:outline-none"
               id="search-close"
             >
               <span class="sr-only">Close panel</span>
@@ -78,10 +78,10 @@ import { Icon } from 'astro-icon/components'
           </div>
 
           <div
-            class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl dark:bg-gray-800"
+            class="dark:bg-ink-deep flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl"
           >
             <div class="px-4 sm:px-6">
-              <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100" id="search-title">
+              <h2 class="text-ink dark:text-cream font-serif text-lg font-medium" id="search-title">
                 Search results
               </h2>
             </div>
@@ -89,7 +89,7 @@ import { Icon } from 'astro-icon/components'
               <div class="ring-opacity-5 overflow-hidden rounded-lg shadow-lg ring-1 ring-black">
                 <div
                   id="search-results"
-                  class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 dark:bg-gray-700 dark:text-gray-100"
+                  class="dark:bg-ink-soft dark:text-cream relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8"
                 >
                   <ul class="w-full space-y-4"></ul>
                 </div>
@@ -174,15 +174,14 @@ import { Icon } from 'astro-icon/components'
 
     const resultsContainer = document.querySelector('#search-results ul')
     if (resultsContainer) {
-      resultsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">Searching...</p>'
+      resultsContainer.innerHTML = '<p class="text-slate dark:text-fog">Searching...</p>'
     }
 
     const searchResponse = await pagefind.search(term)
 
     if (resultsContainer) {
       if (searchResponse.results.length === 0) {
-        resultsContainer.innerHTML =
-          '<p class="text-gray-500 dark:text-gray-400">No results found...</p>'
+        resultsContainer.innerHTML = '<p class="text-slate dark:text-fog">No results found...</p>'
         return
       }
 
@@ -193,10 +192,10 @@ import { Icon } from 'astro-icon/components'
       resultsContainer.innerHTML = resultsData
         .map(
           (doc: any) => `
-        <li class="-m-3 p-3 flex items-start rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900 transition-colors">
+        <li class="-m-3 p-3 flex items-start rounded-lg hover:bg-cream dark:hover:bg-ink transition-colors">
           <a href="${doc.url}" class="w-full">
-            <p class="text-base font-medium text-gray-900 dark:text-gray-100">${doc.meta.title || 'Untitled'}</p>
-            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">${doc.excerpt || ''}</p>
+            <p class="text-base font-medium text-ink dark:text-cream">${doc.meta.title || 'Untitled'}</p>
+            <p class="mt-1 text-sm text-slate dark:text-fog">${doc.excerpt || ''}</p>
           </a>
         </li>
       `
@@ -241,6 +240,15 @@ import { Icon } from 'astro-icon/components'
     if (backdrop) {
       backdrop.addEventListener('click', closeModal)
     }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('search-modal')
+        if (modal && !modal.classList.contains('hidden')) {
+          closeModal()
+        }
+      }
+    })
   }
 
   setupSearch()

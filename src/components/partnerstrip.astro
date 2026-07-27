@@ -1,0 +1,53 @@
+---
+import { ClientWords } from '../config'
+import aws from '../content/partner/aws.png'
+import microsoft from '../content/partner/microsoft.png'
+import domo from '../content/partner/domo.png'
+import netlify from '../content/partner/netlify.png'
+---
+
+<div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+  <div class="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
+    <div
+      class="dark:border-ink-soft border-line flex flex-wrap items-center gap-x-14 gap-y-6 border-b py-9"
+    >
+      <span class="dark:text-fog text-slate font-mono text-[11px] tracking-[.18em] uppercase">
+        Partners
+      </span>
+      <img
+        src={aws.src}
+        alt="AWS"
+        class="h-8 object-contain dark:rounded dark:bg-white dark:px-2 dark:py-1"
+        loading="lazy"
+      />
+      <img
+        src={microsoft.src}
+        alt="Microsoft"
+        class="h-6 object-contain dark:rounded dark:bg-white dark:px-2 dark:py-0.5"
+        loading="lazy"
+      />
+      <img
+        src={domo.src}
+        alt="Domo"
+        class="h-6 object-contain dark:rounded dark:bg-white dark:px-2 dark:py-0.5"
+        loading="lazy"
+      />
+      <img
+        src={netlify.src}
+        alt="Netlify"
+        class="h-6 object-contain dark:rounded dark:bg-white dark:px-2 dark:py-0.5"
+        loading="lazy"
+      />
+    </div>
+    <div class="flex flex-wrap items-center gap-x-14 gap-y-4 py-9">
+      <span class="dark:text-fog text-slate font-mono text-[11px] tracking-[.18em] uppercase">
+        Clients
+      </span>
+      {
+        ClientWords.map((c) => (
+          <span class="dark:text-fog text-slate font-serif text-[17px]">{c}</span>
+        ))
+      }
+    </div>
+  </div>
+</div>

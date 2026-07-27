@@ -1,0 +1,168 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Base from '../../layouts/base.astro'
+import AllTheDataLight from '../../assets/svg/rosely/undraw_all_the_data-light.svg'
+import AllTheDataDark from '../../assets/svg/rosely/undraw_all_the_data-dark.svg'
+import socialImage from '../../assets/services.jpg'
+
+const baseUrl = import.meta.env.BASE_URL
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Applications and Digital Products',
+  description: 'Native, web and integration builds — from proof of concept to production',
+  socialImage: socialImage
+}
+
+const capabilities = [
+  {
+    name: 'Native Apple applications',
+    body: 'Swift and SwiftUI applications for macOS, iPadOS and iOS — local-first, private by design, and at home on the platform. Our own HelloNotes and FinvestLens are built this way.'
+  },
+  {
+    name: 'Web front ends',
+    body: 'JavaScript and TypeScript front ends, including apps embedded in enterprise portals such as ServiceNow — delivered as clean, testable components.'
+  },
+  {
+    name: 'Enterprise integrations',
+    body: 'Authentication via Azure AD / Entra ID, data through Microsoft Graph, and SAP OData services connected via SAP Cloud Platform to on-premise systems.'
+  },
+  {
+    name: 'Data products',
+    body: 'Dashboards, machine-learning-assisted workflows and analytics applications on AWS — turning the models we recommend into tools people use daily.'
+  }
+]
+
+const proof = [
+  {
+    year: '2018',
+    client: 'NSW Government agency',
+    title: 'Native iOS app against Microsoft Graph and SAP',
+    body: 'Proof of concept in Swift: Azure AD authentication, Outlook calendar and directory via Microsoft Graph, QR scanning, and leave requests through backend SAP OData services.'
+  },
+  {
+    year: '2019',
+    client: 'NSW Government agency',
+    title: 'ServiceNow-embedded web front end',
+    body: 'A JavaScript front end embedded in a ServiceNow portal, accessing SAP OData services for leave requests — extended into a service prototype.'
+  },
+  {
+    year: '2019',
+    client: 'NSW Government agency',
+    title: 'Chatbot proof of concept',
+    body: 'Led a vendor-sponsored proof of concept for a chatbot servicing leave requests.'
+  }
+]
+---
+
+<Base {frontmatter}>
+  <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
+      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+          Services · 06 · New practice
+        </p>
+        <h1
+          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+        >
+          Applications and Digital Products.
+        </h1>
+        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+          We now build what we recommend: native iOS and macOS applications, web front ends, service
+          integrations and data products — delivered by the people who wrote the roadmap.
+        </p>
+      </div>
+      <div
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+      >
+        <img
+          src={AllTheDataLight.src}
+          alt=""
+          class="max-h-[260px] w-full object-contain dark:hidden"
+        />
+        <img
+          src={AllTheDataDark.src}
+          alt=""
+          class="hidden max-h-[260px] w-full object-contain dark:block"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-ink bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <h2 class="text-ink dark:text-cream mb-8 font-serif text-3xl font-medium">What we build</h2>
+      <div class="grid gap-x-12 gap-y-8 md:grid-cols-2">
+        {
+          capabilities.map((c) => (
+            <div class="dark:border-ink-soft border-line border-t pt-5">
+              <h3 class="text-ink dark:text-cream font-serif text-[22px] font-medium">{c.name}</h3>
+              <p class="text-slate dark:text-fog mt-2 text-[15px] leading-relaxed">{c.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:border-ink-soft dark:bg-ink-deep border-line bg-cream border-t">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+        <h2 class="text-ink dark:text-cream font-serif text-3xl font-medium">
+          Proof, not promises
+        </h2>
+        <a
+          href={baseUrl + 'apps'}
+          class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+        >
+          Our own apps →
+        </a>
+      </div>
+      {
+        proof.map((cs) => (
+          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed">
+              {cs.year}
+              <br />
+              {cs.client}
+            </div>
+            <div>
+              <div class="text-ink dark:text-cream mb-1.5 font-serif text-[20px] font-medium">
+                {cs.title}
+              </div>
+              <div class="dark:text-fog text-slate max-w-[740px] text-[15px] leading-relaxed">
+                {cs.body}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+      <p class="text-slate dark:text-fog mt-6 max-w-[740px] text-[15px] leading-relaxed">
+        We also publish our own products — <a
+          href={baseUrl + 'apps'}
+          class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
+          >HelloNotes and FinvestLens</a
+        > — native Apple applications built with the same practices we bring to client work.
+      </p>
+    </div>
+  </div>
+
+  <div class="dark:bg-plum bg-ink">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-14 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14"
+    >
+      <div>
+        <h2 class="text-cream font-serif text-3xl font-medium">Have an app in mind?</h2>
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+          Start with a proof of concept — we scope small, deliver early and refine with the people
+          who will use it.
+        </p>
+      </div>
+      <a
+        href={baseUrl + 'contact'}
+        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+      >
+        Contact us
+      </a>
+    </div>
+  </div>
+</Base>

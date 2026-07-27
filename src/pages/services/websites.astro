@@ -1,0 +1,154 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Base from '../../layouts/base.astro'
+import FeaturesOverviewLight from '../../assets/svg/rosely/undraw_features_overview-light.svg'
+import FeaturesOverviewDark from '../../assets/svg/rosely/undraw_features_overview-dark.svg'
+import socialImage from '../../assets/services.jpg'
+
+const baseUrl = import.meta.env.BASE_URL
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Websites and Content Platforms',
+  description: 'Fast, accessible, content-driven sites on modern serverless architecture',
+  socialImage: socialImage
+}
+
+const capabilities = [
+  {
+    name: 'Corporate and content sites',
+    body: 'Static and server-rendered Astro sites with Tailwind — marketing pages, blogs, documentation and portfolios that load quickly and stay fast as they grow.'
+  },
+  {
+    name: 'Design systems',
+    body: 'Token-based design language in light and dark mode, grounded in our own Rosely design system — so every page, chart and component reads as one voice.'
+  },
+  {
+    name: 'Content engineering',
+    body: 'Markdown, MDX and Markdoc pipelines with local full-text search, RSS, structured data, Open Graph and accessibility built in from the first commit.'
+  },
+  {
+    name: 'Serverless delivery',
+    body: 'Deployed to content delivery networks with automated publishing pipelines, sitemaps and search-engine settings handled, and performance independently verified — with no servers to maintain.'
+  }
+]
+
+const builds = [
+  {
+    label: 'This site',
+    title: 'hellotham.com',
+    body: 'Our corporate site — Astro 7, Tailwind CSS 4, Pagefind search, dynamic future-dated publishing and the Rosely design language you are reading now.'
+  },
+  {
+    label: 'Templates',
+    title: 'Hello Astro and Spotlite',
+    body: 'Open-source Astro starters we build and maintain — a multi-purpose corporate/blog/docs theme and an elegant personal site template.'
+  },
+  {
+    label: 'Design system',
+    title: 'Rosely',
+    body: 'The constraint-based colour palette and design system behind our work, documented and published as its own site.'
+  }
+]
+---
+
+<Base {frontmatter}>
+  <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
+      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+          Services · 07 · New practice
+        </p>
+        <h1
+          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+        >
+          Websites and Content Platforms.
+        </h1>
+        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+          Fast, accessible, content-driven sites on a modern serverless stack — designed, written
+          and delivered as one accountable engagement.
+        </p>
+      </div>
+      <div
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+      >
+        <img
+          src={FeaturesOverviewLight.src}
+          alt=""
+          class="max-h-[260px] w-full object-contain dark:hidden"
+        />
+        <img
+          src={FeaturesOverviewDark.src}
+          alt=""
+          class="hidden max-h-[260px] w-full object-contain dark:block"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-ink bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <h2 class="text-ink dark:text-cream mb-8 font-serif text-3xl font-medium">What we deliver</h2>
+      <div class="grid gap-x-12 gap-y-8 md:grid-cols-2">
+        {
+          capabilities.map((c) => (
+            <div class="dark:border-ink-soft border-line border-t pt-5">
+              <h3 class="text-ink dark:text-cream font-serif text-[22px] font-medium">{c.name}</h3>
+              <p class="text-slate dark:text-fog mt-2 text-[15px] leading-relaxed">{c.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:border-ink-soft dark:bg-ink-deep border-line bg-cream border-t">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+        <h2 class="text-ink dark:text-cream font-serif text-3xl font-medium">Built in the open</h2>
+        <a
+          href={baseUrl + 'apps'}
+          class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+        >
+          Apps &amp; templates →
+        </a>
+      </div>
+      {
+        builds.map((b) => (
+          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-[220px_1fr] lg:gap-12">
+            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed uppercase">
+              {b.label}
+            </div>
+            <div>
+              <div class="text-ink dark:text-cream mb-1.5 font-serif text-[20px] font-medium">
+                {b.title}
+              </div>
+              <div class="dark:text-fog text-slate max-w-[740px] text-[15px] leading-relaxed">
+                {b.body}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="dark:bg-plum bg-ink">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-14 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14"
+    >
+      <div>
+        <h2 class="text-cream font-serif text-3xl font-medium">Need a site that lasts?</h2>
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+          We design, build and hand over content platforms your team can actually run — or we run
+          them with you.
+        </p>
+      </div>
+      <a
+        href={baseUrl + 'contact'}
+        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+      >
+        Contact us
+      </a>
+    </div>
+  </div>
+</Base>

@@ -37,10 +37,11 @@ export async function GET(context) {
       posts.map(async (post) => {
         const author = post.data.author ? await getEntry(post.data.author) : defaultauthor
         const categories = post.data.categories && (await getEntries(post.data.categories))
+        // RSS enclosures must be raster images, so skip coverSVG here —
+        // rasterising an SVG would also fail the build (SVG processing is disabled).
         const image = await getImage({
           src:
             post.data.socialImage ||
-            post.data.coverSVG ||
             post.data.coverImage ||
             (post.data.images && post.data.images[0]) ||
             (categories && categories[0].data.socialImage) ||

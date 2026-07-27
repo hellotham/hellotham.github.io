@@ -1,0 +1,182 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from '../layouts/base.astro'
+import { LogoImage } from '../config'
+import HelloNotesLight from '../assets/work/hellonotes-light.webp'
+import HelloNotesDark from '../assets/work/hellonotes-dark.webp'
+import FinvestLensLight from '../assets/work/finvestlens-light.png'
+import FinvestLensDark from '../assets/work/finvestlens-dark.png'
+import HelloAstroLight from '../assets/apps/helloastro-light.png'
+import HelloAstroDark from '../assets/apps/helloastro-dark.png'
+import SpotliteShot from '../assets/apps/spotlite.png'
+import RoselySystem from '../assets/apps/rosely-system.svg'
+
+const baseUrl = import.meta.env.BASE_URL
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Apps',
+  description: 'Apps, templates and the design system built by Hello Tham',
+  socialImage: LogoImage
+}
+
+interface AppCard {
+  name: string
+  tag: string
+  tagline: string
+  description: string
+  href: string
+  shotLight?: ImageMetadata
+  shotDark?: ImageMetadata
+  diagram?: ImageMetadata
+}
+
+const apps: AppCard[] = [
+  {
+    name: 'HelloNotes',
+    tag: 'App · macOS',
+    tagline: 'Think in plain Markdown.',
+    description:
+      'A private, local-first Markdown knowledge base for Mac. Wiki-links, backlinks, graph view, full-text search and on-device intelligence — over plain files you own, with no accounts and no tracking.',
+    href: 'https://hellotham.com/hellonotes/',
+    shotLight: HelloNotesLight,
+    shotDark: HelloNotesDark
+  },
+  {
+    name: 'FinvestLens',
+    tag: 'App · macOS · iPadOS · iOS',
+    tagline: 'Double-entry accounting that belongs on a Mac.',
+    description:
+      'Native double-entry accounting for Apple platforms, built on the rigour of the GnuCash engine. Local SQLite documents, multi-format imports, professional reports — free software under GPL v3.',
+    href: 'https://hellotham.com/finvestlens/',
+    shotLight: FinvestLensLight,
+    shotDark: FinvestLensDark
+  },
+  {
+    name: 'Rosely',
+    tag: 'Design system',
+    tagline: 'Millennial pinks and purples, systematised.',
+    description:
+      'A constraint-based colour palette and design system with four complementary sub-palettes, applied to brand styles, websites and application themes — including this site.',
+    href: 'https://rosely.hellotham.com',
+    diagram: RoselySystem
+  },
+  {
+    name: 'Hello Astro',
+    tag: 'Astro theme',
+    tagline: 'One starter for corporate sites, blogs and docs.',
+    description:
+      'A multi-purpose Astro starter in TypeScript and Tailwind — Markdown, MDX and Markdoc content, diagrams, galleries, search and SEO built in. This website runs on it.',
+    href: 'https://hellotham.com/hello-astro/',
+    shotLight: HelloAstroLight,
+    shotDark: HelloAstroDark
+  },
+  {
+    name: 'Spotlite',
+    tag: 'Astro theme',
+    tagline: 'A personal site with surprising depth.',
+    description:
+      'An elegant, clean personal website template built with Astro, UnoCSS and Iconify — professional timelines, portfolio, articles and CV download, in light and dark.',
+    href: 'https://hellotham.com/spotlite/',
+    shotLight: SpotliteShot
+  }
+]
+---
+
+<Base {frontmatter}>
+  <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+        Apps &amp; templates
+      </p>
+      <h1
+        class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[56px]"
+      >
+        We publish our own software.
+      </h1>
+      <p class="text-slate dark:text-fog mt-6 max-w-[640px] text-lg leading-relaxed">
+        The applications, templates and design system below are built and maintained by Hello Tham —
+        the same practice that delivers our client work. Each one is a live proof of how we design
+        and engineer.
+      </p>
+    </div>
+  </div>
+
+  <div class="dark:bg-ink-deep bg-cream">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          apps.map((app) => (
+            <a
+              href={app.href}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="group dark:border-ink-soft dark:bg-ink border-line flex flex-col overflow-hidden border bg-white"
+            >
+              <div class="dark:border-ink-soft border-line dark:bg-plum bg-cream aspect-video overflow-hidden border-b">
+                {app.diagram ? (
+                  <img
+                    src={app.diagram.src}
+                    alt={app.name + ' overview diagram'}
+                    class="h-full w-full bg-white object-contain p-3"
+                    loading="lazy"
+                  />
+                ) : (
+                  <>
+                    <Image
+                      src={app.shotLight!}
+                      alt={app.name + ' screenshot'}
+                      width={680}
+                      class="h-full w-full object-cover dark:hidden"
+                    />
+                    <Image
+                      src={app.shotDark ?? app.shotLight!}
+                      alt=""
+                      width={680}
+                      class="hidden h-full w-full object-cover dark:block"
+                    />
+                  </>
+                )}
+              </div>
+              <div class="flex grow flex-col p-7">
+                <span class="dark:text-fog text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+                  {app.tag}
+                </span>
+                <span class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream mt-3 font-serif text-2xl font-medium">
+                  {app.name}
+                </span>
+                <span class="text-mulberry dark:text-grape mt-1 text-[15px]">{app.tagline}</span>
+                <span class="text-slate dark:text-fog mt-3 grow text-[15px] leading-relaxed">
+                  {app.description}
+                </span>
+                <span class="dark:text-quartz text-ink group-hover:text-mulberry mt-5 font-mono text-xs tracking-[.14em] uppercase dark:group-hover:text-white">
+                  Visit site →
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-plum bg-ink">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-14 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14"
+    >
+      <div>
+        <h2 class="text-cream font-serif text-3xl font-medium">Want something like this?</h2>
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+          Our Applications and Websites practices build products like these for clients — from proof
+          of concept to production.
+        </p>
+      </div>
+      <a
+        href={baseUrl + 'services'}
+        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+      >
+        Explore services
+      </a>
+    </div>
+  </div>
+</Base>

@@ -19,10 +19,14 @@ if (rfm) {
 export async function getStaticPaths() {
   const pages = await getCollection('page')
 
-  return pages.map((page) => ({
-    params: { page: page.id },
-    props: { page }
-  }))
+  // These ids are served by bespoke pages in src/pages/
+  const bespoke = ['services', 'work', 'about', 'consultants', 'partners']
+  return pages
+    .filter((page) => !bespoke.includes(page.id))
+    .map((page) => ({
+      params: { page: page.id },
+      props: { page }
+    }))
 }
 ---
 

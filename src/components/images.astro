@@ -8,7 +8,7 @@ export interface Props {
 const { images } = Astro.props
 ---
 
-<p class="text-sm text-gray-500 italic">
+<p class="text-slate text-sm italic">
   Please click on any photo to view in a lightbox. Use arrow keys or swipe to navigate.
 </p>
 <Lightbox id="images" images={images} grid={false} />

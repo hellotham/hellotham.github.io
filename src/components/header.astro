@@ -8,18 +8,18 @@ import { Logo } from '../config'
 const baseUrl = import.meta.env.BASE_URL
 ---
 
-<div class="relative h-16 w-full">
-  <nav class="dark:bg-gray-800">
+<div class="relative h-20 w-full">
+  <nav class="dark:bg-ink-deep">
     <div
-      class="fixed z-50 mx-auto w-full border-b-2 border-pink-300 bg-pink-100 px-2 sm:px-6 lg:px-8 dark:border-purple-600 dark:bg-gray-800"
+      class="dark:border-ink-soft dark:bg-ink-deep border-ink fixed z-50 mx-auto w-full border-b bg-white px-2 sm:px-6 lg:px-8"
     >
-      <div class="relative flex h-16 items-center justify-between">
+      <div class="relative flex h-20 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
           <!-- Mobile menu button-->
           <button
             type="button"
             id="mobile-menu-button"
-            class="inline-flex items-center justify-center rounded-md p-2 text-purple-600 hover:bg-purple-200 hover:text-pink-600 focus:ring-2 focus:ring-purple-300 focus:outline-none focus:ring-inset dark:text-purple-300 dark:hover:bg-purple-800 dark:hover:text-pink-300 dark:focus:ring-purple-800"
+            class="dark:text-fog dark:hover:text-quartz text-ink hover:bg-cream hover:text-mulberry focus:ring-mulberry dark:hover:bg-ink inline-flex items-center justify-center rounded-md p-2 focus:ring-2 focus:outline-none focus:ring-inset"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
@@ -38,21 +38,22 @@ const baseUrl = import.meta.env.BASE_URL
             />
           </button>
         </div>
-        <div class="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
-          <div class="flex shrink-0 items-center">
-            <img class="block h-8 w-8 dark:bg-gray-100" src={Logo.src} alt="Logo" />
-          </div>
-          <div class="hidden lg:mx-4 lg:block">
-            <div class="flex space-x-2">
+        <div class="flex flex-1 items-center justify-start pl-12 lg:items-stretch lg:pl-0">
+          <a class="flex shrink-0 items-center" href={baseUrl}>
+            <img class="block h-8 w-8" src={Logo.src} alt="Hello Tham logo" />
+            <span class="sr-only">Home</span>
+          </a>
+          <div class="hidden lg:mx-6 lg:block">
+            <div class="flex items-center gap-6 self-stretch lg:h-full">
               {
                 NavigationLinks.map((item) => (
                   <a
                     href={baseUrl + item.href}
                     class={
                       (item.href.length > 0 && Astro.url.toString().includes(item.href)
-                        ? 'bg-purple-200 text-pink-600 dark:bg-purple-800 dark:text-pink-300'
-                        : 'text-purple-600 hover:bg-purple-200 hover:text-pink-600 dark:text-purple-200 dark:hover:bg-purple-800 dark:hover:text-pink-300') +
-                      ' rounded-md px-2 py-2 text-lg font-medium'
+                        ? 'text-mulberry dark:text-quartz'
+                        : 'dark:text-fog dark:hover:text-quartz text-ink hover:text-mulberry') +
+                      ' text-[15px] font-medium'
                     }
                     aria-current={
                       item.href.length > 0 && Astro.url.toString().includes(item.href)
@@ -72,16 +73,14 @@ const baseUrl = import.meta.env.BASE_URL
         >
           <Search />
           <Theme />
-
-          <!-- Right nav -->
         </div>
       </div>
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="absolute inset-x-0 top-16 z-50 hidden" id="mobile-menu">
+    <div class="absolute inset-x-0 top-20 z-50 hidden" id="mobile-menu">
       <div
-        class="flex justify-center border-t-2 border-b-2 border-purple-300 bg-gray-100 px-4 py-2 font-semibold dark:border-purple-600 dark:bg-gray-800"
+        class="dark:border-ink-soft dark:bg-ink-deep border-line flex flex-wrap justify-center gap-x-4 gap-y-1 border-b bg-white px-4 py-3 font-medium"
       >
         {
           NavigationLinks.map((item) => (
@@ -89,9 +88,9 @@ const baseUrl = import.meta.env.BASE_URL
               href={baseUrl + item.href}
               class:list={[
                 item.href.length > 0 && Astro.url.toString().includes(item.href)
-                  ? 'bg-purple-200 text-pink-600 dark:bg-purple-800 dark:text-pink-300'
-                  : 'text-purple-600 hover:bg-purple-200 hover:text-pink-600 dark:text-purple-200 dark:hover:bg-purple-800 dark:hover:text-pink-300',
-                'px-2'
+                  ? 'text-mulberry dark:text-quartz'
+                  : 'dark:text-fog dark:hover:text-quartz text-ink hover:text-mulberry',
+                'px-2 py-1'
               ]}
               aria-current={
                 item.href.length > 0 && Astro.url.toString().includes(item.href)

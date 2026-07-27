@@ -7,7 +7,7 @@ type Props = {
 }
 
 const { editHref } = Astro.props as Props
-const showMoreSection = COMMUNITY_INVITE_URL
+const showMoreSection = editHref || COMMUNITY_INVITE_URL
 ---
 
 {
@@ -15,17 +15,18 @@ const showMoreSection = COMMUNITY_INVITE_URL
     <>
       <h2
         id="more-title"
-        class="font-display mt-4 space-y-3 text-sm font-medium text-gray-900 dark:text-white"
+        class="font-display text-ink dark:text-cream mt-4 space-y-3 text-sm font-medium"
       >
         More
       </h2>
       <ol class="mt-4 flex flex-col space-y-3 text-sm">
         {editHref && (
-          <li class="flex items-center py-1 text-gray-500 dark:text-gray-400">
+          <li class="text-slate dark:text-fog flex items-center py-1">
             <Icon name="heroicons:pencil" class="mr-2 h-6 w-6" />
             <a
-              class="hover:text-purple-600 dark:hover:text-purple-300"
+              class="hover:text-mulberry dark:hover:text-quartz"
               href={editHref}
+              rel="noopener noreferrer"
               target="_blank"
             >
               <span>Edit this page</span>
@@ -33,10 +34,10 @@ const showMoreSection = COMMUNITY_INVITE_URL
           </li>
         )}
         {COMMUNITY_INVITE_URL && (
-          <li class="flex items-center py-1 text-gray-500 dark:text-gray-400">
+          <li class="text-slate dark:text-fog flex items-center py-1">
             <Icon name="heroicons:chat-bubble-bottom-center-text" class="mr-2 h-6 w-6" />
             <a
-              class="hover:text-purple-600 dark:hover:text-purple-300"
+              class="hover:text-mulberry dark:hover:text-quartz"
               href={COMMUNITY_INVITE_URL}
               target="_blank"
             >

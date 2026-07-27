@@ -1,71 +1,51 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Services } from '../config'
 
-const features = [
-  {
-    name: 'Business and IT Strategies',
-    description:
-      'Business and IT strategy and plans, operating models, business process design and standardisation',
-    icon: 'sparkles'
-  },
-  {
-    name: 'Enterprise Architecture',
-    description:
-      'Enterprise analysis, design, planning, and implementation for the successful development and execution of a strategy',
-    icon: 'puzzle-piece'
-  },
-  {
-    name: 'Analytics and Data Science',
-    description:
-      'Data discovery, analysis, deep and reinforced learning, insights and recommendations',
-    icon: 'presentation-chart-bar'
-  },
-  {
-    name: 'Strategic Roadmaps',
-    description: 'Aligning portfolio to strategy, business cases, project planning and initiation',
-    icon: 'map'
-  }
-]
+const baseUrl = import.meta.env.BASE_URL
 ---
 
-<div class="bg-purple-100 py-12 dark:bg-gray-800">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="lg:text-center">
-      <h2
-        class="text-base font-semibold tracking-wide text-purple-800 uppercase dark:text-purple-300"
-      >
-        Our Services
-      </h2>
-      <p
-        class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100"
-      >
-        Vision into Reality
+<div class="dark:bg-ink bg-white">
+  <div
+    class="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-10 lg:grid-cols-[320px_1fr] lg:gap-16 lg:px-14 lg:py-20"
+  >
+    <div>
+      <p class="dark:text-aqua text-mulberry mb-4 font-mono text-xs tracking-[.2em] uppercase">
+        Our services
       </p>
-      <p class="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto dark:text-gray-300">
-        We help organisations around the world define and implement their vision and objectives.
+      <h2
+        class="text-ink dark:text-cream font-serif text-3xl leading-[1.12] font-medium lg:text-[38px]"
+      >
+        Vision into reality
+      </h2>
+      <p class="dark:text-fog text-slate mt-4 text-[15px] leading-relaxed">
+        Seven practices. Engaged individually, or as one accountable team from first principle to
+        running software.
       </p>
     </div>
-
-    <div class="mt-10">
-      <dl class="space-y-10 md:grid md:grid-cols-2 md:space-y-0 md:gap-x-8 md:gap-y-10">
-        {
-          features.map((feature) => (
-            <div class="relative">
-              <dt>
-                <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-purple-500 text-white dark:bg-purple-400 dark:text-black">
-                  <Icon class="h-6 w-6" aria-hidden="true" name={'heroicons:' + feature.icon} />
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
-                  {feature.name}
-                </p>
-              </dt>
-              <dd class="mt-2 ml-16 text-base text-gray-600 dark:text-gray-400">
-                {feature.description}
-              </dd>
+    <div>
+      {
+        Services.map((sv) => (
+          <a
+            href={baseUrl + 'services#s-' + sv.num}
+            class="group dark:border-ink-soft border-line grid grid-cols-[52px_1fr] items-baseline gap-x-3 gap-y-2 border-t py-6 lg:grid-cols-[52px_1fr_320px] lg:gap-6"
+          >
+            <div class="dark:text-grape text-mulberry font-mono text-[13px]">{sv.num}</div>
+            <div class="flex flex-wrap items-baseline gap-2.5">
+              <span class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream font-serif text-2xl font-medium">
+                {sv.name}
+              </span>
+              {sv.isNew && (
+                <span class="text-rose border-rose dark:text-aqua border px-1.5 py-0.5 font-mono text-[10px] tracking-[.12em] uppercase dark:border-[#3a4a52]">
+                  New
+                </span>
+              )}
             </div>
-          ))
-        }
-      </dl>
+            <div class="dark:text-fog text-slate col-start-2 text-sm leading-relaxed lg:col-start-3">
+              {sv.desc}
+            </div>
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>

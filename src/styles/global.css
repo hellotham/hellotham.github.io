@@ -3,3 +3,42 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @plugin '@tailwindcss/typography';
+
+/* Rosely design system tokens (Blended Direction, turn 2) */
+/* Font files are self-hosted via Astro's Fonts API (astro.config.ts); the
+   --font-noto-* variables are emitted by the <Font /> tags in base.astro. */
+@theme {
+  --font-sans: var(--font-noto-sans);
+  --font-serif: var(--font-noto-serif);
+  --font-mono: var(--font-noto-sans-mono);
+
+  --color-ink: #27272a; /* Black Beauty */
+  --color-ink-deep: #1c1c1f; /* dark bands */
+  --color-ink-soft: #3a3a3f; /* dark-mode hairline */
+  --color-ink-black: #161618; /* dark-mode footer */
+  --color-cream: #f4eee8;
+  --color-quartz: #f7caca; /* Rose Quartz */
+  --color-mulberry: #9c4a8e; /* darkened from #b565a7 for AA contrast on white/cream */
+  --color-rose: #d2386c; /* Rose Red */
+  --color-aqua: #3cadd4; /* Aquarius */
+  --color-grape: #be9cc1; /* Grapeade */
+  --color-plum: #3a3038; /* dark illustration plate */
+  --color-plum-mist: #d2c4d6;
+  --color-line: #d5d1cc; /* light hairline */
+  --color-slate: #615f5f; /* light secondary text */
+  --color-fog: #a49e9e; /* muted */
+}
+
+/* Editorial voice: serif headings inside prose content */
+@layer base {
+  .prose :where(h1, h2, h3, h4, h5) {
+    font-family: var(--font-serif);
+    font-weight: 500;
+  }
+}
+
+/* Unlayered so it wins over the typography plugin's defaults */
+.prose {
+  --tw-prose-links: var(--color-mulberry);
+  --tw-prose-invert-links: var(--color-quartz);
+}

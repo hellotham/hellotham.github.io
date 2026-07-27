@@ -17,19 +17,19 @@ const baseUrl = import.meta.env.BASE_URL
 <div class="mt-4 flex items-center">
   <a
     href={baseUrl + 'categories'}
-    class="inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg"
+    class="bg-ink hover:bg-mulberry inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
   >
     Categories
   </a>
   <a
     href={baseUrl + 'tags'}
-    class="ml-4 inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg"
+    class="bg-ink hover:bg-mulberry ml-4 inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
   >
     Tags
   </a>
   <a
     href={baseUrl + 'authors'}
-    class="ml-4 inline-block rounded-md bg-purple-600 px-2 py-1 text-base text-white hover:bg-pink-600 md:text-lg"
+    class="bg-ink hover:bg-mulberry ml-4 inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
   >
     Authors
   </a>
@@ -45,8 +45,8 @@ const baseUrl = import.meta.env.BASE_URL
             class:list={[
               'relative inline-flex items-center rounded-l-md border px-2 py-2 text-sm font-medium',
               page.url.prev
-                ? 'border-purple-300 bg-white text-gray-500 hover:bg-purple-100 dark:border-purple-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-purple-900'
-                : 'border-gray-300 bg-gray-300 text-gray-400 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-500'
+                ? 'border-line text-slate hover:bg-cream dark:border-ink-soft dark:bg-ink dark:text-fog dark:hover:bg-ink-soft bg-white'
+                : 'border-line text-slate dark:border-ink-soft dark:bg-ink-soft bg-line dark:text-fog'
             ]}
           >
             <span class="sr-only">Previous</span>
@@ -58,8 +58,8 @@ const baseUrl = import.meta.env.BASE_URL
               aria-current="page"
               class:list={[
                 i == page.currentPage
-                  ? 'z-10 border-purple-500 bg-pink-100 text-purple-600 dark:border-pink-500 dark:bg-pink-900 dark:text-purple-200'
-                  : 'border-purple-300 bg-white text-gray-500 hover:bg-purple-100 dark:border-purple-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-purple-900',
+                  ? 'border-mulberry bg-cream text-mulberry dark:border-quartz dark:bg-plum dark:text-quartz z-10'
+                  : 'border-line text-slate hover:bg-cream dark:border-ink-soft dark:bg-ink dark:text-fog dark:hover:bg-ink-soft bg-white',
                 'relative inline-flex items-center border px-4 py-2 text-sm font-medium'
               ]}
             >
@@ -71,8 +71,8 @@ const baseUrl = import.meta.env.BASE_URL
             class:list={[
               'relative inline-flex items-center rounded-r-md border px-2 py-2 text-sm font-medium',
               page.url.next
-                ? 'border-purple-300 bg-white text-gray-500 hover:bg-purple-100 dark:border-purple-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-purple-900'
-                : 'border-gray-300 bg-gray-300 text-gray-400 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-500'
+                ? 'border-line text-slate hover:bg-cream dark:border-ink-soft dark:bg-ink dark:text-fog dark:hover:bg-ink-soft bg-white'
+                : 'border-line text-slate dark:border-ink-soft dark:bg-ink-soft bg-line dark:text-fog'
             ]}
           >
             <span class="sr-only">Next</span>

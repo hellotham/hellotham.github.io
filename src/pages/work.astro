@@ -1,0 +1,271 @@
+---
+import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from '../layouts/base.astro'
+import AllTheDataLight from '../assets/svg/rosely/undraw_all_the_data-light.svg'
+import AllTheDataDark from '../assets/svg/rosely/undraw_all_the_data-dark.svg'
+import MedicalLight from '../assets/svg/rosely/undraw_medical-light.svg'
+import MedicalDark from '../assets/svg/rosely/undraw_medical-dark.svg'
+import GovernmentLight from '../assets/svg/rosely/undraw_government-light.svg'
+import GovernmentDark from '../assets/svg/rosely/undraw_government-dark.svg'
+import ServicesLight from '../assets/svg/rosely/undraw_services-light.svg'
+import ServicesDark from '../assets/svg/rosely/undraw_services-dark.svg'
+import AidouCover from '../assets/work/aidou-cover.png'
+import FinvestLensLight from '../assets/work/finvestlens-light.png'
+import FinvestLensDark from '../assets/work/finvestlens-dark.png'
+import HelloNotesLight from '../assets/work/hellonotes-light.webp'
+import HelloNotesDark from '../assets/work/hellonotes-dark.webp'
+
+const baseUrl = import.meta.env.BASE_URL
+
+const page = await getEntry('page', 'work')
+if (!page) throw new Error('work.md not found in the page collection')
+
+// work.md stays the source of truth; parse its strict
+// `#### year, client` + blockquote format into cards.
+const linkClass = 'text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white'
+
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+const mdInline = (s: string) =>
+  escapeHtml(s)
+    .replace(
+      /\[([^\]]+)\]\(([^)\s]+)\)/g,
+      (_m, text, url) => `<a href="${url}" class="${linkClass}">${text}</a>`
+    )
+    .replace(/_([^_]+)_/g, '<em>$1</em>')
+
+type Category = 'medical' | 'government' | 'services' | 'other'
+
+interface Achievement {
+  year: string
+  client: string
+  html: string
+  kind: 'book' | 'product' | 'work'
+  category: Category
+}
+
+const categorise = (client: string): Category =>
+  /medical devices/i.test(client)
+    ? 'medical'
+    : /government/i.test(client)
+      ? 'government'
+      : /services organisation/i.test(client)
+        ? 'services'
+        : 'other'
+
+// Subtle per-client card tints
+const tints: Record<Category, string> = {
+  medical: 'bg-orange-50 dark:bg-[#2b2320]',
+  government: 'bg-sky-50 dark:bg-[#1f2731]',
+  services: 'bg-green-50 dark:bg-[#212a20]',
+  other: 'bg-white dark:bg-ink'
+}
+
+const artwork: Partial<Record<Category, { light: ImageMetadata; dark: ImageMetadata }>> = {
+  medical: { light: MedicalLight, dark: MedicalDark },
+  government: { light: GovernmentLight, dark: GovernmentDark },
+  services: { light: ServicesLight, dark: ServicesDark }
+}
+
+const chunks = (page.body ?? '').split(/\r?\n---\r?\n/)
+const intro = mdInline(chunks[0]?.split(/####/)[0]?.trim() ?? '')
+
+const achievements: Achievement[] = []
+for (const chunk of chunks) {
+  const heading = chunk.match(/####\s*([^,\n]+),\s*([^\n]+)/)
+  if (!heading) continue
+  const client = heading[2].trim()
+  const body = chunk
+    .split(/\r?\n/)
+    .filter((line) => line.startsWith('>'))
+    .map((line) => line.replace(/^>\s?/, ''))
+    .join(' ')
+    .trim()
+  achievements.push({
+    year: heading[1].trim(),
+    client,
+    html: mdInline(body),
+    kind: client === 'Published book' ? 'book' : client === 'Product launch' ? 'product' : 'work',
+    category: categorise(client)
+  })
+}
+
+const groups: { year: string; items: Achievement[] }[] = []
+for (const a of achievements) {
+  const last = groups[groups.length - 1]
+  if (last && last.year === a.year) {
+    last.items.push(a)
+  } else {
+    groups.push({ year: a.year, items: [a] })
+  }
+}
+---
+
+<Base frontmatter={page.data}>
+  <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
+      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+          Achievements
+        </p>
+        <h1
+          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+        >
+          Work that speaks for itself.
+        </h1>
+        <p
+          class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed"
+          set:html={intro}
+        />
+      </div>
+      <div
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+      >
+        <img
+          src={AllTheDataLight.src}
+          alt=""
+          class="max-h-[260px] w-full object-contain dark:hidden"
+        />
+        <img
+          src={AllTheDataDark.src}
+          alt=""
+          class="hidden max-h-[260px] w-full object-contain dark:block"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="dark:bg-ink-deep bg-cream">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      {
+        groups.map((group) => (
+          <div class="dark:border-ink-soft border-line grid gap-6 border-t py-10 first:border-t-0 first:pt-0 last:pb-0 lg:grid-cols-[180px_1fr] lg:gap-12">
+            <div class="self-start lg:sticky lg:top-28">
+              <div class="text-ink dark:text-quartz font-serif text-5xl font-medium">
+                {group.year}
+              </div>
+            </div>
+            <div class="grid items-start gap-5 md:grid-cols-2">
+              {group.items.map((a) => (
+                <div
+                  class={
+                    'dark:border-ink-soft border-line hover:border-mulberry dark:hover:border-grape border p-6 transition-colors ' +
+                    tints[a.category] +
+                    (a.kind !== 'work' ? ' md:col-span-2' : '')
+                  }
+                >
+                  {a.kind === 'work' ? (
+                    <>
+                      {artwork[a.category] && (
+                        <div class="mb-5 flex h-24 items-center justify-center">
+                          <img
+                            src={artwork[a.category]!.light.src}
+                            alt=""
+                            class="max-h-full max-w-full object-contain dark:hidden"
+                            loading="lazy"
+                          />
+                          <img
+                            src={artwork[a.category]!.dark.src}
+                            alt=""
+                            class="hidden max-h-full max-w-full object-contain dark:block"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                      <p class="dark:text-fog text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+                        {a.client}
+                      </p>
+                      <p
+                        class="text-ink dark:text-cream mt-3 text-[15px] leading-relaxed"
+                        set:html={a.html}
+                      />
+                    </>
+                  ) : (
+                    <div
+                      class={
+                        'grid items-center gap-6 ' +
+                        (a.kind === 'book'
+                          ? 'sm:grid-cols-[1fr_150px]'
+                          : 'sm:grid-cols-[1fr_260px]')
+                      }
+                    >
+                      <div>
+                        <p class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase">
+                          {a.client}
+                        </p>
+                        <p
+                          class="text-ink dark:text-cream mt-3 text-[15px] leading-relaxed"
+                          set:html={a.html}
+                        />
+                      </div>
+                      {a.kind === 'book' ? (
+                        <Image
+                          src={AidouCover}
+                          alt="Cover of AI-dō: The Way of AI, grounded in practice"
+                          width={300}
+                          class="border-line dark:border-ink-soft w-full border shadow-sm max-sm:hidden"
+                        />
+                      ) : /FinvestLens/.test(a.html) ? (
+                        <div class="max-sm:hidden">
+                          <Image
+                            src={FinvestLensLight}
+                            alt="FinvestLens dashboard screenshot"
+                            width={520}
+                            class="border-line w-full border shadow-sm dark:hidden"
+                          />
+                          <Image
+                            src={FinvestLensDark}
+                            alt=""
+                            width={520}
+                            class="border-ink-soft hidden w-full border shadow-sm dark:block"
+                          />
+                        </div>
+                      ) : (
+                        <div class="max-sm:hidden">
+                          <Image
+                            src={HelloNotesLight}
+                            alt="HelloNotes editor screenshot"
+                            width={520}
+                            class="border-line w-full border shadow-sm dark:hidden"
+                          />
+                          <Image
+                            src={HelloNotesDark}
+                            alt=""
+                            width={520}
+                            class="border-ink-soft hidden w-full border shadow-sm dark:block"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="dark:bg-plum bg-ink">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-14 sm:px-10 lg:flex-row lg:items-center lg:gap-12 lg:px-14"
+    >
+      <div>
+        <h2 class="text-cream font-serif text-3xl font-medium">Facing something similar?</h2>
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+          Every engagement above started as a conversation. Tell us what you are working through and
+          we will suggest where to begin.
+        </p>
+      </div>
+      <a
+        href={baseUrl + 'contact'}
+        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+      >
+        Contact us
+      </a>
+    </div>
+  </div>
+</Base>

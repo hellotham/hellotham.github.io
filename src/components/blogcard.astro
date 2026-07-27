@@ -64,7 +64,7 @@ const postDate = post.data.publishDate || post.data.pubDate
               itemprop="datePublished"
               class="border-line text-slate dark:border-ink-soft dark:text-fog mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none"
             >
-              <Icon class="mr-1 h-4 w-4" name="heroicons:calendar-days" />
+              <Icon class="mr-1 h-4 w-4" name="ph:calendar-blank" />
               {postDate.toDateString()}
             </span>
           )
@@ -72,7 +72,7 @@ const postDate = post.data.publishDate || post.data.pubDate
         {
           post.data.minutesRead && (
             <span class="border-line text-slate dark:border-ink-soft dark:text-fog mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none">
-              <Icon class="mr-1 h-4 w-4" name="heroicons:clock" />
+              <Icon class="mr-1 h-4 w-4" name="ph:clock" />
               {post.data.minutesRead}
             </span>
           )
@@ -81,7 +81,7 @@ const postDate = post.data.publishDate || post.data.pubDate
           itemprop="author"
           class="text-slate dark:text-fog inline-flex items-center text-xs leading-none"
         >
-          <Icon class="mr-1 h-4 w-4" name="heroicons:user-circle" />
+          <Icon class="mr-1 h-4 w-4" name="ph:user-circle" />
           {author!.data.title}
         </span>
       </div>

@@ -62,7 +62,7 @@ const isVector = image.format === 'svg'
         {
           postDate && (
             <span class="text-slate dark:text-fog flex items-center gap-1.5">
-              <Icon class="h-4 w-4" name="heroicons:calendar-days" />
+              <Icon class="h-4 w-4" name="ph:calendar-blank" />
               <span class="font-mono text-xs tracking-widest uppercase">
                 {postDate.toDateString()}
               </span>
@@ -72,7 +72,7 @@ const isVector = image.format === 'svg'
         {
           post.data.minutesRead && (
             <span class="text-slate dark:text-fog flex items-center gap-1.5">
-              <Icon class="h-4 w-4" name="heroicons:clock" />
+              <Icon class="h-4 w-4" name="ph:clock" />
               <span class="font-mono text-xs tracking-widest uppercase">
                 {post.data.minutesRead}
               </span>

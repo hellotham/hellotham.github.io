@@ -76,7 +76,7 @@ This website was built using the following technology stack:
 - [Markdown](https://www.markdownguide.org/), [MDX](https://mdxjs.com/) and [Markdoc](https://markdoc.dev/) — content pipelines
 - [Mermaid](https://mermaid.js.org/) and [Markmap](https://markmap.js.org/) — diagrams, plus KaTeX math
 - [Pagefind](https://pagefind.app/) — local full-text search
-- [Heroicons](https://heroicons.com/) and [Bootstrap Icons](https://icons.getbootstrap.com/) — via astro-icon
+- [Phosphor Icons](https://phosphoricons.com/) — via astro-icon
 - [unDraw](https://undraw.co/) — illustrations, recoloured to Rosely
 - [Leaflet](https://leafletjs.com/) — the contact page map
 - [Schema.org](https://schema.org/) and [Open Graph](https://ogp.me/) — JSON-LD and social cards

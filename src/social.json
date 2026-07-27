@@ -3,36 +3,36 @@
     "id": "email",
     "name": "Email",
     "link": "mailto:info@hellotham.com",
-    "icon": "envelope"
+    "icon": "envelope-simple-fill"
   },
   {
     "id": "facebook",
     "name": "Facebook",
     "link": "https://www.facebook.com/hellothamcom",
-    "icon": "facebook"
+    "icon": "facebook-logo-fill"
   },
   {
     "id": "github",
     "name": "Github",
     "link": "https://github.com/orgs/hellotham",
-    "icon": "github"
+    "icon": "github-logo-fill"
   },
   {
     "id": "instagram",
     "name": "Instagram",
     "link": "https://www.instagram.com/hellothamcom",
-    "icon": "instagram"
+    "icon": "instagram-logo-fill"
   },
   {
     "id": "linkedIn",
     "name": "LinkedIn",
     "link": "https://www.linkedin.com/company/hellotham",
-    "icon": "linkedin"
+    "icon": "linkedin-logo-fill"
   },
   {
     "id": "x",
     "name": "X",
     "link": "https://x.com/hellothamcom",
-    "icon": "twitter-x"
+    "icon": "x-logo-fill"
   }
 ]

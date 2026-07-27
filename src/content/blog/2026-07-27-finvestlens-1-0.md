@@ -53,7 +53,7 @@ a secret ingredient:
 | **Agent**    | Claude Code — working directly in the repository                                                |
 | **Model**    | Claude Opus 5 (`claude-opus-5`)                                                                 |
 | **Language** | Swift 6 / SwiftUI, ten local Swift packages, one Xcode project                                  |
-| **Oracle**   | A real 46,553-transaction GnuCash book, GnuCash 5.16, and GnuCash's C/C++ source cloned locally |
+| **Oracle**   | My own 46,553-transaction GnuCash book, GnuCash 5.16, and GnuCash's C/C++ source cloned locally |
 | **Sessions** | Many, across fourteen days — each beginning with no memory of the last                          |
 
 The tools that actually mattered, as distinct from the ones that merely existed:
@@ -112,6 +112,15 @@ strategy** mapping GnuCash's C modules to Swift ones, and a **phased plan** —
 eleven phases, each with objectives, dependencies, deliverables, exit criteria,
 test focus and risks.
 
+That initial statement could afford to be vague because the reference context
+was not. The product already existed — twenty-five years of it. GnuCash's
+source code, its user manual, its file format and its reports specify a
+double-entry accounting application more precisely than any requirements
+document I could have written, and "reimplement _that_, natively, in Swift"
+inherits all of it. The PRD the agent drafted was less an act of invention than
+a careful reading of what was already there. Strong anchors are what make vague
+prompts safe.
+
 That plan set rules that did most of the heavy lifting later:
 
 - **Engine-first, bottom-up.** Nothing is built on an unproven foundation. Money
@@ -135,8 +144,9 @@ never the final word.**
 The final word was GnuCash itself. The expectation was written that way, and
 three things were supplied for the agent to check against:
 
-1. **A real book.** 46,553 transactions, 559 accounts, over 100,000 price
-   records, multi-currency, a decade and a half of actual financial history.
+1. **A real book — mine.** My personal GnuCash file: 46,553 transactions, 559
+   accounts, over 100,000 price records, multi-currency, a decade and a half of
+   my actual financial history.
 2. **A real GnuCash install** (5.16) to produce reference reports.
 3. **GnuCash's actual C/C++ source**, cloned locally, as the porting oracle —
    not the documentation, not the binary, the source.
@@ -156,6 +166,9 @@ them beside GnuCash's own, and they agree **to the cent** — net worth, every
 account subtree, register running balances, the balance sheet, and the
 investment reports including realised gains. Export to GnuCash XML, re-import,
 export again, and the two exports are **byte-identical**.
+
+FinvestLens wasn't validated on fixtures. It was validated, extensively, on my
+own finances — and it matches GnuCash cent for cent.
 
 ## The prompt shape that works
 
@@ -181,6 +194,16 @@ whole implementation, then per-candidate verification, then a gap sweep for what
 the first pass missed. It surfaced 63 candidates. 60 were confirmed and fixed
 the same day; 2 were refuted, which matters just as much — an agent that never
 says "actually, that one's wrong" isn't reviewing, it's agreeing.
+
+## MVP first, then passes
+
+The phase plan ran to a working application, not to the finished product. Once
+the MVP existed the rhythm changed: pick one capability, land it as its own
+pass over a working core, audit it, move on. The Apple Intelligence features
+came that way — automatic categorisation of imported transactions was layered
+onto an import pipeline that already worked, not specified up front. Iterating
+on something real suits this way of building, because every enhancement has the
+whole running application as its reference context.
 
 ## From the other side of the prompt
 
@@ -417,6 +440,27 @@ once got packaged as a skill — I retyped it, slightly differently, every time.
 I wrote the rule and broke it anyway. Knowing the way and walking it are,
 evidently, different disciplines.
 
+## The biggest thing I learned
+
+Do not trust the agent's report of its own work. Commission the audit instead —
+and keep commissioning it.
+
+An agent will claim an implementation is complete while gaps remain. Not
+maliciously: a summary of finished work and a summary of half-finished work are
+generated the same way, and they read the same way. The most characteristic gap
+of all: functionality fully implemented, tested green — and never wired into
+the UI. The code exists; no user can reach it. What caught these, over and
+over, was simply asking again, in a loop: _recheck the implementation for
+accuracy and completeness against the plan._ The report is generation; the
+audit is search. The same agent whose "done" you cannot take at face value will
+find its own gaps every time you send it looking.
+
+Pointed at the product rather than the plan, the same habit became usability
+testing: review the app against Apple's Human Interface Guidelines, create a
+persona, write their user journeys and use cases, and walk them in the running
+application. That is what the HIG review and the four usability audits above
+actually were.
+
 ## What I'd tell someone trying this
 
 - **Write the spec first.** Numbered requirements and written exit criteria turn
@@ -427,6 +471,9 @@ evidently, different disciplines.
   features.
 - **Real data over synthetic data, always.** Synthetic fixtures agree with
   whatever you believed when you wrote them. Real books have opinions.
+- **Never accept "complete".** Ask for a recheck against the plan, in a loop,
+  until the audit comes back empty. The characteristic gap is functionality
+  built, tested — and never wired into the UI.
 - **Reserve the judgement calls.** What _not_ to build, what a number should
   mean, and whether the thing on screen is actually good — those stayed with me
   the entire time, and should have. Very little else needed to.

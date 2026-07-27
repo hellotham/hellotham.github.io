@@ -6,91 +6,6 @@ import PageHero from '../components/pagehero.astro'
 import coverSVG from '../assets/svg/rosely/undraw_add_notes-light.svg'
 import coverSVGDark from '../assets/svg/rosely/undraw_add_notes-dark.svg'
 import socialImage from '../assets/social/add_notes.png'
-import {
-  jupiter,
-  cutout,
-  pianoMan,
-  pieFactory,
-  graphPaper,
-  charlieBrown,
-  autumn,
-  temple,
-  deathStar,
-  churchOnSunday,
-  overlappingHexagons,
-  bamboo,
-  bathroomFloor,
-  corkScrew,
-  happyIntersection,
-  kiwi,
-  lips,
-  lisbon,
-  steelBeams,
-  tinyCheckers,
-  fancyRectangles,
-  heavyRain,
-  cage,
-  connections,
-  flippedDiamonds,
-  houndstooth,
-  morphingDiamonds,
-  zigZag,
-  aztec,
-  bankNote,
-  boxes,
-  diagonalLines,
-  endlessClouds,
-  eyes,
-  groovy,
-  melt,
-  parkayFloor,
-  pixelDots,
-  signal,
-  wallpaper
-} from 'hero-patterns'
-
-const patterns = [
-  steelBeams('#9c92ac', 0.5),
-  jupiter('#9c92ac', 0.5),
-  cutout('#9c92ac', 0.5),
-  pianoMan('#9c92ac', 0.5),
-  pieFactory('#9c92ac', 0.5),
-  graphPaper('#9c92ac', 0.5),
-  charlieBrown('#9c92ac', 0.5),
-  autumn('#9c92ac', 0.5),
-  temple('#9c92ac', 0.5),
-  deathStar('#9c92ac', 0.5),
-  churchOnSunday('#9c92ac', 0.5),
-  overlappingHexagons('#9c92ac', 0.5),
-  bamboo('#9c92ac', 0.5),
-  bathroomFloor('#9c92ac', 0.5),
-  corkScrew('#9c92ac', 0.5),
-  happyIntersection('#9c92ac', 0.5),
-  kiwi('#9c92ac', 0.5),
-  lips('#9c92ac', 0.5),
-  lisbon('#9c92ac', 0.5),
-  tinyCheckers('#9c92ac', 0.5),
-  fancyRectangles('#9c92ac', 0.5),
-  heavyRain('#9c92ac', 0.5),
-  cage('#9c92ac', 0.5),
-  connections('#9c92ac', 0.5),
-  flippedDiamonds('#9c92ac', 0.5),
-  houndstooth('#9c92ac', 0.5),
-  morphingDiamonds('#9c92ac', 0.5),
-  zigZag('#9c92ac', 0.5),
-  aztec('#9c92ac', 0.5),
-  bankNote('#9c92ac', 0.5),
-  boxes('#9c92ac', 0.5),
-  diagonalLines('#9c92ac', 0.5),
-  endlessClouds('#9c92ac', 0.5),
-  eyes('#9c92ac', 0.5),
-  groovy('#9c92ac', 0.5),
-  melt('#9c92ac', 0.5),
-  parkayFloor('#9c92ac', 0.5),
-  pixelDots('#9c92ac', 0.5),
-  signal('#9c92ac', 0.5),
-  wallpaper('#9c92ac', 0.5)
-]
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
   title: 'Tags',
@@ -118,6 +33,35 @@ posts.forEach((post) => {
 
 const tags = Array.from(tagmap.values())
 
+// Frequency is encoded in size and colour; the cloud itself reads
+// alphabetically, so a particular tag can still be found by scanning.
+const counts = tags.map((t) => t.count)
+const min = Math.min(...counts)
+const max = Math.max(...counts)
+
+// Seven steps, heaviest first — standard type scale, no arbitrary sizes.
+const steps = [
+  { size: 'text-5xl', tone: 'text-ink dark:text-cream', weight: 'font-medium' },
+  { size: 'text-4xl', tone: 'text-ink dark:text-cream', weight: 'font-medium' },
+  { size: 'text-3xl', tone: 'text-mulberry dark:text-quartz', weight: 'font-medium' },
+  { size: 'text-2xl', tone: 'text-mulberry dark:text-quartz', weight: 'font-normal' },
+  { size: 'text-xl', tone: 'text-slate dark:text-fog', weight: 'font-normal' },
+  { size: 'text-lg', tone: 'text-slate dark:text-fog', weight: 'font-normal' },
+  { size: 'text-base', tone: 'text-slate dark:text-fog', weight: 'font-normal' }
+]
+
+const stepFor = (count: number) => {
+  if (max === min) return steps[3]
+  // Log scale, so one very frequent tag doesn't flatten all the others.
+  const t = (Math.log(count) - Math.log(min)) / (Math.log(max) - Math.log(min))
+  return steps[Math.round((1 - t) * (steps.length - 1))]
+}
+
+const cloud = tags
+  .slice()
+  .sort((a, b) => a.tag.toLowerCase().localeCompare(b.tag.toLowerCase()))
+  .map((t) => ({ ...t, ...stepFor(t.count) }))
+
 const baseUrl = import.meta.env.BASE_URL
 ---
 
@@ -131,38 +75,36 @@ const baseUrl = import.meta.env.BASE_URL
       socialImage={frontmatter.socialImage}
     />
   </header>
-  <div itemprop="mainContentOfPage" class="dark:bg-ink mt-10">
-    <div
-      itemprop="mainEntity"
-      itemscope
-      itemtype="https://schema.org/CollectionPage"
-      class="mx-4 mt-6 mb-24 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-x-6 xl:gap-y-6"
-    >
-      {
-        tags
-          .sort((a, b) => b.count - a.count)
-          .map((tag, i) => (
-            <a href={`${baseUrl}tag/${tag.tag}/`} class="group">
-              <section
-                class="group relative h-24 w-full overflow-hidden rounded-lg bg-cover bg-center shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
-                style={{
-                  backgroundColor: '#dfdbe5',
-                  // backgroundImage: `url(${OGImage})`,
-                  backgroundImage: patterns[i % patterns.length]
-                }}
+
+  <div itemprop="mainContentOfPage" class="dark:bg-ink-deep bg-cream">
+    <div class="mx-auto max-w-5xl px-6 py-14 sm:px-10 lg:py-16">
+      <p class="text-mulberry dark:text-grape mb-10 font-mono text-xs tracking-widest uppercase">
+        {tags.length} tags · larger means more articles
+      </p>
+
+      <ul
+        itemprop="mainEntity"
+        itemscope
+        itemtype="https://schema.org/CollectionPage"
+        class="flex flex-wrap items-baseline justify-center gap-x-6 gap-y-3"
+      >
+        {
+          cloud.map((tag) => (
+            <li class="leading-tight">
+              <a
+                href={`${baseUrl}tag/${tag.tag}/`}
+                title={`${tag.count} ${tag.count === 1 ? 'article' : 'articles'}`}
+                class={`hover:text-rose font-serif transition-colors dark:hover:text-white ${tag.size} ${tag.tone} ${tag.weight}`}
               >
-                <div class="absolute inset-0 bg-black/50 transition duration-300 ease-in-out group-hover:opacity-75" />
-                <div class="relative flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-4">
-                  <h3 class="text-center text-2xl font-bold text-white">
-                    <span class="absolute inset-0" />
-                    {tag.tag}
-                  </h3>
-                  <p class="text-center text-sm font-medium text-gray-200">&nbsp;({tag.count})</p>
-                </div>
-              </section>
-            </a>
+                {tag.tag}
+                <span class="sr-only">
+                  , {tag.count} {tag.count === 1 ? 'article' : 'articles'}
+                </span>
+              </a>
+            </li>
           ))
-      }
+        }
+      </ul>
     </div>
   </div>
 </Base>

@@ -17,6 +17,12 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
 }
 
 const social = await getCollection('social')
+
+// Preflight zeroes border-width, so form controls need an explicit `border`
+// alongside the token colour, plus their own padding and focus ring.
+const fieldClass =
+  'border-line dark:border-ink-soft text-ink dark:bg-ink dark:text-cream focus:border-mulberry dark:focus:border-quartz focus:ring-mulberry/40 mt-2 block w-full border bg-white px-3.5 py-2.5 text-[15px] focus:ring-2 focus:outline-none'
+const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] tracking-[.14em] uppercase'
 ---
 
 <Base frontmatter={frontmatter} schema="ContactPage">
@@ -40,8 +46,8 @@ const social = await getCollection('social')
           <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
             <div class="mb-6 px-3 md:px-6 xl:px-12">
               <p class="text-slate dark:text-fog">
-                Our common id across Facebook, Twitter and Instagram is @HelloThamCom. In addition,
-                you may contact us through the following means:
+                Our common handle across Facebook, X and Instagram is @HelloThamCom. You may also
+                contact us through any of the following:
               </p>
             </div>
             <div class="flex flex-wrap pt-8 lg:pt-0">
@@ -80,114 +86,104 @@ const social = await getCollection('social')
       </div>
 
       <!-- Netlify Contact Form Section -->
-      <div
-        class="border-line bg-cream dark:border-ink-soft dark:bg-ink-deep mt-12 rounded-lg border p-8"
-      >
-        <div class="lg:grid lg:grid-cols-3 lg:gap-6">
-          <div class="lg:col-span-1">
-            <div class="px-4 sm:px-0">
-              <h3 class="text-ink dark:text-cream text-lg leading-6 font-bold">
-                Send us a message
-              </h3>
-              <p class="text-slate dark:text-fog mt-2 text-sm">
-                Our common handle across Facebook, Twitter/X and Instagram is @HelloThamCom. In
-                addition, you may contact us using this secure form.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-5 lg:col-span-2 lg:mt-0">
-            <form
-              name="contact"
-              method="POST"
-              action="https://hellotham.netlify.app/"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
+      <div class="border-line bg-cream dark:border-ink-soft dark:bg-ink-deep mt-12 border">
+        <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[300px_1fr] lg:gap-14">
+          <div>
+            <p
+              class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase"
             >
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="hidden">
-                <label>
-                  Don’t fill this out if you’re human: <input name="bot-field" />
-                </label>
-              </p>
-              <div class="overflow-hidden shadow sm:rounded-md">
-                <div class="dark:bg-ink bg-white px-4 py-5 sm:p-6">
-                  <div class="grid grid-cols-6 gap-6">
-                    <div class="col-span-6">
-                      <label for="name" class="text-slate dark:text-fog block text-sm font-medium"
-                        >Name</label
-                      >
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="border-line text-ink focus:border-mulberry focus:ring-mulberry dark:border-ink-soft dark:bg-ink-deep dark:text-cream mt-1 block w-full rounded-md bg-white shadow-sm sm:text-sm"
-                      />
-                    </div>
-
-                    <div class="col-span-6">
-                      <label for="email" class="text-slate dark:text-fog block text-sm font-medium"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="border-line text-ink focus:border-mulberry focus:ring-mulberry dark:border-ink-soft dark:bg-ink-deep dark:text-cream mt-1 block w-full rounded-md bg-white shadow-sm sm:text-sm"
-                      />
-                    </div>
-
-                    <div class="col-span-6">
-                      <label for="phone" class="text-slate dark:text-fog block text-sm font-medium"
-                        >Phone</label
-                      >
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        class="border-line text-ink focus:border-mulberry focus:ring-mulberry dark:border-ink-soft dark:bg-ink-deep dark:text-cream mt-1 block w-full rounded-md bg-white shadow-sm sm:text-sm"
-                      />
-                    </div>
-
-                    <div class="col-span-6">
-                      <label
-                        for="subject"
-                        class="text-slate dark:text-fog block text-sm font-medium">Subject</label
-                      >
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        class="border-line text-ink focus:border-mulberry focus:ring-mulberry dark:border-ink-soft dark:bg-ink-deep dark:text-cream mt-1 block w-full rounded-md bg-white shadow-sm sm:text-sm"
-                      />
-                    </div>
-
-                    <div class="col-span-6">
-                      <label for="text" class="text-slate dark:text-fog block text-sm font-medium"
-                        >Message</label
-                      >
-                      <textarea
-                        rows={5}
-                        id="text"
-                        name="text"
-                        placeholder="Enter your message here."
-                        class="border-line text-ink focus:border-mulberry focus:ring-mulberry dark:border-ink-soft dark:bg-ink-deep dark:text-cream mt-1 block w-full rounded-md bg-white shadow-sm sm:text-sm"
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bg-cream dark:bg-ink-deep px-4 py-3 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    class="bg-ink hover:bg-mulberry focus:ring-mulberry inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                  >
-                    Send
-                  </button>
-                </div>
-              </div>
-            </form>
+              Enquiries
+            </p>
+            <h2
+              id="contact-form-heading"
+              class="text-ink dark:text-cream mt-2 font-serif text-3xl font-medium"
+            >
+              Send us a message
+            </h2>
+            <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">
+              Tell us what you are working through and we will respond personally. Every enquiry
+              reaches our Principal directly.
+            </p>
           </div>
+
+          <form
+            name="contact"
+            method="POST"
+            action="https://hellotham.netlify.app/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            aria-labelledby="contact-form-heading"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class={labelClass}>
+                  Name <span class="text-mulberry dark:text-grape" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class={fieldClass}
+                />
+              </div>
+
+              <div>
+                <label for="email" class={labelClass}>
+                  Email address <span class="text-mulberry dark:text-grape" aria-hidden="true"
+                    >*</span
+                  >
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class={fieldClass}
+                />
+              </div>
+
+              <div>
+                <label for="phone" class={labelClass}
+                  >Phone <span class="normal-case">(optional)</span></label
+                >
+                <input type="tel" id="phone" name="phone" autocomplete="tel" class={fieldClass} />
+              </div>
+
+              <div>
+                <label for="subject" class={labelClass}>Subject</label>
+                <input type="text" id="subject" name="subject" class={fieldClass} />
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="text" class={labelClass}>
+                  Message <span class="text-mulberry dark:text-grape" aria-hidden="true">*</span>
+                </label>
+                <textarea rows={6} id="text" name="text" required class={fieldClass}></textarea>
+              </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap items-center justify-between gap-4">
+              <p class="text-fog dark:text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+                <span class="text-mulberry dark:text-grape">*</span> Required
+              </p>
+              <button
+                type="submit"
+                class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink focus:ring-mulberry rounded px-7 py-3.5 text-[15px] font-semibold focus:ring-2 focus:ring-offset-2 focus:outline-none dark:hover:bg-white"
+              >
+                Send message
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

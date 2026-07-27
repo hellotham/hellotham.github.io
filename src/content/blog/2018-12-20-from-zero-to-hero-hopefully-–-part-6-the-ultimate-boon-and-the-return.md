@@ -6,6 +6,8 @@ description: This is the sixth part (and probably the last, for now) of my
 publishDate: 2018-12-19T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-6.png
+categories:
+  - learning
 tags:
   - Proof of Concept
   - technology

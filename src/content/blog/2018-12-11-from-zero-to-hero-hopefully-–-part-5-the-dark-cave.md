@@ -6,6 +6,8 @@ description: 'This is the fifth part of my series of articles on learning to
 publishDate: 2018-12-10T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-5.png
+categories:
+  - learning
 tags:
   - Proof of Concept
   - technology

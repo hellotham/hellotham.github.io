@@ -5,6 +5,8 @@ description: How did my tech predictions for 2018 fared?
 publishDate: 2019-01-15T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2018-review.jpg
+categories:
+  - technology
 tags:
   - management consulting
   - technology

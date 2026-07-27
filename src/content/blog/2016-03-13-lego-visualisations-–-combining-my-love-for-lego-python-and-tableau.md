@@ -5,6 +5,8 @@ description: Using Tableau to visualise the diversity of LEGO sets.
 publishDate: 2016-03-12T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/Set-Owners.png
+categories:
+  - data-science
 tags:
   - LEGO
   - Tableau

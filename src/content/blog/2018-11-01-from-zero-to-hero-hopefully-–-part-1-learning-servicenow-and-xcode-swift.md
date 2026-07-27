@@ -6,6 +6,8 @@ description: Part 1 of a series of articles about me learning how to code and
 publishDate: 2018-10-31T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-1.png
+categories:
+  - learning
 tags:
   - Proof of Concept
   - technology

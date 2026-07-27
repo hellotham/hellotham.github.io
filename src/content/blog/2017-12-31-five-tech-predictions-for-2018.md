@@ -5,6 +5,8 @@ description: Five predictions for the technology industry for 2018
 publishDate: 2017-12-30T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2018.png
+categories:
+  - technology
 tags:
   - management consulting
   - strategy

@@ -6,6 +6,8 @@ description: A personal history of the use of smartphones over 20 years.
 publishDate: 2017-06-29T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2017-6.png
+categories:
+  - technology
 tags:
   - phone
   - history

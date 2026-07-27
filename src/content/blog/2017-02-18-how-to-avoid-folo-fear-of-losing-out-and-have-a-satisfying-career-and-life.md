@@ -5,6 +5,8 @@ publishDate: 2017-02-17T22:00:00.000Z
 description: Advice on how to have a satisfying career and life
 featuredpost: false
 coverImage: ../../assets/blog/folo.jpg
+categories:
+  - consulting
 tags:
   - advice
   - career

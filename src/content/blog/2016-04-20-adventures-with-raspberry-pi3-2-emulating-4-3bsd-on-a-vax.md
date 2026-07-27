@@ -5,6 +5,8 @@ description: How to run 4.3BSD Unix in an emulated Micro VAX 3000 using a Raspbe
 publishDate: 2016-04-19T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/vax.png
+categories:
+  - technology
 tags:
   - Unix
   - 4.3BSD

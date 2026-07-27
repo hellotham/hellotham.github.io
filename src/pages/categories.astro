@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
+import { getPosts } from '../config'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
 import coverSVG from '../assets/svg/rosely/undraw_windows-light.svg'
@@ -14,7 +15,12 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
   socialImage: socialImage
 }
 
-const categories = await getCollection('category')
+const posts = await getPosts()
+const used = new Set(posts.flatMap((post) => (post.data.categories ?? []).map((c) => c.id)))
+
+// 'general' exists only as a fallback for posts without a category,
+// so keep the index to categories that actually have articles.
+const categories = (await getCollection('category')).filter((category) => used.has(category.id))
 
 const baseUrl = import.meta.env.BASE_URL
 ---

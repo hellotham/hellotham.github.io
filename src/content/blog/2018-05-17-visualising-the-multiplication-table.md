@@ -5,6 +5,8 @@ description: Insights you may not realise about the multiplication table.
 publishDate: 2018-05-16T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/multiply-1.png
+categories:
+  - data-science
 tags:
   - Tableau
   - mathematics

@@ -7,6 +7,8 @@ description: Welcome to the new Hello Tham website! It has been completely
 publishDate: 2020-06-11T00:28:51.973Z
 featuredpost: false
 coverImage: ../../assets/blog/hellotham-serverless.jpg
+categories:
+  - website
 tags:
   - Hello Tham
   - website

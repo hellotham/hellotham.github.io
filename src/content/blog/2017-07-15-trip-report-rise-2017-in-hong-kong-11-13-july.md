@@ -5,6 +5,8 @@ description: A recap of a trip to Hong Kong in 2017 to attend the RISE conferenc
 publishDate: 2017-07-14T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/rise-1.png
+categories:
+  - consulting
 tags:
   - event
   - conference

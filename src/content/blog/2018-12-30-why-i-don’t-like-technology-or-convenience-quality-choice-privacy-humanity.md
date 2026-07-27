@@ -6,6 +6,8 @@ description: Technology isn't always positive, or a benefit.
 publishDate: 2018-12-29T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/hate-tech.png
+categories:
+  - technology
 tags:
   - opinion
   - technology

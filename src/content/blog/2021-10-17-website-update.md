@@ -6,6 +6,8 @@ publishDate: 2021-10-17T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/site/screenshot.png
 coverSVG: ../../assets/blog/undraw_website_builder-rosely.svg
+categories:
+  - website
 tags:
   - Hello Tham
   - website

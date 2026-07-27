@@ -5,6 +5,8 @@ author: chris-tham
 publishDate: 2026-07-27T00:00:00.000Z
 featuredpost: true
 coverImage: ../../assets/blog/redesign-2026.png
+categories:
+  - website
 tags:
   - Hello Tham
   - website
@@ -51,6 +53,15 @@ This was genuinely collaborative work rather than code generation. I directed; C
 3. **Illustrations recoloured** from [unDraw](https://undraw.co) into the Rosely palette — a scripted colour-mapping pass, verified by histogram rather than by eye.
 4. **Accessibility fixes** throughout: a skip link, a single main landmark, correct listbox semantics on the theme switcher, and the contrast work described above.
 5. **Fonts migrated** to Astro's native Fonts API. The variable Noto families are downloaded at build time and self-hosted with preload links, so no third-party font requests are made at runtime — better for privacy and for first paint.
+6. **The blog rebuilt** in the same language: article pages now open with a serif headline, a byline rule and the cover art in its own panel, rather than white text floating over a darkened image, and the body sits at a proper reading measure.
+
+### A discipline worth the effort
+
+One deliberate constraint deserves a mention. It is tempting, when implementing a design, to reach for one-off values — a 15px here, a 0.14em there, a grid of `1.15fr .85fr` because that is what the mockup measured. It works, and it quietly destroys the system: every arbitrary number is a decision nobody can reuse.
+
+So we swept the whole site back onto the standard scale — roughly 250 one-off values across thirty files became ordinary type, spacing, tracking and column utilities. A handful of things genuinely justified an exception and were kept, deliberately and visibly. The result reads the same, but the next change is now a choice between existing options rather than an invention.
+
+That is the same argument we make to clients about reference architectures, and it applies just as well to a stylesheet.
 
 ### Beyond the visuals
 
@@ -59,6 +70,8 @@ While we were in there, we refreshed a good deal of substance:
 - Our **Quality Statement** is now structured around the seven quality management principles of ISO 9000:2015, and our **Risk Management Statement** around the ISO 31000:2018 risk management process — including the modern definition of risk as the effect of uncertainty on objectives, covering opportunity as well as threat.
 - Our **[Privacy Policy](/privacy)** was rewritten from scratch based on what this website actually does, and structured for GDPR: legal bases, retention periods, processors and your rights. The short version is that this site sets no cookies, runs no analytics and embeds no trackers — so it needs no cookie banner.
 - New pages for our **[Applications and Digital Products](/services/applications)** and **[Websites and Content Platforms](/services/websites)** practices, and an **[Apps](/apps)** page for the software we publish ourselves.
+- The **[contact form](/contact)** was rebuilt. Reviewing it turned up a real defect rather than a cosmetic one — the fields carried a border colour but no border width, so they were rendering as bare hairlines with no padding, and the focus ring had a colour but no width, meaning keyboard users got no visible focus at all. It now has proper fields, required-field validation, autocomplete, and a confirmation page instead of dropping you on an unbranded thank-you screen.
+- Articles are now **organised into categories** — [Website](/category/website), [Technology](/category/technology), [Consulting](/category/consulting), [Finance](/category/finance), [Data Science](/category/data-science) and [Learning](/category/learning) — so ten years of writing is finally navigable by subject.
 
 ### On working with AI
 

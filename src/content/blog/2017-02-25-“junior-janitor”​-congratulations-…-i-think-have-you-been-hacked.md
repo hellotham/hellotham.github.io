@@ -5,6 +5,8 @@ description: What is the relevance of the job title these days?
 publishDate: 2017-02-24T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/janitor.jpg
+categories:
+  - consulting
 tags:
   - advice
   - Hello Tham

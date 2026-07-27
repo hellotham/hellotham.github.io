@@ -6,6 +6,8 @@ description: Welcome to the new website!
 publishDate: 2019-07-21T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/refresh.jpg
+categories:
+  - website
 tags:
   - Hello Tham
   - website

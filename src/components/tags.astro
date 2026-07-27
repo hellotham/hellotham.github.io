@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.BASE_URL
       {tags.map((tag) => (
         <a
           href={`${baseUrl}tag/${encodeURIComponent(tag)}/`}
-          class="dark:border-ink-soft dark:bg-ink-deep dark:text-fog dark:hover:border-quartz dark:hover:text-quartz border-line bg-cream text-slate hover:border-mulberry hover:text-mulberry inline-block border px-2.5 py-1.5 font-mono text-[11px] lg:py-1"
+          class="dark:border-ink-soft dark:bg-ink-deep dark:text-fog dark:hover:border-quartz dark:hover:text-quartz border-line bg-cream text-slate hover:border-mulberry hover:text-mulberry inline-block border px-2.5 py-1.5 font-mono text-xs lg:py-1"
         >
           #{tag}
         </a>

@@ -23,19 +23,19 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
       class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 sm:px-10 lg:grid-cols-2 lg:px-14 lg:py-24"
     >
       <div>
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           Message sent
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           Thank you — we have your message.
         </h1>
-        <p class="text-slate dark:text-fog mt-6 max-w-[560px] text-lg leading-relaxed">
+        <p class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed">
           Your enquiry has reached us and will be read personally by our Principal. We normally
           reply within one business day.
         </p>
-        <p class="text-slate dark:text-fog mt-4 max-w-[560px] text-[15px] leading-relaxed">
+        <p class="text-slate dark:text-fog mt-4 max-w-xl text-base leading-relaxed">
           If your message is urgent, you can also email us directly at{' '}
           <a
             href="mailto:info@hellotham.com"
@@ -47,13 +47,13 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
         <div class="mt-9 flex flex-wrap gap-4">
           <a
             href={siteUrl}
-            class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink rounded px-7 py-3.5 text-[15px] font-semibold dark:hover:bg-white"
+            class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink rounded px-7 py-3.5 text-base font-semibold dark:hover:bg-white"
           >
             Back to home
           </a>
           <a
             href={siteUrl + 'work'}
-            class="text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz border-ink rounded border px-7 py-3.5 text-[15px] font-semibold"
+            class="text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz border-ink rounded border px-7 py-3.5 text-base font-semibold"
           >
             See our work
           </a>
@@ -62,15 +62,11 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
       <div
         class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border p-8 sm:p-12"
       >
-        <img
-          src={ContactLight.src}
-          alt=""
-          class="max-h-[300px] w-full object-contain dark:hidden"
-        />
+        <img src={ContactLight.src} alt="" class="max-h-72 w-full object-contain dark:hidden" />
         <img
           src={ContactDark.src}
           alt=""
-          class="hidden max-h-[300px] w-full object-contain dark:block"
+          class="hidden max-h-72 w-full object-contain dark:block"
         />
       </div>
     </div>

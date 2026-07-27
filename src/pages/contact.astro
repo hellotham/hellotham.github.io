@@ -20,39 +20,35 @@ const social = await getCollection('social')
 // Preflight zeroes border-width, so form controls need an explicit `border`
 // alongside the token colour, plus their own padding and focus ring.
 const fieldClass =
-  'border-line dark:border-ink-soft text-ink dark:bg-ink dark:text-cream focus:border-mulberry dark:focus:border-quartz focus:ring-mulberry/40 mt-2 block w-full border bg-white px-3.5 py-2.5 text-[15px] focus:ring-2 focus:outline-none'
-const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] tracking-[.14em] uppercase'
+  'border-line dark:border-ink-soft text-ink dark:bg-ink dark:text-cream focus:border-mulberry dark:focus:border-quartz focus:ring-mulberry/40 mt-2 block w-full border bg-white px-3.5 py-2.5 text-base focus:ring-2 focus:outline-none'
+const labelClass = 'text-slate dark:text-fog block font-mono text-xs tracking-widest uppercase'
 ---
 
 <Base frontmatter={frontmatter} schema="ContactPage">
   <header class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
-    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
-      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+      <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           Contact
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           Let’s start a conversation.
         </h1>
-        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+        <p class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed">
           Our presence is both real and digital. Tell us what you are working through — by form,
           email or any of the channels below.
         </p>
       </div>
       <div
-        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img
-          src={ContactLight.src}
-          alt=""
-          class="max-h-[260px] w-full object-contain dark:hidden"
-        />
+        <img src={ContactLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
         <img
           src={ContactDark.src}
           alt=""
-          class="hidden max-h-[260px] w-full object-contain dark:block"
+          class="hidden max-h-64 w-full object-contain dark:block"
         />
       </div>
     </div>
@@ -109,11 +105,9 @@ const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] trackin
 
       <!-- Netlify Contact Form Section -->
       <div class="border-line bg-cream dark:border-ink-soft dark:bg-ink-deep mt-12 border">
-        <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-[300px_1fr] lg:gap-14">
-          <div>
-            <p
-              class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase"
-            >
+        <div class="grid gap-10 p-7 sm:p-10 lg:grid-cols-12 lg:gap-14">
+          <div class="lg:col-span-4">
+            <p class="text-mulberry dark:text-grape font-mono text-xs tracking-widest uppercase">
               Enquiries
             </p>
             <h2
@@ -122,7 +116,7 @@ const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] trackin
             >
               Send us a message
             </h2>
-            <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">
+            <p class="text-slate dark:text-fog mt-4 text-base leading-relaxed">
               Tell us what you are working through and we will respond personally. Every enquiry
               reaches our Principal directly.
             </p>
@@ -135,6 +129,7 @@ const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] trackin
             data-netlify="true"
             netlify-honeypot="bot-field"
             aria-labelledby="contact-form-heading"
+            class="lg:col-span-8"
           >
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
@@ -195,12 +190,12 @@ const labelClass = 'text-slate dark:text-fog block font-mono text-[10px] trackin
             </div>
 
             <div class="mt-7 flex flex-wrap items-center justify-between gap-4">
-              <p class="text-fog dark:text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+              <p class="text-fog dark:text-slate font-mono text-xs tracking-widest uppercase">
                 <span class="text-mulberry dark:text-grape">*</span> Required
               </p>
               <button
                 type="submit"
-                class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink focus:ring-mulberry rounded px-7 py-3.5 text-[15px] font-semibold focus:ring-2 focus:ring-offset-2 focus:outline-none dark:hover:bg-white"
+                class="dark:bg-quartz text-cream hover:bg-mulberry dark:text-ink bg-ink focus:ring-mulberry rounded px-7 py-3.5 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:outline-none dark:hover:bg-white"
               >
                 Send message
               </button>

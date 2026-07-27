@@ -21,7 +21,7 @@ const formatDate = (d: Date) =>
       <h2 class="text-ink dark:text-cream font-serif text-2xl font-medium lg:text-3xl">Insights</h2>
       <a
         href={baseUrl + 'blog'}
-        class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+        class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-widest uppercase dark:hover:text-white"
       >
         All articles →
       </a>
@@ -37,10 +37,10 @@ const formatDate = (d: Date) =>
               data-publish-date={postDate ? postDate.toISOString() : undefined}
               class="future-hidden group dark:border-ink-soft border-line block border-t pt-4"
             >
-              <div class="dark:text-fog text-slate mb-2.5 font-mono text-[11px]">
+              <div class="dark:text-fog text-slate mb-2.5 font-mono text-xs">
                 {postDate && formatDate(postDate)}
               </div>
-              <div class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream font-serif text-[19px] leading-snug font-medium">
+              <div class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream font-serif text-lg leading-snug font-medium">
                 {post.data.title}
               </div>
             </a>

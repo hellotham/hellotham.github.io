@@ -57,9 +57,9 @@ const categorise = (client: string): Category =>
 
 // Subtle per-client card tints
 const tints: Record<Category, string> = {
-  medical: 'bg-orange-50 dark:bg-[#2b2320]',
-  government: 'bg-sky-50 dark:bg-[#1f2731]',
-  services: 'bg-green-50 dark:bg-[#212a20]',
+  medical: 'bg-orange-50 dark:bg-orange-950',
+  government: 'bg-sky-50 dark:bg-sky-950',
+  services: 'bg-green-50 dark:bg-green-950',
   other: 'bg-white dark:bg-ink'
 }
 
@@ -105,33 +105,29 @@ for (const a of achievements) {
 
 <Base frontmatter={page.data}>
   <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
-    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
-      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+      <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           Achievements
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           Work that speaks for itself.
         </h1>
         <p
-          class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed"
+          class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed"
           set:html={intro}
         />
       </div>
       <div
-        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img
-          src={AllTheDataLight.src}
-          alt=""
-          class="max-h-[260px] w-full object-contain dark:hidden"
-        />
+        <img src={AllTheDataLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
         <img
           src={AllTheDataDark.src}
           alt=""
-          class="hidden max-h-[260px] w-full object-contain dark:block"
+          class="hidden max-h-64 w-full object-contain dark:block"
         />
       </div>
     </div>
@@ -141,13 +137,13 @@ for (const a of achievements) {
     <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
       {
         groups.map((group) => (
-          <div class="dark:border-ink-soft border-line grid gap-6 border-t py-10 first:border-t-0 first:pt-0 last:pb-0 lg:grid-cols-[180px_1fr] lg:gap-12">
-            <div class="self-start lg:sticky lg:top-28">
+          <div class="dark:border-ink-soft border-line grid gap-6 border-t py-10 first:border-t-0 first:pt-0 last:pb-0 lg:grid-cols-12 lg:gap-12">
+            <div class="self-start lg:sticky lg:top-28 lg:col-span-2">
               <div class="text-ink dark:text-quartz font-serif text-5xl font-medium">
                 {group.year}
               </div>
             </div>
-            <div class="grid items-start gap-5 md:grid-cols-2">
+            <div class="grid items-start gap-5 md:grid-cols-2 lg:col-span-10">
               {group.items.map((a) => (
                 <div
                   class={
@@ -174,29 +170,22 @@ for (const a of achievements) {
                           />
                         </div>
                       )}
-                      <p class="dark:text-fog text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+                      <p class="dark:text-fog text-slate font-mono text-xs tracking-widest uppercase">
                         {a.client}
                       </p>
                       <p
-                        class="text-ink dark:text-cream mt-3 text-[15px] leading-relaxed"
+                        class="text-ink dark:text-cream mt-3 text-base leading-relaxed"
                         set:html={a.html}
                       />
                     </>
                   ) : (
-                    <div
-                      class={
-                        'grid items-center gap-6 ' +
-                        (a.kind === 'book'
-                          ? 'sm:grid-cols-[1fr_150px]'
-                          : 'sm:grid-cols-[1fr_260px]')
-                      }
-                    >
-                      <div>
-                        <p class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase">
+                    <div class="grid items-center gap-6 sm:grid-cols-3">
+                      <div class="sm:col-span-2">
+                        <p class="text-mulberry dark:text-grape font-mono text-xs tracking-widest uppercase">
                           {a.client}
                         </p>
                         <p
-                          class="text-ink dark:text-cream mt-3 text-[15px] leading-relaxed"
+                          class="text-ink dark:text-cream mt-3 text-base leading-relaxed"
                           set:html={a.html}
                         />
                       </div>
@@ -205,7 +194,7 @@ for (const a of achievements) {
                           src={AidouCover}
                           alt="Cover of AI-dō: The Way of AI, grounded in practice"
                           width={300}
-                          class="border-line dark:border-ink-soft w-full border shadow-sm max-sm:hidden"
+                          class="border-line dark:border-ink-soft w-full max-w-40 justify-self-end border shadow-sm max-sm:hidden"
                         />
                       ) : /FinvestLens/.test(a.html) ? (
                         <div class="max-sm:hidden">
@@ -255,14 +244,14 @@ for (const a of achievements) {
     >
       <div>
         <h2 class="text-cream font-serif text-3xl font-medium">Facing something similar?</h2>
-        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-lg text-base leading-relaxed">
           Every engagement above started as a conversation. Tell us what you are working through and
           we will suggest where to begin.
         </p>
       </div>
       <a
         href={baseUrl + 'contact'}
-        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+        class="bg-quartz text-ink rounded px-9 py-4 text-base font-semibold whitespace-nowrap hover:bg-white"
       >
         Contact us
       </a>

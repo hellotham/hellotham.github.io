@@ -86,15 +86,15 @@ const apps: AppCard[] = [
 <Base {frontmatter}>
   <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
     <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
-      <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+      <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
         Apps &amp; templates
       </p>
       <h1
-        class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[56px]"
+        class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
       >
         We publish our own software.
       </h1>
-      <p class="text-slate dark:text-fog mt-6 max-w-[640px] text-lg leading-relaxed">
+      <p class="text-slate dark:text-fog mt-6 max-w-2xl text-lg leading-relaxed">
         The applications, templates and design system below are built and maintained by Hello Tham —
         the same practice that delivers our client work. Each one is a live proof of how we design
         and engineer.
@@ -139,17 +139,17 @@ const apps: AppCard[] = [
                 )}
               </div>
               <div class="flex grow flex-col p-7">
-                <span class="dark:text-fog text-slate font-mono text-[10px] tracking-[.14em] uppercase">
+                <span class="dark:text-fog text-slate font-mono text-xs tracking-widest uppercase">
                   {app.tag}
                 </span>
                 <span class="dark:group-hover:text-quartz text-ink group-hover:text-mulberry dark:text-cream mt-3 font-serif text-2xl font-medium">
                   {app.name}
                 </span>
-                <span class="text-mulberry dark:text-grape mt-1 text-[15px]">{app.tagline}</span>
-                <span class="text-slate dark:text-fog mt-3 grow text-[15px] leading-relaxed">
+                <span class="text-mulberry dark:text-grape mt-1 text-base">{app.tagline}</span>
+                <span class="text-slate dark:text-fog mt-3 grow text-base leading-relaxed">
                   {app.description}
                 </span>
-                <span class="dark:text-quartz text-ink group-hover:text-mulberry mt-5 font-mono text-xs tracking-[.14em] uppercase dark:group-hover:text-white">
+                <span class="dark:text-quartz text-ink group-hover:text-mulberry mt-5 font-mono text-xs tracking-widest uppercase dark:group-hover:text-white">
                   Visit site →
                 </span>
               </div>
@@ -166,14 +166,14 @@ const apps: AppCard[] = [
     >
       <div>
         <h2 class="text-cream font-serif text-3xl font-medium">Want something like this?</h2>
-        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-lg text-base leading-relaxed">
           Our Applications and Websites practices build products like these for clients — from proof
           of concept to production.
         </p>
       </div>
       <a
         href={baseUrl + 'services'}
-        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+        class="bg-quartz text-ink rounded px-9 py-4 text-base font-semibold whitespace-nowrap hover:bg-white"
       >
         Explore services
       </a>

@@ -56,33 +56,29 @@ const proof = [
 
 <Base {frontmatter}>
   <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
-    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
-      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+      <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           Services · 06 · New practice
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           Applications and Digital Products.
         </h1>
-        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+        <p class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed">
           We now build what we recommend: native iOS and macOS applications, web front ends, service
           integrations and data products — delivered by the people who wrote the roadmap.
         </p>
       </div>
       <div
-        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img
-          src={AllTheDataLight.src}
-          alt=""
-          class="max-h-[260px] w-full object-contain dark:hidden"
-        />
+        <img src={AllTheDataLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
         <img
           src={AllTheDataDark.src}
           alt=""
-          class="hidden max-h-[260px] w-full object-contain dark:block"
+          class="hidden max-h-64 w-full object-contain dark:block"
         />
       </div>
     </div>
@@ -95,8 +91,8 @@ const proof = [
         {
           capabilities.map((c) => (
             <div class="dark:border-ink-soft border-line border-t pt-5">
-              <h3 class="text-ink dark:text-cream font-serif text-[22px] font-medium">{c.name}</h3>
-              <p class="text-slate dark:text-fog mt-2 text-[15px] leading-relaxed">{c.body}</p>
+              <h3 class="text-ink dark:text-cream font-serif text-2xl font-medium">{c.name}</h3>
+              <p class="text-slate dark:text-fog mt-2 text-base leading-relaxed">{c.body}</p>
             </div>
           ))
         }
@@ -112,31 +108,31 @@ const proof = [
         </h2>
         <a
           href={baseUrl + 'apps'}
-          class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+          class="dark:text-quartz text-ink hover:text-mulberry font-mono text-xs tracking-widest uppercase dark:hover:text-white"
         >
           Our own apps →
         </a>
       </div>
       {
         proof.map((cs) => (
-          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-[220px_1fr] lg:gap-12">
-            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed">
+          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-12 lg:gap-12">
+            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed lg:col-span-3">
               {cs.year}
               <br />
               {cs.client}
             </div>
-            <div>
-              <div class="text-ink dark:text-cream mb-1.5 font-serif text-[20px] font-medium">
+            <div class="lg:col-span-9">
+              <div class="text-ink dark:text-cream mb-1.5 font-serif text-xl font-medium">
                 {cs.title}
               </div>
-              <div class="dark:text-fog text-slate max-w-[740px] text-[15px] leading-relaxed">
+              <div class="dark:text-fog text-slate max-w-3xl text-base leading-relaxed">
                 {cs.body}
               </div>
             </div>
           </div>
         ))
       }
-      <p class="text-slate dark:text-fog mt-6 max-w-[740px] text-[15px] leading-relaxed">
+      <p class="text-slate dark:text-fog mt-6 max-w-3xl text-base leading-relaxed">
         We also publish our own products — <a
           href={baseUrl + 'apps'}
           class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
@@ -152,14 +148,14 @@ const proof = [
     >
       <div>
         <h2 class="text-cream font-serif text-3xl font-medium">Have an app in mind?</h2>
-        <p class="text-fog dark:text-plum-mist mt-3 max-w-[520px] text-base leading-relaxed">
+        <p class="text-fog dark:text-plum-mist mt-3 max-w-lg text-base leading-relaxed">
           Start with a proof of concept — we scope small, deliver early and refine with the people
           who will use it.
         </p>
       </div>
       <a
         href={baseUrl + 'contact'}
-        class="bg-quartz text-ink rounded px-9 py-4 text-[15px] font-semibold whitespace-nowrap hover:bg-white"
+        class="bg-quartz text-ink rounded px-9 py-4 text-base font-semibold whitespace-nowrap hover:bg-white"
       >
         Contact us
       </a>

@@ -11,7 +11,7 @@ import netlify from '../content/partner/netlify.png'
     <div
       class="dark:border-ink-soft border-line flex flex-wrap items-center gap-x-14 gap-y-6 border-b py-9"
     >
-      <span class="dark:text-fog text-slate font-mono text-[11px] tracking-[.18em] uppercase">
+      <span class="dark:text-fog text-slate font-mono text-xs tracking-widest uppercase">
         Partners
       </span>
       <img
@@ -40,14 +40,10 @@ import netlify from '../content/partner/netlify.png'
       />
     </div>
     <div class="flex flex-wrap items-center gap-x-14 gap-y-4 py-9">
-      <span class="dark:text-fog text-slate font-mono text-[11px] tracking-[.18em] uppercase">
+      <span class="dark:text-fog text-slate font-mono text-xs tracking-widest uppercase">
         Clients
       </span>
-      {
-        ClientWords.map((c) => (
-          <span class="dark:text-fog text-slate font-serif text-[17px]">{c}</span>
-        ))
-      }
+      {ClientWords.map((c) => <span class="dark:text-fog text-slate font-serif text-lg">{c}</span>)}
     </div>
   </div>
 </div>

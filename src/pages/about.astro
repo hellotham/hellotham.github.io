@@ -107,34 +107,30 @@ const statements = [
 
 <Base {frontmatter}>
   <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
-    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
-      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-18">
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+      <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-18">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           About us
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[52px]"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           A boutique firm, holistic by design.
         </h1>
-        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+        <p class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed">
           Hello Tham is a boutique management consulting firm, registered in Australia (ABN 44 617
           279 115). We deliver consulting services to clients around the world — and we implement
           what we recommend.
         </p>
       </div>
       <div
-        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img
-          src={IdeasFlowLight.src}
-          alt=""
-          class="max-h-[260px] w-full object-contain dark:hidden"
-        />
+        <img src={IdeasFlowLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
         <img
           src={IdeasFlowDark.src}
           alt=""
-          class="hidden max-h-[260px] w-full object-contain dark:block"
+          class="hidden max-h-64 w-full object-contain dark:block"
         />
       </div>
     </div>
@@ -142,31 +138,31 @@ const statements = [
 
   <div class="dark:bg-ink bg-white">
     <div
-      class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:px-10 lg:grid-cols-[320px_1fr] lg:gap-16 lg:px-14 lg:py-16"
+      class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:px-10 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:py-16"
     >
-      <div>
-        <p class="dark:text-aqua text-mulberry mb-4 font-mono text-xs tracking-[.2em] uppercase">
+      <div class="lg:col-span-4">
+        <p class="dark:text-aqua text-mulberry mb-4 font-mono text-xs tracking-widest uppercase">
           What we do
         </p>
-        <h2 class="text-ink dark:text-cream font-serif text-3xl leading-[1.12] font-medium">
+        <h2 class="text-ink dark:text-cream font-serif text-3xl leading-tight font-medium">
           We specialise in
         </h2>
-        <p class="dark:text-fog text-slate mt-4 text-[15px] leading-relaxed">
+        <p class="dark:text-fog text-slate mt-4 text-base leading-relaxed">
           Seven practices, engaged individually or as one accountable team. We also assist our
           clients in implementing our recommendations, models and strategies.
         </p>
         <a
           href={baseUrl + 'services'}
-          class="dark:text-quartz text-ink hover:text-mulberry mt-5 inline-block font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+          class="dark:text-quartz text-ink hover:text-mulberry mt-5 inline-block font-mono text-xs tracking-widest uppercase dark:hover:text-white"
         >
           Explore services →
         </a>
       </div>
-      <div class="grid gap-x-10 sm:grid-cols-2">
+      <div class="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
         {
           Services.map((sv) => (
             <div class="dark:border-ink-soft border-line flex items-baseline gap-4 border-t py-4">
-              <span class="dark:text-grape text-mulberry font-mono text-[13px]">{sv.num}</span>
+              <span class="dark:text-grape text-mulberry font-mono text-sm">{sv.num}</span>
               <span class="text-ink dark:text-cream font-serif text-lg font-medium">{sv.name}</span>
             </div>
           ))
@@ -184,13 +180,13 @@ const statements = [
           <Image src={LogoBadge} alt="Hello Tham logo" width={600} class="w-56 sm:w-72" />
         </div>
         <div class="p-7">
-          <p class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase">
+          <p class="text-mulberry dark:text-grape font-mono text-xs tracking-widest uppercase">
             Our logo
           </p>
           <h2 class="text-ink dark:text-cream mt-2 font-serif text-2xl font-medium">
             Hello Tham Logo
           </h2>
-          <p class="text-slate dark:text-fog mt-3 text-[15px] leading-relaxed">
+          <p class="text-slate dark:text-fog mt-3 text-base leading-relaxed">
             Our logo reflects who we are and our values. The Circle reflects our holistic approach
             to delivering services to our clients. The Eyes reflect the insights we provide through
             the outcomes we achieve. The Gear reflects the type of services we provide, which
@@ -200,20 +196,20 @@ const statements = [
       </div>
 
       <div class="dark:border-ink-soft dark:bg-ink border-line border bg-white p-7">
-        <p class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase">
+        <p class="text-mulberry dark:text-grape font-mono text-xs tracking-widest uppercase">
           About this website
         </p>
         <h2 class="text-ink dark:text-cream mt-2 font-serif text-2xl font-medium">
           Website Design
         </h2>
-        <p class="text-slate dark:text-fog mt-3 text-[15px] leading-relaxed">
+        <p class="text-slate dark:text-fog mt-3 text-base leading-relaxed">
           This site is designed by us, built by us and deployed to both GitHub Pages and Netlify. It
           is a static-first website built with:
         </p>
         <ul class="mt-4 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
           {
             stack.map((t) => (
-              <li class="text-slate dark:text-fog text-[14px] leading-relaxed">
+              <li class="text-slate dark:text-fog text-sm leading-relaxed">
                 <a href={t.href} class={linkClass} rel="noopener noreferrer" target="_blank">
                   {t.name}
                 </a>
@@ -229,10 +225,10 @@ const statements = [
   <div class="dark:bg-ink bg-white">
     <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
       <div class="mb-10 text-center">
-        <p class="dark:text-aqua text-mulberry font-mono text-xs tracking-[.2em] uppercase">
+        <p class="dark:text-aqua text-mulberry font-mono text-xs tracking-widest uppercase">
           How we hold ourselves to account
         </p>
-        <h2 class="text-ink dark:text-cream mt-3 font-serif text-3xl font-medium lg:text-[34px]">
+        <h2 class="text-ink dark:text-cream mt-3 font-serif text-3xl font-medium lg:text-4xl">
           Quality, risk and privacy
         </h2>
       </div>
@@ -241,22 +237,22 @@ const statements = [
           statements.map((s) => (
             <article class="dark:border-ink-soft dark:bg-ink-deep border-line bg-cream border p-7 shadow-sm sm:p-10">
               <div class="dark:border-ink-soft border-line flex items-baseline justify-between border-b pb-4">
-                <p class="text-mulberry dark:text-grape font-mono text-[10px] tracking-[.14em] uppercase">
+                <p class="text-mulberry dark:text-grape font-mono text-xs tracking-widest uppercase">
                   Statement {s.num} · {s.label}
                 </p>
-                <span class="text-fog font-mono text-[10px] tracking-[.14em] uppercase">
+                <span class="text-fog font-mono text-xs tracking-widest uppercase">
                   Hello Tham Pty Ltd
                 </span>
               </div>
               <h3 class="text-ink dark:text-cream mt-5 font-serif text-2xl font-medium">
                 {s.title}
               </h3>
-              <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">{s.intro}</p>
+              <p class="text-slate dark:text-fog mt-4 text-base leading-relaxed">{s.intro}</p>
               {s.points.length > 0 && (
                 <ul class="mt-4 flex flex-col gap-2.5">
                   {s.points.map((p, i) => (
-                    <li class="text-slate dark:text-fog grid grid-cols-[32px_1fr] text-[15px] leading-relaxed">
-                      <span class="dark:text-grape text-mulberry font-mono text-[12px] leading-6">
+                    <li class="text-slate dark:text-fog flex gap-3 text-base leading-relaxed">
+                      <span class="dark:text-grape text-mulberry font-mono text-xs leading-6">
                         {s.ordered ? String(i + 1).padStart(2, '0') : '—'}
                       </span>
                       <span>{p}</span>
@@ -265,10 +261,10 @@ const statements = [
                 </ul>
               )}
               {s.outro && (
-                <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">{s.outro}</p>
+                <p class="text-slate dark:text-fog mt-4 text-base leading-relaxed">{s.outro}</p>
               )}
               {s.label === 'Risk' && (
-                <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">
+                <p class="text-slate dark:text-fog mt-4 text-base leading-relaxed">
                   As a legal employer in New South Wales, we hold a workers compensation insurance
                   policy with icare NSW (policy no. 144478201). We also maintain Professional
                   Indemnity insurance ($1 million) and Public Liability insurance ($10 million)
@@ -277,7 +273,7 @@ const statements = [
                 </p>
               )}
               {s.label === 'Privacy' && (
-                <p class="text-slate dark:text-fog mt-4 text-[15px] leading-relaxed">
+                <p class="text-slate dark:text-fog mt-4 text-base leading-relaxed">
                   Our privacy policy for this website is published separately:{' '}
                   <a href={baseUrl + 'privacy'} class={linkClass}>
                     Privacy Policy

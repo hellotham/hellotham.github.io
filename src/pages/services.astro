@@ -17,33 +17,33 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
 
 <Base {frontmatter}>
   <div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
-    <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.15fr_.85fr]">
-      <div class="px-6 py-14 sm:px-10 lg:px-14 lg:py-19">
-        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-[.2em] uppercase">
+    <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+      <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-19">
+        <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
           Services
         </p>
         <h1
-          class="text-ink dark:text-cream font-serif text-4xl leading-[1.06] font-medium tracking-[-0.02em] sm:text-5xl lg:text-[56px]"
+          class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
         >
           Focus on business and IT strategy.
         </h1>
-        <p class="text-slate dark:text-fog mt-6 max-w-[600px] text-lg leading-relaxed">
+        <p class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed">
           Our consultants have successfully delivered multiple engagements to companies and
           government organisations in several countries, focusing on Australia and New Zealand.
         </p>
       </div>
       <div
-        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:border-t-0 lg:border-l"
+        class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
         <img
           src={FeaturesOverviewLight.src}
           alt=""
-          class="max-h-[260px] w-full object-contain dark:hidden"
+          class="max-h-64 w-full object-contain dark:hidden"
         />
         <img
           src={FeaturesOverviewDark.src}
           alt=""
-          class="hidden max-h-[260px] w-full object-contain dark:block"
+          class="hidden max-h-64 w-full object-contain dark:block"
         />
       </div>
     </div>
@@ -55,33 +55,37 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
         Services.map((sv) => (
           <div
             id={'s-' + sv.num}
-            class="dark:border-ink-soft border-line grid scroll-mt-24 gap-x-12 gap-y-4 border-b px-6 py-10 sm:px-10 lg:grid-cols-[100px_1fr_1fr] lg:px-14"
+            class="dark:border-ink-soft border-line grid scroll-mt-24 gap-x-12 gap-y-4 border-b px-6 py-10 sm:px-10 lg:grid-cols-12 lg:px-14"
           >
-            <div class="dark:text-grape text-mulberry font-mono text-[13px]">{sv.num}</div>
-            <div class="flex flex-col gap-2.5">
+            <div class="dark:text-grape text-mulberry font-mono text-sm lg:col-span-2">
+              {sv.num}
+            </div>
+            <div class="flex flex-col gap-2.5 lg:col-span-5">
               <div class="flex flex-wrap items-baseline gap-2.5">
-                <h3 class="text-ink dark:text-cream font-serif text-2xl font-medium lg:text-[28px]">
+                <h3 class="text-ink dark:text-cream font-serif text-2xl font-medium lg:text-3xl">
                   {sv.name}
                 </h3>
                 {sv.isNew && (
-                  <span class="text-rose border-rose dark:text-aqua border px-1.5 py-0.5 font-mono text-[10px] tracking-[.12em] uppercase dark:border-[#3a4a52]">
+                  <span class="text-rose border-rose dark:text-aqua border px-1.5 py-0.5 font-mono text-xs tracking-widest uppercase dark:border-slate-600">
                     New
                   </span>
                 )}
               </div>
-              <span class="dark:text-fog text-slate font-mono text-[11px] tracking-[.14em] uppercase">
+              <span class="dark:text-fog text-slate font-mono text-xs tracking-widest uppercase">
                 {sv.tag}
               </span>
               {sv.href && (
                 <a
                   href={baseUrl + sv.href}
-                  class="dark:text-quartz text-ink hover:text-mulberry mt-1 font-mono text-xs tracking-[.14em] uppercase dark:hover:text-white"
+                  class="dark:text-quartz text-ink hover:text-mulberry mt-1 font-mono text-xs tracking-widest uppercase dark:hover:text-white"
                 >
                   Learn more →
                 </a>
               )}
             </div>
-            <p class="dark:text-fog text-slate text-base leading-relaxed">{sv.long}</p>
+            <p class="dark:text-fog text-slate text-base leading-relaxed lg:col-span-5">
+              {sv.long}
+            </p>
           </div>
         ))
       }
@@ -93,10 +97,10 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
       class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:px-10 lg:grid-cols-2 lg:gap-16 lg:px-14 lg:py-15"
     >
       <div>
-        <h3 class="text-ink dark:text-cream mb-3.5 font-serif text-[22px] font-medium">
+        <h3 class="text-ink dark:text-cream mb-3.5 font-serif text-2xl font-medium">
           NSW Government ICT Services Scheme SCM0020
         </h3>
-        <p class="dark:text-fog text-slate text-[15px] leading-relaxed">
+        <p class="dark:text-fog text-slate text-base leading-relaxed">
           Prequalified supplier, listed for Enterprise &amp; Business Architecture, Information
           Architecture, Solution Architecture, Benchmarking, ICT Strategy, Efficiency &amp;
           Optimisation, Project/Program/Portfolio Management, Business Analysis, Information
@@ -104,10 +108,10 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
         </p>
       </div>
       <div>
-        <h3 class="text-ink dark:text-cream mb-3.5 font-serif text-[22px] font-medium">
+        <h3 class="text-ink dark:text-cream mb-3.5 font-serif text-2xl font-medium">
           APQC Process Classification Framework
         </h3>
-        <p class="dark:text-fog text-slate text-[15px] leading-relaxed">
+        <p class="dark:text-fog text-slate text-base leading-relaxed">
           Services map to APQC v7.0.2 categories 1.0 Develop Vision and Strategy, 8.1–8.7 Manage the
           business of information technology, and 13.1–13.6 Manage business processes and
           performance.

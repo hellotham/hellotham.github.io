@@ -66,7 +66,10 @@ const openGraph = {
 const twitter = {
   card: (fm.socialImage ? 'summary_large_image' : 'summary') as TwitterCardType,
   site: SiteMetadata.org.twitter,
-  creator: SiteMetadata.author.twitter
+  creator: SiteMetadata.author.twitter,
+  // Slack and several in-app previewers read twitter:image before og:image
+  image: new URL(image.src, siteurl).toString(),
+  imageAlt: fm.title!
 }
 
 const website: WithContext<WebSite> = {

@@ -1,6 +1,6 @@
 ---
 title: 'Data Science'
 coverImage: ../../assets/blog/undraw_data_trends-rosely.svg
-socialImage: ../../assets/undraw/undraw_mathematics.png
+socialImage: ../../assets/social/data_trends.png
 description: Analysis, modelling and visualisation of data.
 ---

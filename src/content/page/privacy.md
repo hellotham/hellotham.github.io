@@ -2,6 +2,7 @@
 title: Privacy Policy
 description: What personal data we process, why, and your rights
 coverImage: ../../assets/about.jpg
+socialImage: ../../assets/social/privacy_protection.png
 ---
 
 **Last updated: 27 July 2026**

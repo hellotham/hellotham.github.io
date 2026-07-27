@@ -37,7 +37,7 @@ export { default as Logo } from './assets/site/logo.svg'
 export { default as LogoImage } from './assets/site/hellotham-logo-500x500.png'
 export { default as FeaturedSVG } from './assets/svg/undraw/undraw_ideas_flow.svg'
 export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
-export { default as DefaultImage } from './assets/undraw/undraw_my_feed.png'
+export { default as DefaultImage } from './assets/social/my_feed.png'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },

@@ -2,6 +2,7 @@
 title: Achievements
 description: Recent work we have performed for our clients
 coverImage: ../../assets/work.jpg
+socialImage: ../../assets/social/all_the_data.png
 ---
 
 Here are some recent examples (from the last few years) of work we have performed for clients. Please do not hesitate to [contact us](https://www.hellotham.com/contactus/) at [info@hellotham.com](mailto:info@hellotham.com) if you need more information or to discuss your specific needs.

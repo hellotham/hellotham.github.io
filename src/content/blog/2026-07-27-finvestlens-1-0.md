@@ -1,6 +1,6 @@
 ---
 title: 'FinvestLens 1.0: 56,000 lines of accounting software in fourteen days'
-description: A native Apple double-entry accounting app, verified against a real 46,000-transaction GnuCash book to the cent — built by writing specifications and issuing prompts. What worked, what I had to catch, and what real data found that no test suite would.
+description: A native Apple double-entry accounting app, verified against a real 46,000-transaction GnuCash book to the cent — built by writing specifications and issuing prompts. What the method got right, and what real data found that no test suite would.
 author: chris-tham
 publishDate: 2026-07-27T07:00:00.000Z
 featuredpost: true
@@ -29,9 +29,12 @@ The first commit landed on 12 July 2026. This one is 26 July. In between: 325
 commits, ten Swift packages, 56,611 lines across 221 files, 1,179 tests, and a
 phase plan taken from P0 through P10.
 
-I typed very little of it. I directed it — through **Claude Code**, Anthropic's
-coding agent — and directing, it turns out, is a skill with failure modes of its
-own. They are the more interesting story.
+I typed very little of it, and less than you would guess. The instructions were
+mostly of two shapes — _"implement the next phase"_ and _"audit the implemented
+codebase against the plan and fix what you find"_ — issued to **Claude Code**,
+Anthropic's coding agent, running in an agentic loop. The specification said what
+done meant. The audits found the mistakes. That division of labour is the more
+interesting story.
 
 The method was not improvised. It is the one I set out in Chapters 2 and 3 of my
 book [_AI-dō_](https://christham.net/aidou/) — the practice and the craft — and
@@ -96,13 +99,14 @@ directions.
 Which raises the question that shaped the whole project. If you've rewritten the
 engine, **how do you know it's right?**
 
-## I wrote documents before I wrote code
+## Documents came before code
 
-The temptation with a capable coding agent is to start asking for features. I
-think that's the main way these projects go wrong: you get a pile of plausible
-code with no spine.
+The temptation with a capable coding agent is to start asking for features. That
+is the main way these projects go wrong: you get a pile of plausible code with no
+spine.
 
-So the first artefacts weren't code. They were a **PRD** with numbered
+So the first artefacts weren't code. From a short statement of what I wanted, the
+agent drafted — and I reviewed — a **PRD** with numbered
 requirements, an **architecture document** with numbered decisions, a **porting
 strategy** mapping GnuCash's C modules to Swift ones, and a **phased plan** —
 eleven phases, each with objectives, dependencies, deliverables, exit criteria,
@@ -125,11 +129,11 @@ asking for something with a written definition of finished.
 
 ## The oracle
 
-Here's the decision I'd repeat on any project like this: **I never let our own
-tests be the final word.**
+Here's the decision I'd repeat on any project like this: **our own tests were
+never the final word.**
 
-The final word was GnuCash itself. I supplied three things the agent could check
-against, and then insisted it did:
+The final word was GnuCash itself. The expectation was written that way, and
+three things were supplied for the agent to check against:
 
 1. **A real book.** 46,553 transactions, 559 accounts, over 100,000 price
    records, multi-currency, a decade and a half of actual financial history.
@@ -259,9 +263,12 @@ the guid as a _note line_, and only the parser produces metadata. Nothing ever
 matched, the "no guid found" fallback kept everything, and `print Expenses:Food`
 cheerfully printed the entire book.
 
-## Where I had to step in
+## What stayed mine
 
-An honest account needs this part.
+An honest account needs this part, and it is shorter than you might expect.
+Almost everything below the line — the implementation, the audits, and every
+bug in this article — was the agent's work, caught by the agent. What remained
+human was narrow, and it was not supervision.
 
 **Judgement calls stayed mine.** Four things were consciously _not_ built, and
 each is recorded as a decision with reasoning rather than left as a silent gap:
@@ -277,21 +284,22 @@ will happily build all four. Deciding they shouldn't exist is the job.
 checkout, four genuine bank export files to validate the import matcher against.
 None of that is something the agent could have obtained.
 
-**I did the looking.** The build-and-relaunch loop was automated; deciding
-whether the result actually looked right was not.
+**And taste stayed mine.** Whether a dashboard reads well, whether a number
+means the right thing — I can be shown the screen, but the verdict is a decision
+about what the product is.
 
-**And I caught the near-misses.** The best example: the first screenshot run for
-this website produced a beautiful dashboard — showing my real account names and
-real balances, because the app's session restore had helpfully reopened the real
-book over the demo. Those got deleted, and there's now a generator that builds an
+Everything else, including the near-misses, came back through the audits. The
+best example: the first screenshot run for this website produced a beautiful
+dashboard — showing real account names and real balances, because the app's
+session restore had helpfully reopened the real book over the demo. That was
+caught in review, the screenshots were deleted, and a generator now builds an
 entirely synthetic book. Writing _that_ produced two bugs almost too on-the-nose
-for an accounting project: transactions whose legs didn't match because each leg
+for an accounting project — transactions whose legs didn't match because each leg
 drew its own random amount, and `Decimal(Double)` quietly reintroducing the
-binary-float error the whole application exists to avoid.
-
-I also had to catch a stray `hellonotes` where `finvestlens` belonged in the
-website's base path — the kind of typo that silently 404s every link on a
-project page.
+binary-float error the whole application exists to avoid — and both were found the
+same way. So was a stray `hellonotes` where `finvestlens` belonged in the
+website's base path, the kind of typo that silently 404s every link on a project
+page.
 
 ## What actually got built
 
@@ -421,17 +429,22 @@ evidently, different disciplines.
   whatever you believed when you wrote them. Real books have opinions.
 - **Reserve the judgement calls.** What _not_ to build, what a number should
   mean, and whether the thing on screen is actually good — those stayed with me
-  the entire time, and should have.
+  the entire time, and should have. Very little else needed to.
 - **Verify the verification.** More than once during this project a measurement
   was wrong rather than the code — readings taken mid-animation, greps that
-  matched a substring of the thing they were meant to exclude. Being sceptical of
-  your own instrumentation is part of the work.
+  matched a substring of the thing they were meant to exclude. Instructing the
+  agent to be sceptical of its own instrumentation is part of the specification.
 
 Fourteen days is the headline number, but it isn't really the point. The pace
 came from having an oracle: when a real book and a real GnuCash install can
-answer "is this correct?" in seconds, you can move quickly _and_ be sure, and you
-spend your time on interesting failures instead of wondering whether you have
-any.
+answer "is this correct?" in seconds, the agent can move quickly _and_ be sure,
+and the audits spend their time on interesting failures instead of wondering
+whether there are any.
+
+Which is the whole argument. State the intent and the expectations well enough,
+put something real within reach for the work to be checked against, and the rest
+— the implementation, the review, and the catching of its own mistakes — follows
+from the harness rather than from you.
 
 ## Try it
 

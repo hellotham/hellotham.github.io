@@ -4,6 +4,11 @@ import Base from '../../layouts/base.astro'
 import AllTheDataLight from '../../assets/svg/rosely/undraw_all_the_data-light.svg'
 import AllTheDataDark from '../../assets/svg/rosely/undraw_all_the_data-dark.svg'
 import socialImage from '../../assets/social/all_the_data.png'
+import { Image } from 'astro:assets'
+import FinvestLensLight from '../../assets/work/finvestlens-light.png'
+import FinvestLensDark from '../../assets/work/finvestlens-dark.png'
+import HelloNotesLight from '../../assets/work/hellonotes-light.webp'
+import HelloNotesDark from '../../assets/work/hellonotes-dark.webp'
 
 const baseUrl = import.meta.env.BASE_URL
 
@@ -32,12 +37,35 @@ const capabilities = [
   }
 ]
 
-const proof = [
+interface Proof {
+  year: string
+  client: string
+  title: string
+  body: string
+  href?: string
+  shotLight?: ImageMetadata
+  shotDark?: ImageMetadata
+}
+
+// Newest first: our own shipped products lead, then client work.
+const proof: Proof[] = [
   {
-    year: '2018',
-    client: 'NSW Government agency',
-    title: 'Native iOS app against Microsoft Graph and SAP',
-    body: 'Proof of concept in Swift: Azure AD authentication, Outlook calendar and directory via Microsoft Graph, QR scanning, and leave requests through backend SAP OData services.'
+    year: '2026',
+    client: 'Hello Tham',
+    title: 'FinvestLens 1.0 — double-entry accounting for Apple platforms',
+    body: 'A native accounting application for macOS, iPadOS and iOS, built on the rigour of the GnuCash engine: local SQLite documents, bank imports across six formats, on-device intelligence and annual-report-grade reporting. Verified against a real 46,000-transaction book to the cent, and released as free software under GPL v3.',
+    href: 'https://hellotham.com/finvestlens/',
+    shotLight: FinvestLensLight,
+    shotDark: FinvestLensDark
+  },
+  {
+    year: '2026',
+    client: 'Hello Tham',
+    title: 'HelloNotes 1.0 — a local-first Markdown knowledge base',
+    body: 'A native Mac knowledge base whose database is an ordinary folder of Markdown files: live styled editing on TextKit 2, wiki-links and backlinks, a native graph view, Git history, cloud-folder support and on-device intelligence. Signed, notarised and free.',
+    href: 'https://hellotham.com/hellonotes/',
+    shotLight: HelloNotesLight,
+    shotDark: HelloNotesDark
   },
   {
     year: '2019',
@@ -50,6 +78,12 @@ const proof = [
     client: 'NSW Government agency',
     title: 'Chatbot proof of concept',
     body: 'Led a vendor-sponsored proof of concept for a chatbot servicing leave requests.'
+  },
+  {
+    year: '2018',
+    client: 'NSW Government agency',
+    title: 'Native iOS app against Microsoft Graph and SAP',
+    body: 'Proof of concept in Swift: Azure AD authentication, Outlook calendar and directory via Microsoft Graph, QR scanning, and leave requests through backend SAP OData services.'
   }
 ]
 ---
@@ -123,29 +157,56 @@ const proof = [
       </div>
       {
         proof.map((cs) => (
-          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-12 lg:gap-12">
+          <div class="dark:border-ink-soft border-line grid items-center gap-6 border-t py-8 lg:grid-cols-12 lg:gap-12">
             <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed lg:col-span-3">
               {cs.year}
               <br />
               {cs.client}
             </div>
-            <div class="lg:col-span-9">
+            <div class={cs.shotLight ? 'lg:col-span-5' : 'lg:col-span-9'}>
               <div class="text-ink dark:text-cream mb-1.5 font-serif text-xl font-medium">
                 {cs.title}
               </div>
               <div class="dark:text-fog text-slate max-w-3xl text-base leading-relaxed">
                 {cs.body}
               </div>
+              {cs.href && (
+                <a
+                  href={cs.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="dark:text-quartz text-ink hover:text-mulberry mt-3 inline-block font-mono text-xs tracking-widest uppercase dark:hover:text-white"
+                >
+                  Visit site →
+                </a>
+              )}
             </div>
+            {cs.shotLight && (
+              <div class="lg:col-span-4">
+                <Image
+                  src={cs.shotLight}
+                  alt={cs.title + ' screenshot'}
+                  width={720}
+                  class="border-line dark:border-ink-soft w-full border object-cover dark:hidden"
+                />
+                <Image
+                  src={cs.shotDark ?? cs.shotLight}
+                  alt=""
+                  width={720}
+                  class="dark:border-ink-soft hidden w-full border object-cover dark:block"
+                />
+              </div>
+            )}
           </div>
         ))
       }
       <p class="text-slate dark:text-fog mt-6 max-w-3xl text-base leading-relaxed">
-        We also publish our own products — <a
+        Our own products are built with the same practices we bring to client work — and they are
+        the part of our portfolio you can download and inspect for yourself. See <a
           href={baseUrl + 'apps'}
           class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
-          >HelloNotes and FinvestLens</a
-        > — native Apple applications built with the same practices we bring to client work.
+          >all our apps</a
+        >.
       </p>
     </div>
   </div>

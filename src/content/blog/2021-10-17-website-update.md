@@ -5,6 +5,7 @@ description: Another year has passed, and we have refreshed our website, using t
 publishDate: 2021-10-17T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/site/screenshot.png
+coverSVG: ../../assets/blog/undraw_website_builder-rosely.svg
 tags:
   - Hello Tham
   - website

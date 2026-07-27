@@ -6,6 +6,42 @@ coverImage: ../../assets/work.jpg
 
 Here are some recent examples (from the last few years) of work we have performed for clients. Please do not hesitate to [contact us](https://www.hellotham.com/contactus/) at [info@hellotham.com](mailto:info@hellotham.com) if you need more information or to discuss your specific needs.
 
+#### 2026, Published book
+
+> Published [_AI-dō: The Way of AI, grounded in practice_](https://christham.net/aidou/) — a book by our founder Chris Tham on working with artificial intelligence in a disciplined, human-centred way, prioritising augmentation of human judgement over replacement. It is free to read online, with PDF and ePub editions available.
+
+---
+
+#### 2026, Product launch
+
+> Launched [FinvestLens](https://hellotham.com/finvestlens/), a native double-entry accounting application for macOS, iPadOS and iOS. Built on the rigour of the GnuCash accounting engine and reimagined for Apple platforms, it keeps accounts in local SQLite documents, imports from multiple formats and produces professional reports — released as free software under GPL v3.
+
+---
+
+#### 2026, Product launch
+
+> Launched [HelloNotes](https://hellotham.com/hellonotes/), a private, local-first Markdown knowledge base for the Mac. A native live editor with wiki-links, backlinks, graph visualisation, full-text search and on-device intelligence — over plain files the user owns, with no accounts and no tracking.
+
+---
+
+#### 2026, Global medical devices manufacturer
+
+> Defined enterprise architecture governance for a global medical devices manufacturer, including an architecture services model setting out how architecture services are requested, delivered and assured across the enterprise, and a set of enterprise architecture metrics for measuring the health, adoption and business value of the architecture practice.
+
+---
+
+#### 2026, Global medical devices manufacturer
+
+> Developed enterprise guidelines for adopting WalkMe as an enterprise digital adoption platform. WalkMe overlays step-by-step guidance, walkthroughs, automation and usage analytics on top of enterprise applications, helping people learn and complete tasks in the flow of work. The guidelines cover governance, design standards and lifecycle management so that in-application guidance is built once, consistently, and maintained across the application portfolio.
+
+---
+
+#### 2026, Global medical devices manufacturer
+
+> Developed an AI strategy consisting of a framework of 8 patterns for deploying and using AI in the organisation and 12 guardrails for safe and responsible use, complemented by a reference architecture for AI capabilities. The strategy is aligned to ISO/IEC 22989 (which establishes concepts and terminology for artificial intelligence), ISO/IEC 23894 (which provides guidance on managing AI-related risk) and ISO/IEC 42001 (which specifies requirements for an AI management system, enabling organisations to govern AI responsibly and pursue certification).
+
+---
+
 #### 2019, NSW Government agency
 
 > Conducted text analysis machine learning (using fast.ai framework and AWS Sagemaker) to determine whether it is possible to predict correct resolver group based on Incident description for IT incidents on Remedy.

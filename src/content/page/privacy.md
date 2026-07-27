@@ -1,114 +1,100 @@
 ---
 title: Privacy Policy
-description: Information collection and use
+description: What personal data we process, why, and your rights
 coverImage: ../../assets/about.jpg
 ---
 
-Hello Tham Pty. Ltd. (“us”, “we”, or “our”) operates the [https://www.hellotham.com](https://www.hellotham.com/) website (hereinafter referred to as the “Service”).
+**Last updated: 27 July 2026**
 
-This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy for Hello Tham is created with the help of the [PrivacyPolicies.com Privacy Policy Generator](https://www.privacypolicies.com/free-privacy-policy-generator/).
+Hello Tham Pty Ltd (ABN 44 617 279 115) of Sydney NSW, Australia ("Hello Tham", "we", "us") operates the website [www.hellotham.com](https://www.hellotham.com/) (the "Site"). We are the data controller for the personal data described in this policy.
 
-We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from www.hellotham.com
+We handle personal data in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles, and — for visitors in the European Economic Area and the United Kingdom — the General Data Protection Regulation (GDPR and UK GDPR).
 
-## Information Collection And Use
+You can contact us about anything in this policy at [info@hellotham.com](mailto:info@hellotham.com).
 
-We collect several different types of information for various purposes to provide and improve our Service to you.
+## The short version
 
-## Types of Data Collected
+- This Site sets **no cookies** and uses **no analytics, advertising or tracking scripts**, so it needs no cookie banner.
+- The only personal data we receive is what **you choose to send us** (through the contact form or by email) and the **standard server logs** kept by our hosting providers.
+- Your theme choice (light or dark) and our site search work **entirely on your device** — nothing is transmitted to us.
+- We never sell personal data, and we do not profile you or make automated decisions about you.
 
-### Personal Data
+## What we process, why, and on what legal basis
 
-While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (“Personal Data”). Personally identifiable information may include, but is not limited to:
+### 1. Server logs (hosting)
 
-- Email address
-- First name and last name
-- Cookies and Usage Data
+The Site is a static website deployed to **GitHub Pages** (GitHub, Inc.) and **Netlify** (Netlify, Inc.). Like almost every web host, these providers automatically record basic request data when you visit: your IP address, browser type and version, the pages requested, and the date and time of the request.
 
-### Usage Data
+- **Purpose:** delivering the Site to you, keeping it secure, and preventing abuse.
+- **Legal basis (GDPR):** our legitimate interests in operating a secure, reliable website (Article 6(1)(f)).
+- **Retention:** these logs are held by the hosting providers for short periods under their own policies — see the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement) and the [Netlify Privacy Policy](https://www.netlify.com/privacy/). We do not combine them with any other data.
 
-We may also collect information on how the Service is accessed and used (“Usage Data”). This Usage Data may include information such as your computer’s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+### 2. Contact form and email
 
-### Tracking & Cookies Data
+If you use the form on our [Contact page](https://www.hellotham.com/contact), we receive the details you enter: your name, email address, subject, message, and optionally your phone number. The form is processed by **Netlify Forms** on our behalf. If you email us directly, we receive your email address and whatever you include in the message.
 
-We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.
+- **Purpose:** responding to your enquiry and any follow-up you ask for.
+- **Legal basis (GDPR):** taking steps at your request prior to entering a contract (Article 6(1)(b)) where your enquiry concerns our services; otherwise our legitimate interest in answering messages sent to us (Article 6(1)(f)).
+- **Retention:** we retain enquiries and related correspondence for the period Australian law requires us to keep business records. Where correspondence relates to an engagement or transaction, that is generally **seven years** after the relevant transactions are completed, under section 286 of the Corporations Act 2001 (Cth), with Australian tax law separately requiring at least five years. Where no legal retention obligation applies to an enquiry, we keep it only as long as needed to handle it, then delete it.
 
-Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.
+### 3. Map tiles on the Contact page
 
-You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service. You can learn more how to manage cookies in the [Browser Cookies Guide](https://privacypolicies.com/blog/how-to-delete-cookies/).
+The map on our Contact page loads its imagery from the **OpenStreetMap Foundation** (UK). When the map displays, your browser requests those tiles directly, which discloses your IP address and standard request headers to OpenStreetMap. See the [OSMF Privacy Policy](https://osmfoundation.org/wiki/Privacy_Policy). No other page on the Site loads third-party content.
 
-Examples of Cookies we use:
+## What we do not do
 
-- **Session Cookies.** We use Session Cookies to operate our Service.
-- **Preference Cookies.** We use Preference Cookies to remember your preferences and various settings.
-- **Security Cookies.** We use Security Cookies for security purposes.
+- We set **no cookies** of any kind — no session, preference, advertising or third-party cookies.
+- We run **no analytics or measurement tools** and embed no social media plugins, pixels or beacons.
+- Fonts, icons and illustrations are **self-hosted**, so pages (other than the Contact page map) make no requests to third-party servers.
+- We do **no profiling and no automated decision-making** within the meaning of Article 22 GDPR.
+- We **never sell or rent personal data**, and we do not share it for marketing.
 
-## Use of Data
+## Data stored on your device only
 
-Hello Tham uses the collected data for various purposes:
+Two features store data locally in your browser; nothing is sent to us:
 
-- To provide and maintain the Service
-- To notify you about changes to our Service
-- To allow you to participate in interactive features of our Service when you choose to do so
-- To provide customer care and support
-- To provide analysis or valuable information so that we can improve the Service
-- To monitor the usage of the Service
-- To detect, prevent and address technical issues
+- **Theme preference** — choosing light or dark mode saves a single value in your browser's local storage so the Site remembers your choice. It identifies nothing about you.
+- **Site search** — search runs entirely in your browser against a locally downloaded index (Pagefind). Your search terms never leave your device.
 
-## Transfer Of Data
+You can clear both at any time by clearing your browser's site data for this Site.
 
-Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
+## Processors and international transfers
 
-If you are located outside Australia and choose to provide information to us, please note that we transfer the data, including Personal Data, to Australia and process it there.
+We use a small number of service providers ("processors") to run the Site: **GitHub, Inc.** (United States) and **Netlify, Inc.** (United States) for hosting and form processing, and the **OpenStreetMap Foundation** (United Kingdom) serves map tiles as an independent controller. We are based in Australia, so data you send us is processed in Australia.
 
-Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+Where the GDPR applies to a transfer outside the EEA or UK, it takes place under appropriate safeguards — an adequacy decision, the EU–U.S. Data Privacy Framework where the provider is certified, or Standard Contractual Clauses under Article 46 GDPR. Details are in each provider's privacy documentation linked above.
 
-Hello Tham will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+## Security
 
-## Disclosure Of Data
+The Site is served exclusively over HTTPS (TLS). It is a static-first website with no user accounts and no database of visitor data operated by us — the most effective protection we apply is simply collecting as little as possible. Where we hold correspondence, we protect it with access controls and delete it when no longer needed. No transmission or storage method is completely secure, but we take reasonable technical and organisational measures appropriate to the low volume and sensitivity of the data we handle.
 
-### Legal Requirements
+## Your rights
 
-Hello Tham may disclose your Personal Data in the good faith belief that such action is necessary to:
+If the GDPR or UK GDPR applies to you, you have the right to:
 
-- To comply with a legal obligation
-- To protect and defend the rights or property of Hello Tham
-- To prevent or investigate possible wrongdoing in connection with the Service
-- To protect the personal safety of users of the Service or the public
-- To protect against legal liability
+- **access** the personal data we hold about you (Article 15);
+- **rectify** inaccurate data (Article 16);
+- **erasure** — have your data deleted (Article 17);
+- **restrict** processing (Article 18);
+- **data portability** (Article 20);
+- **object** to processing based on legitimate interests (Article 21); and
+- **withdraw consent** at any time, where processing is based on consent, without affecting prior processing.
 
-### Security Of Data
+To exercise any of these rights, email [info@hellotham.com](mailto:info@hellotham.com). We will respond within one month, and we will not charge a fee unless a request is manifestly unfounded or excessive. We may need to verify your identity before acting on a request. These rights are subject to the conditions and exceptions in the GDPR — in particular, we may decline to erase records that Australian law requires us to keep (Article 17(3)) for as long as that obligation lasts, and we will tell you if that is the case.
 
-The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+You also have the right to lodge a complaint with a supervisory authority — in the EEA, the authority in your country of residence; in the UK, the [Information Commissioner's Office](https://ico.org.uk/); and in Australia, the [Office of the Australian Information Commissioner](https://www.oaic.gov.au/). We would appreciate the chance to address your concern first.
 
-### Service Providers
+## Children
 
-We may employ third party companies and individuals to facilitate our Service (“Service Providers”), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+The Site is directed at businesses and professionals, not children. We do not knowingly collect personal data from anyone under 18. If you believe a child has provided us with personal data, contact us and we will delete it.
 
-These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+## Changes to this policy
 
-## Links To Other Sites
+When we change this policy we will publish the new version on this page and update the date at the top. Material changes will be noted prominently on the Site. Earlier versions are available in the Site's public [source repository](https://github.com/hellotham/hellotham.github.io).
 
-Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit.
+## Contact us
 
-We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+Questions, requests or complaints about privacy:
 
-## Children’s Privacy
-
-Our Service does not address anyone under the age of 18 (“Children”).
-
-We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
-
-## Changes To This Privacy Policy
-
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-
-We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the “effective date” at the top of this Privacy Policy.
-
-You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-
-## Contact Us
-
-If you have any questions about this Privacy Policy, please contact us:
-
-- By email: info@hellotham.com
-- By visiting this page on our website: [https://www.hellotham.com/privacy](https://www.hellotham.com/privacy)
+- **Email:** [info@hellotham.com](mailto:info@hellotham.com)
+- **This policy:** [www.hellotham.com/privacy](https://www.hellotham.com/privacy)

@@ -6,6 +6,7 @@ author: chris-tham
 publishDate: 2026-07-22T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/20141020-DSC07931-Edit.jpg
+coverSVG: ../../assets/blog/undraw_fixing_bugs-rosely.svg
 tags:
   - Finance
   - Portfolio Optimisation

@@ -5,6 +5,7 @@ author: chris-tham
 publishDate: 2026-07-18T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/site/screenshot.png
+coverSVG: ../../assets/blog/undraw_building_websites-rosely.svg
 tags:
   - Hello Astro
   - Hello Tham

@@ -67,16 +67,19 @@ Our privacy policy for the website can be viewed in a separate page on our websi
 
 This website was built using the following technology stack:
 
-- [Astro](https://astro.build)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TailwindCSS](https://tailwindcss.com) and [TailwindUI](https://tailwindui.com)
-- [HeroIcons](https://heroicons.com/)
-- [Hero Patterns](https://heropatterns.com/)
-- [AlpineJS](https://alpinejs.dev/)
-- [unDraw](https://undraw.co/) for illustrations
-- [MDX](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
-- [ESLint](https://eslint.org) for error-checking
-- [SendGrid](https://sendgrid.com/) for email delivery
-- [Schema.org](https://schema.org/) and [JSON for Linking Data](https://json-ld.org/)
-- [Open Graph](https://ogp.me/) used by [Facebook](https://developers.facebook.com/docs/sharing/webmasters/#markup)
-- [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
+- [Astro](https://astro.build) — static-first web framework, with fonts self-hosted via Astro's native Fonts API
+- [TypeScript](https://www.typescriptlang.org/) — typed end to end
+- [Tailwind CSS](https://tailwindcss.com) — design tokens and utilities
+- [Hello Astro](https://github.com/hellotham/hello-astro) — our own starter theme
+- [Rosely](https://rosely.hellotham.com) — our design system, light and dark
+- [Noto fonts](https://fonts.google.com/noto) — Sans, Serif and Mono variable families
+- [Markdown](https://www.markdownguide.org/), [MDX](https://mdxjs.com/) and [Markdoc](https://markdoc.dev/) — content pipelines
+- [Mermaid](https://mermaid.js.org/) and [Markmap](https://markmap.js.org/) — diagrams, plus KaTeX math
+- [Pagefind](https://pagefind.app/) — local full-text search
+- [Heroicons](https://heroicons.com/) and [Bootstrap Icons](https://icons.getbootstrap.com/) — via astro-icon
+- [unDraw](https://undraw.co/) — illustrations, recoloured to Rosely
+- [Leaflet](https://leafletjs.com/) — the contact page map
+- [Schema.org](https://schema.org/) and [Open Graph](https://ogp.me/) — JSON-LD and social cards
+- [ESLint](https://eslint.org) and [Prettier](https://prettier.io/) — linting and formatting
+- [GitHub Pages](https://pages.github.com/) — hosting and CI
+- [Netlify](https://www.netlify.com/) — hosting and contact form delivery

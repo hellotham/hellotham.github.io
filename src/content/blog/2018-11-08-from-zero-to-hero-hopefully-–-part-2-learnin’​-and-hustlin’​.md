@@ -9,10 +9,13 @@ coverImage: ../../assets/blog/zero-2.png
 categories:
   - learning
 tags:
-  - Proof of Concept
-  - technology
+  - proof of concept
+  - ServiceNow
   - Swift
+  - Xcode
   - iOS
+  - technology
+  - learning
 ---
 
 This is the second part of my series of articles on learning to code at age 55 and creating some prototypes. For the first part, click on [From Zero to Hero (hopefully) – Part 1 (Learning ServiceNow and Xcode/Swift)](/blog/2018-11-01-from-zero-to-hero-hopefully-–-part-1-learning-servicenow-and-xcode-swift/). In today’s article I provide an update on my learning progress, hustling a team together and some observations and self-reflection on the journey.

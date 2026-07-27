@@ -9,10 +9,13 @@ coverImage: ../../assets/blog/zero-5.png
 categories:
   - learning
 tags:
-  - Proof of Concept
-  - technology
+  - proof of concept
+  - ServiceNow
   - Swift
+  - Xcode
   - iOS
+  - technology
+  - learning
 ---
 
 Previous articles in the series are:

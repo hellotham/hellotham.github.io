@@ -8,8 +8,10 @@ coverImage: ../../assets/blog/tech-2018-review.jpg
 categories:
   - technology
 tags:
-  - management consulting
   - technology
+  - predictions
+  - management consulting
+  - opinion
 ---
 
 In 2017, mainly because I reacting to the unbounded optimism and idealism that were prevalent in attitudes about technology and how it was a force for good and changing our lives, I wrote [5 somewhat dark and pessimistic tech predictions](0/blog/2016-12-31-five-tech-predictions-for-2017/). Surprisingly, I seemed to have caught a trend, and at the [beginning of 2018 I created 5 new predictions for the year](/blog/2017-12-31-five-tech-predictions-for-2018/):

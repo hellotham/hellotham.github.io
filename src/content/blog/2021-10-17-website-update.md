@@ -15,9 +15,8 @@ tags:
   - JAMstack
   - Gatsby
   - React
-  - web app
   - GraphQL
-  - JavaScript
+  - Tailwind CSS
 ---
 
 We last refreshed our website about a year ago, and we took advantage of moving from Wordpress to exploring new technologies based on

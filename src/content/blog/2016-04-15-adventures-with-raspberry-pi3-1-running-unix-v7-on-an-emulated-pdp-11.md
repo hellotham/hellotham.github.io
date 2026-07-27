@@ -11,6 +11,8 @@ tags:
   - Raspberry Pi
   - Unix
   - simh
+  - emulation
+  - history
 ---
 
 I bought a [Raspberry Pi 3](https://www.raspberrypi.org/blog/page/3/?fish#raspberry-pi-3-on-sale)recently. For those of you that don’t know, the Pi is a tiny and affordable (US$35) computer (roughly the size of a credit card but thicker) created by the [Raspberry Pi Foundation](https://www.raspberrypi.org/), for the purpose of teaching children about computers and programming. Since then, the foundation has sold over 8 million of these devices and many hobbyists have used the Pi as a foundation for interesting and creative projects.

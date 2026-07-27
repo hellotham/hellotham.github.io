@@ -8,11 +8,12 @@ coverImage: ../../assets/blog/vax.png
 categories:
   - technology
 tags:
+  - Raspberry Pi
   - Unix
   - 4.3BSD
   - VAX
-  - Raspberry Pi
   - simh
+  - emulation
 ---
 
 As a sucessor on my previous [post](/blog/2016-04-15-adventures-with-raspberry-pi3-1-running-unix-v7-on-an-emulated-pdp-11/), I also did some investigation to see if I can emulate another classic Unix hardware and software combo, 4.3BSD on a VAX, this time with networking!

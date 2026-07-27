@@ -10,8 +10,9 @@ coverSVG: ../../assets/blog/undraw_data_trends-rosely.svg
 categories:
   - finance
 tags:
-  - Finance
-  - Portfolio Optimisation
+  - finance
+  - portfolio optimisation
+  - investing
   - Python
   - Jupyter
   - PyPortfolioOpt

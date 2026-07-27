@@ -14,8 +14,9 @@ tags:
   - Astro
   - Gatsby
   - NextJS
-  - template
   - Tailwind CSS
+  - template
+  - open source
   - Antigravity
 ---
 

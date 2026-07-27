@@ -8,9 +8,11 @@ coverImage: ../../assets/blog/tech-2017.jpeg
 categories:
   - technology
 tags:
-  - management consulting
-  - strategy
   - technology
+  - predictions
+  - strategy
+  - management consulting
+  - opinion
 ---
 
 I have decided to make some controversial predictions for 2017. I don’t guarantee that these will come true, but I have tried to make them as controversial as possible. Feel free to disagree with me and post your own opinion.

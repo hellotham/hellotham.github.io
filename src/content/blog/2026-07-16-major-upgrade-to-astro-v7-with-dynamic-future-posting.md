@@ -11,12 +11,11 @@ categories:
 tags:
   - Hello Tham
   - website
-  - serverless
-  - SSR
   - Astro
   - Tailwind CSS
-  - web app
-  - JavaScript
+  - SSR
+  - serverless
+  - Netlify
   - TypeScript
   - Antigravity
 ---

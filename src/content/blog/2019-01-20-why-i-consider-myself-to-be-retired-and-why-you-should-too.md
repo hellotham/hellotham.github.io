@@ -10,6 +10,8 @@ categories:
 tags:
   - advice
   - opinion
+  - career
+  - personal
 ---
 
 When I turned 50, I announced my professional retirement. We had calculated that we have accumulated enough savings to live out the rest of our lives in comfortable obscurity, in “shabby poor” circumstances, and that was fine by us. I could devote the rest of my life in creative pursuits, the occasional travel, and lots of gazing at sunsets and long walks.

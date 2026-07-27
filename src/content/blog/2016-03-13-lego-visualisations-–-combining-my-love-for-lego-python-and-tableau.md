@@ -9,8 +9,10 @@ categories:
   - data-science
 tags:
   - LEGO
+  - Python
   - Tableau
-  - Data Science
+  - data science
+  - data visualisation
 ---
 
 I am a lover of [LEGO](http://www.lego.com/en-us/default.aspx) (I think the official term for people like me is “Adult Fan Of LEGO”) and not ashamed to admit i have bought way too many LEGO sets and likely to buy more.

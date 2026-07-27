@@ -11,6 +11,7 @@ tags:
   - Tableau
   - mathematics
   - numbers
+  - data visualisation
 ---
 
 Were you forced to memorise the multiplication table at school? Did you find it difficult, and wish there was an easier way to derive the multiplication table using a few simple rules rather than memorising the entire table?

@@ -16,11 +16,10 @@ tags:
   - JAMstack
   - Gatsby
   - React
-  - web app
-  - NetlifyCMS
   - Netlify
+  - NetlifyCMS
   - GraphQL
-  - JavaScript
+  - WordPress
 ---
 
 Ever since our company was established (in 2016), our web site has been built using the industry leading content management system

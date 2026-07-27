@@ -9,11 +9,13 @@ coverImage: ../../assets/blog/zero-1.png
 categories:
   - learning
 tags:
-  - Proof of Concept
-  - technology
-  - Swift
-  - iOS
+  - proof of concept
   - ServiceNow
+  - Swift
+  - Xcode
+  - iOS
+  - technology
+  - learning
 ---
 
 I am a management consultant, which means I get involved in many things. I am 55 years old. Although I have studied computer science at university, and did some software development in my first few years after university, I haven’t really been involved in writing code, or delivering solutions, or being part of IT projects, for over 30 years.

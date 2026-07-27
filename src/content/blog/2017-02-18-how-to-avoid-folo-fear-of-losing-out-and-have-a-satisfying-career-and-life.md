@@ -10,6 +10,7 @@ categories:
 tags:
   - advice
   - career
+  - personal
 ---
 
 What is FOLO (Fear of Losing Out)? It is an advanced form of “Fear

@@ -8,9 +8,11 @@ coverImage: ../../assets/blog/tech-2018.png
 categories:
   - technology
 tags:
-  - management consulting
-  - strategy
   - technology
+  - predictions
+  - strategy
+  - management consulting
+  - opinion
 ---
 
 Last year, I wrote an article making what I thought (at the time) were controversial predictions for 2017: [Five Tech Predictions for 2017](/blog/2016-12-31-five-tech-predictions-for-2017/).

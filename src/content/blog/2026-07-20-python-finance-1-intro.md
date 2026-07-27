@@ -10,9 +10,11 @@ coverSVG: ../../assets/blog/undraw_investing-rosely.svg
 categories:
   - finance
 tags:
-  - Finance
-  - Portfolio Optimisation
+  - finance
+  - portfolio optimisation
+  - investing
   - Python
+  - mathematics
 ---
 
 Welcome to a series of articles on Financial Analysis and Portfolio Optimisation. This started off as a series of Facebook and LinkedIn posts that I published whilst playing around with Python to try and optimise our investment portfolio. A friend of mine, Raj Dalal, has encouraged me to convert them into blog posts, so here we are.

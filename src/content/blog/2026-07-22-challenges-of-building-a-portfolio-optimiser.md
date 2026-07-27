@@ -10,8 +10,9 @@ coverSVG: ../../assets/blog/undraw_fixing_bugs-rosely.svg
 categories:
   - finance
 tags:
-  - Finance
-  - Portfolio Optimisation
+  - finance
+  - portfolio optimisation
+  - investing
   - Python
   - PyPortfolioOpt
   - yfinance

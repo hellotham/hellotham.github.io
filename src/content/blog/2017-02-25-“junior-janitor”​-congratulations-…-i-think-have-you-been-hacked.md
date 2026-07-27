@@ -9,6 +9,7 @@ categories:
   - consulting
 tags:
   - advice
+  - career
   - Hello Tham
 ---
 

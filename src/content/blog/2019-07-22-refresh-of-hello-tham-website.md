@@ -11,6 +11,7 @@ categories:
 tags:
   - Hello Tham
   - website
+  - WordPress
   - news
 ---
 

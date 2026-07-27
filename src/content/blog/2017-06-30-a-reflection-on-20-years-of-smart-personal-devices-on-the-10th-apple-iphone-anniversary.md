@@ -9,9 +9,10 @@ coverImage: ../../assets/blog/tech-2017-6.png
 categories:
   - technology
 tags:
-  - phone
-  - history
   - technology
+  - phone
+  - Apple
+  - history
   - personal
 ---
 

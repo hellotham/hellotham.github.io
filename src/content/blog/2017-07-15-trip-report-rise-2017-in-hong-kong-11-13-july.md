@@ -10,8 +10,9 @@ categories:
 tags:
   - event
   - conference
-  - technology
   - Hong Kong
+  - startups
+  - technology
 ---
 
 This year I attended my first conference in Hong Kong – RISE 2017, organised by the same people who do Web Summit in Europe. The conference was very focussed on the tech startup ecosystem and I really enjoyed it.

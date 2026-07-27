@@ -9,8 +9,9 @@ coverImage: ../../assets/blog/hate-tech.png
 categories:
   - technology
 tags:
-  - opinion
   - technology
+  - opinion
+  - privacy
 ---
 
 Often people are surprised when I tell them I don’t like Technology, especially Big Tech (the FAANGs – Facebook, Apple, Amazon, Netflix, Google) and also the Gig or “sharing” economy (Uber, Airbnb etc.). I don’t subscribe to any streaming services (music or video) – no Apple Music, Spotify, Netflix or even cable TV.

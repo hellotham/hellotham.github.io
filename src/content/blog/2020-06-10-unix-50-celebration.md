@@ -8,7 +8,7 @@ coverImage: ../../assets/blog/Unix_history-simple.png
 categories:
   - technology
 tags:
-  - UNIX
+  - Unix
 ---
 
 Recently Unix celebrated it's 50th birthday. We don't know the exact date but we do know it was sometime in late 1970. That's one reason why the Unix system clock starts from 1970.

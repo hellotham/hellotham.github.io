@@ -139,8 +139,14 @@ export const CaseStudies = [
   {
     year: '2026',
     client: 'Product launch',
-    title: 'FinvestLens and HelloNotes published',
-    body: 'Two native Apple applications of our own: FinvestLens, double-entry accounting for macOS, iPadOS and iOS built on the GnuCash engine, and HelloNotes, a private, local-first Markdown knowledge base for the Mac.'
+    title: 'FinvestLens published',
+    body: 'A native double-entry accounting application for macOS, iPadOS and iOS. Built on the rigour of the GnuCash accounting engine and reimagined for Apple platforms, it keeps accounts in local SQLite documents, imports from multiple formats and produces professional reports — released as free software under GPL v3.'
+  },
+  {
+    year: '2026',
+    client: 'Product launch',
+    title: 'HelloNotes published',
+    body: 'A private, local-first Markdown knowledge base for the Mac. A native live editor with wiki-links, backlinks, graph visualisation, full-text search and on-device intelligence — over plain files the user owns, with no accounts and no tracking.'
   },
   {
     year: '2026',

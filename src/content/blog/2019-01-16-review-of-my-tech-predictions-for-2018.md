@@ -1,7 +1,7 @@
 ---
 title: Review of my Tech predictions for 2018
 description: How did my tech predictions for 2018 fared?
-^author: chris-tham
+author: chris-tham
 publishDate: 2019-01-15T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2018-review.jpg

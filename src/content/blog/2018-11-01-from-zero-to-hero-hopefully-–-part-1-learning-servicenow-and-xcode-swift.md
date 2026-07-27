@@ -2,7 +2,7 @@
 title: From Zero to Hero Part 1 (Learning ServiceNow & Xcode/Swift)
 description: Part 1 of a series of articles about me learning how to code and
   delivering two prototypes.
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-10-31T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-1.png

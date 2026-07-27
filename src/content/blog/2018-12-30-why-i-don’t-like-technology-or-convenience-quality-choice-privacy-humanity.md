@@ -2,7 +2,7 @@
 title: Why I don’t like Technology, or, (convenience) = -(quality) -(choice)
   -(privacy) -(humanity)
 description: Technology isn't always positive, or a benefit.
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-12-29T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/hate-tech.png

@@ -1,6 +1,6 @@
 ---
 title: How to Avoid FOLO (Fear of Losing Out)
-^author: chris-tham
+author: chris-tham
 publishDate: 2017-02-17T22:00:00.000Z
 description: Advice on how to have a satisfying career and life
 featuredpost: false

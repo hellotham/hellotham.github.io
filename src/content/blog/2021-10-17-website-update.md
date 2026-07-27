@@ -1,7 +1,7 @@
 ---
 title: Website Update
 description: Another year has passed, and we have refreshed our website, using the latest version of Gatsby.
-^author: chris-tham
+author: chris-tham
 publishDate: 2021-10-17T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/site/screenshot.png

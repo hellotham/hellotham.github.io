@@ -2,7 +2,7 @@
 title: From Zero to Hero Part 4 (Eating, Drinking, Sprinting)
 description: 'This is the fourth part of my series of articles on learning to
   code at age 55 and creating some prototypes. '
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-11-27T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-4.png

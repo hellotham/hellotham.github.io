@@ -2,7 +2,7 @@
 title: From Zero to Hero Part 2 (Learnin’​ and Hustlin’​)
 description: This is the second part of my series of articles on learning to
   code at age 55 and creating some prototypes.
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-11-07T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-2.png

@@ -2,7 +2,7 @@
 title: From Zero to Hero Part 6 (The Ultimate Boon and The Return)
 description: This is the sixth part (and probably the last, for now) of my
   series of articles on learning to code at age 55 and creating some prototypes.
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-12-19T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-6.png

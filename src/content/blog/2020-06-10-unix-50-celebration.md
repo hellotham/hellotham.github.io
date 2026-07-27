@@ -1,7 +1,7 @@
 ---
 title: A celebration of 50 Years of Unix
 description: A beautiful operating system, still healthy after 50 years.
-^author: chris-tham
+author: chris-tham
 publishDate: 2020-06-10T00:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/Unix_history-simple.png

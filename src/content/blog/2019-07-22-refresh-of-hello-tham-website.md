@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Refresh of Hello Tham website
 description: Welcome to the new website!
-^author: chris-tham
+author: chris-tham
 publishDate: 2019-07-21T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/refresh.jpg

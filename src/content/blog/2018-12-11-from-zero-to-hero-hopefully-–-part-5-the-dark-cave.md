@@ -2,7 +2,7 @@
 title: From Zero to Hero Part 5 (The Dark Cave)
 description: 'This is the fifth part of my series of articles on learning to
   code at age 55 and creating some prototypes. '
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-12-10T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/zero-5.png

@@ -1,7 +1,7 @@
 ---
 title: Visualising the Multiplication Table
 description: Insights you may not realise about the multiplication table.
-^author: chris-tham
+author: chris-tham
 publishDate: 2018-05-16T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/multiply-1.png

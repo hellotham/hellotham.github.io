@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
+import { getPosts } from '../config'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/base.astro'
@@ -15,7 +16,12 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
   socialImage: socialImage
 }
 
-const authors = await getCollection('author')
+const posts = await getPosts()
+const written = new Set(posts.map((post) => post.data.author?.id).filter(Boolean))
+
+// 'default' exists only as a byline fallback for posts with no author,
+// so keep the index to authors who have actually written something.
+const authors = (await getCollection('author')).filter((author) => written.has(author.id))
 
 const baseUrl = import.meta.env.BASE_URL
 ---

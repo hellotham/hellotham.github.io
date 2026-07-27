@@ -1,7 +1,7 @@
 ---
 title: “Junior Janitor”​? Congratulations … I think?
 description: What is the relevance of the job title these days?
-^author: chris-tham
+author: chris-tham
 publishDate: 2017-02-24T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/janitor.jpg

@@ -1,7 +1,7 @@
 ---
 title: Five Tech Predictions for 2018
 description: Five predictions for the technology industry for 2018
-^author: chris-tham
+author: chris-tham
 publishDate: 2017-12-30T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2018.png

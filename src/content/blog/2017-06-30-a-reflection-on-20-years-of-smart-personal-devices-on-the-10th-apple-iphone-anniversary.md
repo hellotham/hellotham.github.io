@@ -2,7 +2,7 @@
 title: A reflection on 20 years of smart personal devices, on the 10th Apple
   iPhone anniversary
 description: A personal history of the use of smartphones over 20 years.
-^author: chris-tham
+author: chris-tham
 publishDate: 2017-06-29T23:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/tech-2017-6.png

@@ -1,7 +1,7 @@
 ---
 title: LEGO Visualisations – Combining my love for LEGO, Python and Tableau
 description: Using Tableau to visualise the diversity of LEGO sets.
-^author: chris-tham
+author: chris-tham
 publishDate: 2016-03-12T22:00:00.000Z
 featuredpost: false
 coverImage: ../../assets/blog/Set-Owners.png

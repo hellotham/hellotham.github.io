@@ -26,9 +26,9 @@ const postDate = post.data.publishDate || post.data.pubDate
     >
       <div
         data-future-lock
-        class="border-line bg-cream text-ink dark:border-ink-soft dark:bg-ink-deep dark:text-cream mx-auto my-12 hidden max-w-5xl rounded-lg border p-6"
+        class="border-line bg-cream text-ink dark:border-ink-soft dark:bg-ink-deep dark:text-cream mx-auto my-12 hidden max-w-3xl border p-7"
       >
-        <h1 class="text-2xl font-bold">This article is not yet published</h1>
+        <h1 class="font-serif text-2xl font-medium">This article is not yet published</h1>
         <p class="mt-2">
           It will unlock automatically on {postDate ? postDate.toUTCString() : 'its publish date'}.
         </p>
@@ -37,7 +37,9 @@ const postDate = post.data.publishDate || post.data.pubDate
         <header>
           <BlogHero {post} />
         </header>
-        <section class="prose dark:prose-invert lg:prose-xl mx-auto my-8 max-w-5xl px-4 lg:px-0">
+        <section
+          class="prose dark:prose-invert lg:prose-lg mx-auto max-w-3xl px-6 py-14 sm:px-10 lg:py-16"
+        >
           {post.data.images && <Images images={post.data.images} />}
           <slot itemprop="articleBody" />
         </section>

@@ -47,7 +47,7 @@ interface Proof {
   shotDark?: ImageMetadata
 }
 
-// Newest first: our own shipped products lead, then client work.
+// Our own shipped products. Client proofs of concept live in Achievements.
 const proof: Proof[] = [
   {
     year: '2026',
@@ -66,24 +66,6 @@ const proof: Proof[] = [
     href: 'https://hellotham.com/hellonotes/',
     shotLight: HelloNotesLight,
     shotDark: HelloNotesDark
-  },
-  {
-    year: '2019',
-    client: 'NSW Government agency',
-    title: 'ServiceNow-embedded web front end',
-    body: 'A JavaScript front end embedded in a ServiceNow portal, accessing SAP OData services for leave requests — extended into a service prototype.'
-  },
-  {
-    year: '2019',
-    client: 'NSW Government agency',
-    title: 'Chatbot proof of concept',
-    body: 'Led a vendor-sponsored proof of concept for a chatbot servicing leave requests.'
-  },
-  {
-    year: '2018',
-    client: 'NSW Government agency',
-    title: 'Native iOS app against Microsoft Graph and SAP',
-    body: 'Proof of concept in Swift: Azure AD authentication, Outlook calendar and directory via Microsoft Graph, QR scanning, and leave requests through backend SAP OData services.'
   }
 ]
 ---
@@ -201,11 +183,16 @@ const proof: Proof[] = [
         ))
       }
       <p class="text-slate dark:text-fog mt-6 max-w-3xl text-base leading-relaxed">
-        Our own products are built with the same practices we bring to client work — and they are
-        the part of our portfolio you can download and inspect for yourself. See <a
+        Both are built with the same practices we bring to client work, and both are yours to
+        download and inspect. See <a
           href={baseUrl + 'apps'}
           class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
           >all our apps</a
+        >, or our client engagements — including native iOS, ServiceNow and chatbot proofs of
+        concept for government — in <a
+          href={baseUrl + 'work'}
+          class="text-mulberry hover:text-rose dark:text-quartz dark:hover:text-white"
+          >Achievements</a
         >.
       </p>
     </div>

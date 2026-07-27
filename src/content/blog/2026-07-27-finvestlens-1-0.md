@@ -1,6 +1,6 @@
 ---
 title: 'FinvestLens 1.0: 56,000 lines of accounting software in fourteen days'
-description: A native Apple double-entry accounting app, verified against a real 46,000-transaction GnuCash book to the cent — built by writing specifications and issuing prompts. What the method got right, and what real data found that no test suite would.
+description: A native Apple double-entry accounting app, verified against a real 46,000-transaction GnuCash book to the cent — built from a single-sentence prompt, with the agent drafting its own specifications. What the method got right, and what real data found that no test suite would.
 author: chris-tham
 publishDate: 2026-07-27T07:00:00.000Z
 featuredpost: true
@@ -29,12 +29,14 @@ The first commit landed on 12 July 2026. This one is 26 July. In between: 325
 commits, ten Swift packages, 56,611 lines across 221 files, 1,179 tests, and a
 phase plan taken from P0 through P10.
 
-I typed very little of it, and less than you would guess. The instructions were
-mostly of two shapes — _"implement the next phase"_ and _"audit the implemented
-codebase against the plan and fix what you find"_ — issued to **Claude Code**,
-Anthropic's coding agent, running in an agentic loop. The specification said what
-done meant. The audits found the mistakes. That division of labour is the more
-interesting story.
+I typed very little of it, and less than you would guess. The whole project
+began as a single sentence — reimplement GnuCash as a native app for Apple
+platforms — and after that the instructions were mostly of two shapes:
+_"implement the next phase"_ and _"audit the implemented codebase against the
+plan and fix what you find"_, issued to **Claude Code**, Anthropic's coding
+agent, running in an agentic loop. The specification said what done meant. The
+audits found the mistakes. That division of labour is the more interesting
+story.
 
 The method was not improvised. It is the one I set out in Chapters 2 and 3 of my
 book [_AI-dō_](https://christham.net/aidou/) — the practice and the craft — and
@@ -48,13 +50,13 @@ on whether the Way holds up.
 Nothing here is exotic, and I'd rather state it plainly than let anyone imagine
 a secret ingredient:
 
-|              |                                                                                                 |
-| ------------ | ----------------------------------------------------------------------------------------------- |
-| **Agent**    | Claude Code — working directly in the repository                                                |
-| **Model**    | Claude Opus 5 (`claude-opus-5`)                                                                 |
-| **Language** | Swift 6 / SwiftUI, ten local Swift packages, one Xcode project                                  |
-| **Oracle**   | My own 46,553-transaction GnuCash book, GnuCash 5.16, and GnuCash's C/C++ source cloned locally |
-| **Sessions** | Many, across fourteen days — each beginning with no memory of the last                          |
+|              |                                                                                                       |
+| ------------ | ----------------------------------------------------------------------------------------------------- |
+| **Agent**    | Claude Code — working directly in the repository                                                      |
+| **Model**    | Claude Opus 5 (`claude-opus-5`)                                                                       |
+| **Language** | Swift 6 / SwiftUI, ten local Swift packages, one Xcode project                                        |
+| **Oracle**   | My own 46,553-transaction GnuCash book, GnuCash 5.16, and GnuCash's C/C++ source, cloned by the agent |
+| **Sessions** | Many, across fourteen days — each beginning with no memory of the last                                |
 
 The tools that actually mattered, as distinct from the ones that merely existed:
 
@@ -105,14 +107,16 @@ The temptation with a capable coding agent is to start asking for features. That
 is the main way these projects go wrong: you get a pile of plausible code with no
 spine.
 
-So the first artefacts weren't code. From a short statement of what I wanted, the
-agent drafted — and I reviewed — a **PRD** with numbered
-requirements, an **architecture document** with numbered decisions, a **porting
-strategy** mapping GnuCash's C modules to Swift ones, and a **phased plan** —
-eleven phases, each with objectives, dependencies, deliverables, exit criteria,
-test focus and risks.
+So the first artefacts weren't code — but they weren't mine either. From that
+one sentence, the agent fetched its own reference context — cloning GnuCash's
+source, pulling its user manual — and then drafted, for my review, a **PRD**
+with numbered requirements, an **architecture document** with numbered
+decisions, a **porting strategy** mapping GnuCash's C modules to Swift ones,
+and a **phased plan** — eleven phases, each with objectives, dependencies,
+deliverables, exit criteria, test focus and risks. I approved documents; I did
+not write them.
 
-That initial statement could afford to be vague because the reference context
+That sentence could afford to be that vague because the reference context
 was not. The product already existed — twenty-five years of it. GnuCash's
 source code, its user manual, its file format and its reports specify a
 double-entry accounting application more precisely than any requirements
@@ -142,14 +146,15 @@ Here's the decision I'd repeat on any project like this: **our own tests were
 never the final word.**
 
 The final word was GnuCash itself. The expectation was written that way, and
-three things were supplied for the agent to check against:
+three things sat on disk for the agent to check against — two of them supplied
+by me, the third fetched by the agent for itself:
 
 1. **A real book — mine.** My personal GnuCash file: 46,553 transactions, 559
    accounts, over 100,000 price records, multi-currency, a decade and a half of
    my actual financial history.
 2. **A real GnuCash install** (5.16) to produce reference reports.
-3. **GnuCash's actual C/C++ source**, cloned locally, as the porting oracle —
-   not the documentation, not the binary, the source.
+3. **GnuCash's actual C/C++ source**, which the agent cloned for itself as the
+   porting oracle — not the documentation, not the binary, the source.
 
 That third one changed the quality of the work more than anything else. A prompt
 like _"audit our lot and cost-basis implementation against the real GnuCash
@@ -303,9 +308,10 @@ rule assigning one to a transaction has no coherent target); Quick Look for
 `.gnucash` (it's the interchange format, not the document you browse). An agent
 will happily build all four. Deciding they shouldn't exist is the job.
 
-**I supplied the ground truth.** The real book, the GnuCash install, the source
-checkout, four genuine bank export files to validate the import matcher against.
-None of that is something the agent could have obtained.
+**The personal ground truth was mine to give.** The real book, and four genuine
+bank export files to validate the import matcher against — data no agent could
+obtain. The rest of the reference context the agent fetched for itself, starting
+with GnuCash's source.
 
 **And taste stayed mine.** Whether a dashboard reads well, whether a number
 means the right thing — I can be shown the screen, but the verdict is a decision
@@ -490,8 +496,9 @@ whether there are any.
 
 Which is the whole argument. State the intent and the expectations well enough,
 put something real within reach for the work to be checked against, and the rest
-— the implementation, the review, and the catching of its own mistakes — follows
-from the harness rather than from you.
+— the specifications, the implementation, the review, and the catching of its
+own mistakes — follows from the harness rather than from you. A complete,
+shipping application, from a single sentence.
 
 ## Try it
 

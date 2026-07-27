@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 description: What personal data we process, why, and your rights
-coverImage: ../../assets/about.jpg
+coverSVG: ../../assets/svg/rosely/undraw_privacy_protection-light.svg
 socialImage: ../../assets/social/privacy_protection.png
 ---
 

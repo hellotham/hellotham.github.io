@@ -1,5 +1,6 @@
 # Hello Tham Website
 
+[![GitHub Pages Status](https://github.com/hellotham/hellotham.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/hellotham/hellotham.github.io/actions/workflows/deploy.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/744060b8-0d0c-4951-a546-e61f40129cb2/deploy-status)](https://app.netlify.com/sites/hellotham/deploys)
 
 The corporate website of [Hello Tham Pty Ltd](https://hellotham.com) (v4.0.0), a boutique management consulting firm — built on our own [Hello Astro](https://github.com/hellotham/hello-astro) starter.

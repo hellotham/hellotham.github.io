@@ -9,7 +9,7 @@
    --font-noto-* variables are emitted by the <Font /> tags in base.astro. */
 @theme {
   --font-sans: var(--font-noto-sans);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-noto-serif);
   --font-mono: var(--font-noto-sans-mono);
 
   --color-ink: #27272a; /* Black Beauty */

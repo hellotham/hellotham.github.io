@@ -26,10 +26,9 @@ export default defineConfig({
     },
     {
       provider: fontProviders.google(),
-      name: 'Playfair Display',
-      cssVariable: '--font-playfair',
-      // Playfair's variable axis starts at 400
-      weights: ['400 900'],
+      name: 'Noto Serif',
+      cssVariable: '--font-noto-serif',
+      weights: ['100 900'],
       display: 'swap',
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-serif', 'Georgia', 'serif']

@@ -77,32 +77,31 @@ const labelClass = 'text-slate dark:text-fog block font-mono text-xs tracking-wi
                 contact us through any of the following:
               </p>
             </div>
-            <div class="flex flex-wrap pt-8 lg:pt-0">
+            <div class="flex flex-wrap">
               {
                 social.map(
                   (method) =>
                     method.data.link && (
-                      <div class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
-                        <div class="flex items-start">
-                          <div class="shrink-0">
-                            <Icon
-                              name={'ph:' + method.data.icon}
-                              class="bg-ink flex h-14 w-14 items-center justify-center rounded-md p-4 text-white shadow-md"
-                            />
-                          </div>
-                          <div class="ml-6 min-w-0 grow">
-                            <p class="mb-1 font-bold">{method.data.name}</p>
-                            <p>
-                              <a
-                                href={method.data.link}
-                                class="text-mulberry hover:text-rose dark:text-quartz break-all dark:hover:text-white"
-                              >
-                                {method.data.link}
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                      <a
+                        href={method.data.link}
+                        class="group dark:border-ink-soft border-line flex w-full items-center gap-4 border-t py-4 md:w-6/12 md:pr-8 lg:w-full xl:w-6/12"
+                      >
+                        <Icon
+                          name={'ph:' + method.data.icon}
+                          class="text-mulberry dark:text-grape group-hover:text-rose dark:group-hover:text-quartz h-6 w-6 shrink-0"
+                        />
+                        <span class="min-w-0">
+                          <span class="text-ink dark:text-cream group-hover:text-mulberry dark:group-hover:text-quartz block font-serif text-lg font-medium">
+                            {method.data.name}
+                          </span>
+                          <span class="text-slate dark:text-fog block truncate font-mono text-xs">
+                            {method.data.link
+                              .replace(/^mailto:/, '')
+                              .replace(/^https?:\/\/(www\.)?/, '')
+                              .replace(/\/$/, '')}
+                          </span>
+                        </span>
+                      </a>
                     )
                 )
               }

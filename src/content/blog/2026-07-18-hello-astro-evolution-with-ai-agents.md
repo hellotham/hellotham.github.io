@@ -25,7 +25,7 @@ Looking back at the git log, this project represents my personal learning journe
 
 ---
 
-### Part 1: The Hand-Coded Learning Journey (2022–2025)
+## Part 1: The Hand-Coded Learning Journey (2022–2025)
 
 Before July 2026, every single commit was coded by hand as I learned the ins and outs of the Astro ecosystem:
 
@@ -36,7 +36,7 @@ Before July 2026, every single commit was coded by hand as I learned the ins and
 
 ---
 
-### Part 2: The Antigravity Partner Programming Era (July 2026)
+## Part 2: The Antigravity Partner Programming Era (July 2026)
 
 In July 2026, after years of manual development, I partnered with **Antigravity** (a powerful agentic AI coding assistant designed by the Google Deepmind team) to perform a massive architectural overhaul:
 
@@ -47,7 +47,7 @@ In July 2026, after years of manual development, I partnered with **Antigravity*
 
 ---
 
-### 📋 Full Change Log & Project Milestones
+## 📋 Full Change Log & Project Milestones
 
 ```mermaid
 timeline

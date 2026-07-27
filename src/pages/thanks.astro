@@ -62,9 +62,17 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
       <div
         class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border p-8 sm:p-12"
       >
-        <img src={ContactLight.src} alt="" class="max-h-72 w-full object-contain dark:hidden" />
+        <img
+          src={ContactLight.src}
+          width={ContactLight.width}
+          height={ContactLight.height}
+          alt=""
+          class="max-h-72 w-full object-contain dark:hidden"
+        />
         <img
           src={ContactDark.src}
+          width={ContactDark.width}
+          height={ContactDark.height}
           alt=""
           class="hidden max-h-72 w-full object-contain dark:block"
         />

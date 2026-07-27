@@ -19,7 +19,7 @@ Despite the tiny size, the Pi 3 is a surprisingly powerful computer and can be u
 
 One of the thoughts that occured almost as soon as I unpacked the computer was “I wonder if it will emulate a PDP-11 running Unix Version 7?”
 
-### Why PDP-11?
+## Why PDP-11?
 
 Some people consider the PDP-11 – originally introduced by Digital Equipment Corporation in 1970, as the most popular mini-computer ever made. For many computer scientists of my generation, it was the mini-computer they were introduced to at university. It is so popular it is still in use today and recently there was even a job ad advertising for PDP-11 assembly programmers.
 
@@ -27,7 +27,7 @@ The PDP-11 introduced many concepts that have now become standard in the computi
 
 Even more importants, the PDP-11 has long been associated with the Unix operating system and aspects of the PDP-11 have influenced the design of the “C” programming language and Unix itself. In other words, the PDP-11 is the true ancestor of all modern computers and CPUs, more so than computers before and after it. Anyone who uses a smartphone today (iOS and Android) can trace elements of the smartphone design back to the PDP-11.
 
-### Why Unix Version 7?
+## Why Unix Version 7?
 
 I was introduced to Unix in my first year at university, and instantly fell in love with it. Prior to that, I had been exposed to scientific calculators and home computers. Unix was powerful and sophisticated compared to them, but also had an elegance and a simplicity that was beguiling.
 
@@ -37,7 +37,7 @@ In these days of bloated Linux distributions, it is all too easy to forget what 
 
 > _“Unix Version 7. This is the weapon of a true Unix guru. Not as clumsy or random as Linux; an elegant weapon for a more civilized age. For over a zillion clock cycles, Unix gurus were the guardians of peace and justice of the Internet. Before the dark times… before Microsoft Windows.”_
 
-### Emulating Unix Version 7 on a PDP-11 on the Pi
+## Emulating Unix Version 7 on a PDP-11 on the Pi
 
 Fortunately, there is an excellent PDP-11 emulator written as part of the [Computer History Simulation Project](http://simh.trailing-edge.com/). The [V7 distribution tape](http://www.tuhs.org/Archive/PDP-11/Distributions/research/Keith_Bostic_v7/)image is also available as part of the [Unix Archive](http://wiki.tuhs.org/doku.php?id=source:unix_archive).
 

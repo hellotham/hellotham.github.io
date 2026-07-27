@@ -37,7 +37,7 @@ Fundamentally, I think over-reliance of technology dehumanises me, gets in the w
 
 Or, to express it as a mathematical equation …
 
-### (convenience) = -(quality) -(choice) -(privacy) -(humanity)
+## (convenience) = -(quality) -(choice) -(privacy) -(humanity)
 
 This may not seem obvious at first, and perhaps it is helpful to rearrange the equation as:
 
@@ -47,7 +47,7 @@ In other words, it’s a zero-sum game and optimising convenience trades-off oth
 
 Let me illustrate this through a few examples. Let’s start with streaming services such as Netflix and Spotify.
 
-### Why are streaming services bad?
+## Why are streaming services bad?
 
 On the surface, the value proposition seems self-evident and unarguably positive. Listen or watch anything you want anywhere on any device for a low subscription cost. Never buy physical media and wondering where to store them. How can anyone not want that?
 
@@ -91,7 +91,7 @@ The same thing occurs for viewing content on streaming services. Increasingly we
 
 So, streaming services => reduced humanity.
 
-### Why are Uber and Airbnb bad?
+## Why are Uber and Airbnb bad?
 
 This is a lot easier to explain these days than a few years ago, when people would literally look at me as if I am crazy when I told them I do not use Uber or Airbnb.
 
@@ -103,7 +103,7 @@ A similar argument can be mounted for Airbnb.
 
 Besides, I prefer catching public transport and taxis. I like the anonymity, and the fact that I am not judged by previous experiences. I like the hotel experience, and I prefer to trust a reputable brand than an unknown property and unknown person. I have heard many horror Airbnb stories, and whilst I have had unpleasant hotel experiences, more often than not that is redressed by discussing my issue with management, and more often than not I have been rewarded for a bad experience that more than compensates for the lack of satisfaction in the first place.
 
-### Why are FAANGs bad?
+## Why are FAANGs bad?
 
 This should be obvious by now, but let’s summarise:
 

@@ -17,7 +17,7 @@ tags:
 
 As a sucessor on my previous [post](/blog/2016-04-15-adventures-with-raspberry-pi3-1-running-unix-v7-on-an-emulated-pdp-11/), I also did some investigation to see if I can emulate another classic Unix hardware and software combo, 4.3BSD on a VAX, this time with networking!
 
-### VAX
+## VAX
 
 [DEC](https://en.wikipedia.org/wiki/Digital_Equipment_Corporation)introduced the VAX-11/780 in 1977 (coincidentally the year my parents bought me a home computer after strenous amounts of pleading and begging). It was intended as the 32-bit successor to the PDP-11 with virtual memory addressing.
 
@@ -31,7 +31,7 @@ In my last year at university, I was given access to the staff VAX, and was even
 
 But most of all, I remember some happy memories playing Infocom text adventures with the late, great[John Mackin](http://shand.pagesperso-orange.fr/jjm/)in his office late at night. We were using a very early version of the Infocom Task Force interpreter (I was loosely affiliated with the Infocom Task Force – actually, the members were my friends – and not proud to admit that I contributed to MS-DOS port as I was one of the few people that owned an IBM PC XT which I was using for my thesis). I remember one late night when we solved[Lurking Horror](https://en.wikipedia.org/wiki/The_Lurking_Horror)(and John yelled out one of the loudest “SCORE!!!” I have ever heard from him) – those of you who have played Lurking Horror will realise how self-referential the game was to the conditions in which we played it. After that, John and I celebrated by John playing one of his prized possessions – a rare Japanese LP pressing of Pink Floyd’s Dark Side of the Moon.
 
-### Berkeley Software Distribution (BSD)
+## Berkeley Software Distribution (BSD)
 
 Although ironically I have never actually used BSD on a VAX, it also had a profound impact on my life, and arguably BSD was the operating system that created the Internet as we know it today. For years,[ucbvax](http://ucbvax.berkeley.edu/passing-of-ucbvax.txt)was one of the primary relays for UUCP carrying mail and USENET traffic. The Berkeley TCP/IP networking stack ended up being used in many other operating systems (including Linux and Windows pre NT).
 
@@ -43,7 +43,7 @@ For me, BSD was also responsible the loss of a significant portion of my youth �
 
 Many commercial Unix implementations were originally based on BSD. In my first job after leaving university, I was using Sun workstations running SunOS in a stockbroker, then we moved to HP-UX, AIX … all originally BSD based. Most notably, Apple’s operating systems (watchOS, tvOS, iOS and Mac OS X) are all derived from Darwin, which was an attempt to merge Mach with elements from BSD, and OS X still contains most of the BSD user space tools.
 
-### Emulating 4.3BSDQuasijarus0c on a MicroVAX
+## Emulating 4.3BSDQuasijarus0c on a MicroVAX
 
 For the purposes of our trip back in time, I have chosen the Quasijarus fork of 4.3BSDTahoe – the last pure distribution of BSD before it was butchered to make it POSIX compliant. Quasijarus was an attempt in the mid-2000s to update it for some “modern” hardware, including the MicroVAX.
 
@@ -74,7 +74,7 @@ Note: some of the steps in the following guide were inspired and derived from th
 - [unixhistory Quasijarus page](http://www.tavi.co.uk/unixhistory/quasijarus.html)
 - [smh networking how to (qu1j0t3)](https://github.com/qu1j0t3/simh-networking-linux-howto)
 
-### Stage 1: Restoring the mini root filesystem
+## Stage 1: Restoring the mini root filesystem
 
 Once the binaries are built, we can start the simulator with the RA82 disk and TQK50/TK50 tape drive, but all other devices disabled (via a boot.ini configuration file for the simulator):
 
@@ -147,7 +147,7 @@ Copy completed: 308 records copied
 =
 ```
 
-### Stage 2: Creating and restoring the full root filesystem
+## Stage 2: Creating and restoring the full root filesystem
 
 Now we boot up the miniroot environment and use it to create and restore the full root filesystem:
 
@@ -209,7 +209,7 @@ If this is a 730, update the cassette
 
 At this point we kill the simulator (Control-E then q) and restart it again, simulating a power cycle.
 
-### Stage 3: Creating and restoring other filesystems
+## Stage 3: Creating and restoring other filesystems
 
 We create the /usr and /home filesystems, and then restore /usr, /usr/src/sys and finally /usr/src from tape. We also take the opportunity to set the default boot device so that we can enable autoboot later.
 
@@ -299,7 +299,7 @@ Goodbye
 NVR: writing buffer to file
 ```
 
-### Stage 4: Setting up an Ethernet bridge for simh
+## Stage 4: Setting up an Ethernet bridge for simh
 
 simh should work with the Raspberry Pi 3 Ethernet port (I haven’t tried it with the Wi-Fi interface). First, we need to determine the current networking parameters:
 
@@ -336,7 +336,7 @@ Note I did not set up a default gateway because I already have one (because my w
 - **`sudo route add -net 0.0.0.0/0 gw`**\
   _\[IP address of your gateway]_
 
-### Stage 5: Multi-user boot and set up networking
+## Stage 5: Multi-user boot and set up networking
 
 We create a default initialisation file called vax.ini (which the vax simulator will automatically execute if it finds it). This enables the DZV11 terminal multiplexor and connect it to port 8023, as well as the DEQNA Ethernet controller connected to the tap0 interface. We also enable autoboot from the default device (DUAO:)
 
@@ -499,7 +499,7 @@ PING a.root-servers.net (198.41.0.4): 56 data bytes
 64 bytes from 198.41.0.4: icmp_seq=2. time=140. ms
 ```
 
-### But there’s one more thing …
+## But there’s one more thing …
 
 To play rogue, you need to set a policy for the dungeon master:
 

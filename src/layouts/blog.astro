@@ -28,7 +28,7 @@ const postDate = post.data.publishDate || post.data.pubDate
         data-future-lock
         class="border-line bg-cream text-ink dark:border-ink-soft dark:bg-ink-deep dark:text-cream mx-auto my-12 hidden max-w-3xl border p-7"
       >
-        <h1 class="font-serif text-2xl font-medium">This article is not yet published</h1>
+        <p class="font-serif text-2xl font-medium">This article is not yet published</p>
         <p class="mt-2">
           It will unlock automatically on {postDate ? postDate.toUTCString() : 'its publish date'}.
         </p>

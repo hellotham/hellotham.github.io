@@ -74,9 +74,17 @@ const proof = [
       <div
         class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img src={AllTheDataLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
+        <img
+          src={AllTheDataLight.src}
+          width={AllTheDataLight.width}
+          height={AllTheDataLight.height}
+          alt=""
+          class="max-h-64 w-full object-contain dark:hidden"
+        />
         <img
           src={AllTheDataDark.src}
+          width={AllTheDataDark.width}
+          height={AllTheDataDark.height}
           alt=""
           class="hidden max-h-64 w-full object-contain dark:block"
         />

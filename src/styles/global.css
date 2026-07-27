@@ -37,8 +37,14 @@
   }
 }
 
-/* Unlayered so it wins over the typography plugin's defaults */
+/* Unlayered so it wins over the typography plugin's defaults. Because this rule
+   also outranks the plugin's `prose-invert` swap, dark mode has to be set here
+   explicitly — otherwise links stay mulberry on a dark background (~2.4:1). */
 .prose {
   --tw-prose-links: var(--color-mulberry);
   --tw-prose-invert-links: var(--color-quartz);
+}
+
+.dark .prose {
+  --tw-prose-links: var(--color-quartz);
 }

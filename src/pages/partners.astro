@@ -42,11 +42,15 @@ const partners = (await getCollection('partner')).sort((a, b) =>
       >
         <img
           src={FeaturesOverviewLight.src}
+          width={FeaturesOverviewLight.width}
+          height={FeaturesOverviewLight.height}
           alt=""
           class="max-h-64 w-full object-contain dark:hidden"
         />
         <img
           src={FeaturesOverviewDark.src}
+          width={FeaturesOverviewDark.width}
+          height={FeaturesOverviewDark.height}
           alt=""
           class="hidden max-h-64 w-full object-contain dark:block"
         />

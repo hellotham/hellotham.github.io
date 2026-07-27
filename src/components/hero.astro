@@ -59,11 +59,13 @@ const baseUrl = import.meta.env.BASE_URL
       class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full dark:hidden"
       src={IdeasFlowLight.src}
       alt=""
+      fetchpriority="high"
     />
     <img
       class="hidden h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full dark:block"
       src={IdeasFlowDark.src}
       alt=""
+      fetchpriority="high"
     />
   </div>
 </div>

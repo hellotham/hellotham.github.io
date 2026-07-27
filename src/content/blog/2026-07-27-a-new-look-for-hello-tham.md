@@ -22,19 +22,19 @@ Our website has a new look. Version 5.0.0 is a complete visual redesign — new 
 
 If the previous release was about the engine, this one is about the bodywork.
 
-### Why redesign at all?
+## Why redesign at all?
 
 The old site was perfectly serviceable, but it looked like what it was: a template with our colours applied. Nothing about it said _boutique consulting firm_. Everything was rounded cards, drop shadows and generous purple.
 
 We advise clients on how to express strategy clearly. Our own website ought to do the same thing — so we went back to first principles and asked what a consultancy site should feel like. The answer we kept coming back to was **editorial**: the visual language of a well-set magazine or annual report. Serif headlines. Hairlines instead of shadows. Numbered indexes. Plenty of white space and a lot of restraint.
 
-### Designing in Claude Design
+## Designing in Claude Design
 
 The design itself was created in **Claude Design**, Anthropic's design tool, running **Claude Opus**. Rather than commissioning a single mockup, we explored several complete directions side by side — each a full, interactive page rather than a static picture, which made it much easier to judge how a direction would actually behave.
 
 The direction we chose, "Blended Direction", became the specification for the build: type scale, spacing rhythm, the treatment of rules and eyebrows, and the palette in both light and dark.
 
-### Rosely, applied to ourselves
+## Rosely, applied to ourselves
 
 The colour system is **[Rosely](https://rosely.hellotham.com)**, our own design system — the millennial pinks and purples we publish as a product. It has always been our palette in spirit, but this is the first time it is implemented on our own site as a proper token system rather than a set of hex codes sprinkled through the markup.
 
@@ -42,7 +42,7 @@ Every colour is now a Tailwind CSS v4 `@theme` token — ink, cream, quartz, mul
 
 Along the way we recomputed the contrast ratios and darkened our signature mulberry so that body text and links now meet **WCAG AA** against both cream and white. Good design should be legible design.
 
-### Implementing with Claude Code
+## Implementing with Claude Code
 
 The implementation — the part where a design becomes a working, accessible, fast website — was done in pair programming with **Claude Code**, running **Claude Fable**, Anthropic's most capable model.
 
@@ -55,7 +55,7 @@ This was genuinely collaborative work rather than code generation. I directed; C
 5. **Fonts migrated** to Astro's native Fonts API. The variable Noto families are downloaded at build time and self-hosted with preload links, so no third-party font requests are made at runtime — better for privacy and for first paint.
 6. **The blog rebuilt** in the same language: article pages now open with a serif headline, a byline rule and the cover art in its own panel, rather than white text floating over a darkened image, and the body sits at a proper reading measure.
 
-### A discipline worth the effort
+## A discipline worth the effort
 
 One deliberate constraint deserves a mention. It is tempting, when implementing a design, to reach for one-off values — a 15px here, a 0.14em there, a grid of `1.15fr .85fr` because that is what the mockup measured. It works, and it quietly destroys the system: every arbitrary number is a decision nobody can reuse.
 
@@ -63,7 +63,7 @@ So we swept the whole site back onto the standard scale — roughly 250 one-off 
 
 That is the same argument we make to clients about reference architectures, and it applies just as well to a stylesheet.
 
-### Beyond the visuals
+## Beyond the visuals
 
 While we were in there, we refreshed a good deal of substance:
 
@@ -73,7 +73,7 @@ While we were in there, we refreshed a good deal of substance:
 - The **[contact form](/contact)** was rebuilt. Reviewing it turned up a real defect rather than a cosmetic one — the fields carried a border colour but no border width, so they were rendering as bare hairlines with no padding, and the focus ring had a colour but no width, meaning keyboard users got no visible focus at all. It now has proper fields, required-field validation, autocomplete, and a confirmation page instead of dropping you on an unbranded thank-you screen.
 - Articles are now **organised into categories** — [Website](/category/website), [Technology](/category/technology), [Consulting](/category/consulting), [Finance](/category/finance), [Data Science](/category/data-science) and [Learning](/category/learning) — so ten years of writing is finally navigable by subject.
 
-### On working with AI
+## On working with AI
 
 I have written before about using agentic assistants on this codebase. What strikes me about this release is the division of labour: **Claude Opus** in Claude Design was the right tool for exploring what the site should look like, and **Claude Fable** in Claude Code was the right tool for making it real — reading the codebase, holding conventions consistent across sixty-odd files, and checking its own work in a browser.
 

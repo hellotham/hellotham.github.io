@@ -43,9 +43,13 @@ import '../styles/global.css'
       href={`${Astro.site}rss.xml`}
     />
     <meta name="generator" content={Astro.generator} />
-    <Font cssVariable="--font-noto-sans" preload />
-    <Font cssVariable="--font-noto-serif" preload />
-    <Font cssVariable="--font-noto-sans-mono" preload />
+    {
+      /* Preload only the upright latin faces. latin-ext and italic files are
+        large and the browser fetches them on demand, when a glyph needs them. */
+    }
+    <Font cssVariable="--font-noto-sans" preload={[{ subset: 'latin', style: 'normal' }]} />
+    <Font cssVariable="--font-noto-serif" preload={[{ subset: 'latin', style: 'normal' }]} />
+    <Font cssVariable="--font-noto-sans-mono" />
     <SEO frontmatter={frontmatter} />
     <script is:inline>
       const setDarkMode = () => {

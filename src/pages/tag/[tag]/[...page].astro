@@ -74,7 +74,11 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
     tag +
     (page.size < page.total ? ' (page ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
   description:
-    'Showing articles ' + (page.start + 1) + '-' + (page.end + 1) + ' (total ' + page.total + ')',
+    'Articles tagged ' +
+    tag +
+    ' on the Hello Tham blog — ' +
+    page.total +
+    (page.total === 1 ? ' article.' : ' articles.'),
   coverSVG: coverSVG,
   socialImage: socialImage
 }

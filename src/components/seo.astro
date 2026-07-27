@@ -31,6 +31,10 @@ const image = await getImage({
   format: 'jpg'
 })
 const logo = LogoImage
+// Lead with the page name: search results truncate around 60 characters, and
+// the distinguishing words matter more than the repeated brand.
+const pageTitle =
+  fm.title === SiteMetadata.title ? SiteMetadata.title : `${fm.title} | ${SiteMetadata.title}`
 const pubDate = fm.publishDate || fm.pubDate || SiteMetadata.buildTime
 const author = fm.author ? fm.author.id : 'default'
 const openGraph = {
@@ -197,7 +201,7 @@ const article: WithContext<Article> = {
 ---
 
 <SEO
-  title={SiteMetadata.title + ' | ' + fm.title}
+  title={pageTitle}
   description={fm.description}
   noindex={fm.noindex ?? false}
   {openGraph}

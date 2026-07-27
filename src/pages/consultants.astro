@@ -51,8 +51,20 @@ const qualifications = [
       <div
         class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
       >
-        <img src={TeamLight.src} alt="" class="max-h-64 w-full object-contain dark:hidden" />
-        <img src={TeamDark.src} alt="" class="hidden max-h-64 w-full object-contain dark:block" />
+        <img
+          src={TeamLight.src}
+          width={TeamLight.width}
+          height={TeamLight.height}
+          alt=""
+          class="max-h-64 w-full object-contain dark:hidden"
+        />
+        <img
+          src={TeamDark.src}
+          width={TeamDark.width}
+          height={TeamDark.height}
+          alt=""
+          class="hidden max-h-64 w-full object-contain dark:block"
+        />
       </div>
     </div>
   </div>

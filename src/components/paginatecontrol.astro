@@ -14,22 +14,22 @@ const { base, page } = Astro.props
 const baseUrl = import.meta.env.BASE_URL
 ---
 
-<div class="mt-4 flex items-center">
+<div class="mt-8 flex flex-wrap items-center gap-y-3">
   <a
     href={baseUrl + 'categories'}
-    class="bg-ink hover:bg-mulberry inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
+    class="border-ink text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz inline-block rounded border px-3 py-1 font-mono text-xs tracking-widest uppercase"
   >
     Categories
   </a>
   <a
     href={baseUrl + 'tags'}
-    class="bg-ink hover:bg-mulberry ml-4 inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
+    class="border-ink text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz ml-3 inline-block rounded border px-3 py-1 font-mono text-xs tracking-widest uppercase"
   >
     Tags
   </a>
   <a
     href={baseUrl + 'authors'}
-    class="bg-ink hover:bg-mulberry ml-4 inline-block rounded-md px-2 py-1 text-base text-white md:text-lg"
+    class="border-ink text-ink hover:border-mulberry hover:text-mulberry dark:border-slate dark:text-cream dark:hover:border-quartz dark:hover:text-quartz ml-3 inline-block rounded border px-3 py-1 font-mono text-xs tracking-widest uppercase"
   >
     Authors
   </a>
@@ -82,7 +82,7 @@ const baseUrl = import.meta.env.BASE_URL
       </div>
     )
   }
-  <p class="ml-4 text-white italic">
+  <p class="text-slate dark:text-fog ml-4 text-sm italic">
     Articles {page.start + 1}-{page.end + 1} (total {page.total})
   </p>
 </div>

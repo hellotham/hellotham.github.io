@@ -5,34 +5,74 @@ import { DefaultImage } from '../config'
 export interface Props {
   title: string
   description?: string
+  eyebrow?: string
   coverSVG?: ImageMetadata
   coverImage?: ImageMetadata
   socialImage?: ImageMetadata
+  /** Optional dark-mode counterpart for coverSVG. */
+  coverSVGDark?: ImageMetadata
 }
 
-const { title, description, coverSVG, coverImage, socialImage } = Astro.props
+const { title, description, eyebrow, coverSVG, coverSVGDark, coverImage, socialImage } = Astro.props
 
 const image = coverSVG || coverImage || socialImage || DefaultImage
+const darkImage = coverSVGDark ?? image
+const isVector = image.format === 'svg'
+// Illustrations sit inside the panel; photographs fill it.
+const mediaClass = isVector ? 'max-h-64 w-full object-contain' : 'h-full w-full object-cover'
 ---
 
-<div class="relative mx-auto h-96 w-full max-w-7xl md:my-4">
-  <div class="from-ink absolute bottom-0 left-0 z-10 h-full w-full bg-linear-to-t xl:rounded-lg">
-  </div>
-  <Image
-    itemprop="image"
-    src={image}
-    alt=""
-    format={image.format === 'svg' ? 'svg' : undefined}
-    class="absolute top-0 left-0 z-0 h-full w-full object-cover"
-  />
-  <div class="absolute bottom-0 left-0 z-20 p-4">
-    <slot name="before" />
-    <h1 itemprop="name" class="font-serif text-4xl leading-tight font-medium text-white">
-      {title}
-    </h1>
-    <p itemprop="abstract description" class="text-quartz text-xl font-medium">
-      {description}
-    </p>
-    <slot />
+<div class="dark:border-ink-soft border-line dark:bg-ink border-b bg-white">
+  <div class="mx-auto grid max-w-7xl lg:grid-cols-12">
+    <div class="px-6 py-14 sm:px-10 lg:col-span-7 lg:px-14 lg:py-18">
+      {
+        eyebrow && (
+          <p class="dark:text-aqua text-mulberry mb-5 font-mono text-xs tracking-widest uppercase">
+            {eyebrow}
+          </p>
+        )
+      }
+      <slot name="before" />
+      <h1
+        itemprop="name"
+        class="text-ink dark:text-cream font-serif text-4xl leading-none font-medium tracking-tight sm:text-5xl"
+      >
+        {title}
+      </h1>
+      {
+        description && (
+          <p
+            itemprop="abstract description"
+            class="text-slate dark:text-fog mt-6 max-w-xl text-lg leading-relaxed"
+          >
+            {description}
+          </p>
+        )
+      }
+      <slot />
+    </div>
+    <div
+      class="dark:border-ink-soft dark:bg-plum border-line bg-quartz flex items-center justify-center overflow-hidden border-t p-8 sm:p-10 lg:col-span-5 lg:border-t-0 lg:border-l"
+    >
+      <Image
+        itemprop="image"
+        src={image}
+        alt=""
+        width={640}
+        format={isVector ? 'svg' : undefined}
+        class={mediaClass + (darkImage !== image ? ' dark:hidden' : '')}
+      />
+      {
+        darkImage !== image && (
+          <Image
+            src={darkImage}
+            alt=""
+            width={640}
+            format={darkImage.format === 'svg' ? 'svg' : undefined}
+            class={'hidden dark:block ' + mediaClass}
+          />
+        )
+      }
+    </div>
   </div>
 </div>

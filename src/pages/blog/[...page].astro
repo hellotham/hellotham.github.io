@@ -6,7 +6,8 @@ import Base from '../../layouts/base.astro'
 import PageHero from '../../components/pagehero.astro'
 import BlogRoll from '../../components/blogroll.astro'
 import PaginateControl from '../../components/paginatecontrol.astro'
-import coverSVG from '../../assets/svg/undraw/undraw_my_feed.svg'
+import coverSVG from '../../assets/svg/rosely/undraw_my_feed-light.svg'
+import coverSVGDark from '../../assets/svg/rosely/undraw_my_feed-dark.svg'
 import socialImage from '../../assets/undraw/undraw_my_feed.png'
 
 export async function getStaticPaths() {
@@ -78,15 +79,17 @@ const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
 <Base frontmatter={frontmatter}>
   <header>
     <PageHero
-      title={frontmatter.title}
+      eyebrow="Insights"
+      title="Blog"
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverSVG={coverSVG}
+      coverSVGDark={coverSVGDark}
       socialImage={frontmatter.socialImage}
     >
       <PaginateControl base={currentPage} page={page} />
     </PageHero>
   </header>
-  <div class="dark:bg-ink mt-10 bg-gray-100">
+  <div class="dark:bg-ink-deep bg-cream">
     <BlogRoll posts={page.data} />
   </div>
 </Base>

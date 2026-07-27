@@ -4,7 +4,8 @@ import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
-import coverSVG from '../assets/svg/undraw/undraw_windows.svg'
+import coverSVG from '../assets/svg/rosely/undraw_windows-light.svg'
+import coverSVGDark from '../assets/svg/rosely/undraw_windows-dark.svg'
 import socialImage from '../assets/undraw/undraw_windows.png'
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
@@ -24,7 +25,8 @@ const baseUrl = import.meta.env.BASE_URL
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverSVG={coverSVG}
+      coverSVGDark={coverSVGDark}
       socialImage={frontmatter.socialImage}
     />
   </header>

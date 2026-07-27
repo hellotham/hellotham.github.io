@@ -2,7 +2,8 @@
 import type { CollectionEntry } from 'astro:content'
 import Base from '../layouts/base.astro'
 import PageHero from '../components/pagehero.astro'
-import coverSVG from '../assets/svg/undraw/undraw_page_not_found.svg'
+import coverSVG from '../assets/svg/rosely/undraw_page_not_found-light.svg'
+import coverSVGDark from '../assets/svg/rosely/undraw_page_not_found-dark.svg'
 import socialImage from '../assets/undraw/undraw_page_not_found.png'
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
@@ -18,7 +19,8 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={frontmatter.coverSVG}
+      coverSVG={coverSVG}
+      coverSVGDark={coverSVGDark}
       socialImage={frontmatter.socialImage}
     />
   </header>

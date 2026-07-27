@@ -93,7 +93,7 @@ const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
       <PaginateControl base={currentPage} page={page} />
     </PageHero>
   </header>
-  <div itemprop="mainContentOfPage" class="dark:bg-ink mt-10 bg-gray-100">
+  <div itemprop="mainContentOfPage" class="dark:bg-ink-deep bg-cream">
     <BlogRoll posts={page.data} />
   </div>
 </Base>

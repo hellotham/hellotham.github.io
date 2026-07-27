@@ -4,6 +4,12 @@ import Base from '../../layouts/base.astro'
 import FeaturesOverviewLight from '../../assets/svg/rosely/undraw_features_overview-light.svg'
 import FeaturesOverviewDark from '../../assets/svg/rosely/undraw_features_overview-dark.svg'
 import socialImage from '../../assets/social/features_overview.png'
+import { Image } from 'astro:assets'
+import HelloThamLight from '../../assets/apps/hellotham-light.png'
+import HelloThamDark from '../../assets/apps/hellotham-dark.png'
+import HelloAstroLight from '../../assets/apps/helloastro-light.png'
+import HelloAstroDark from '../../assets/apps/helloastro-dark.png'
+import RoselySystem from '../../assets/apps/rosely-system.svg'
 
 const baseUrl = import.meta.env.BASE_URL
 
@@ -32,21 +38,39 @@ const capabilities = [
   }
 ]
 
-const builds = [
+interface Build {
+  label: string
+  title: string
+  body: string
+  href: string
+  shotLight?: ImageMetadata
+  shotDark?: ImageMetadata
+  diagram?: ImageMetadata
+}
+
+const builds: Build[] = [
   {
     label: 'This site',
     title: 'hellotham.com',
-    body: 'Our corporate site — Astro 7, Tailwind CSS 4, Pagefind search, dynamic future-dated publishing and the Rosely design language you are reading now.'
+    body: 'Our corporate site — Astro 7, Tailwind CSS 4, Pagefind search, dynamic future-dated publishing and the Rosely design language you are reading now.',
+    href: 'https://hellotham.com',
+    shotLight: HelloThamLight,
+    shotDark: HelloThamDark
   },
   {
     label: 'Templates',
     title: 'Hello Astro and Spotlite',
-    body: 'Open-source Astro starters we build and maintain — a multi-purpose corporate/blog/docs theme and an elegant personal site template.'
+    body: 'Open-source Astro starters we build and maintain — a multi-purpose corporate/blog/docs theme and an elegant personal site template.',
+    href: 'https://hellotham.com/hello-astro/',
+    shotLight: HelloAstroLight,
+    shotDark: HelloAstroDark
   },
   {
     label: 'Design system',
     title: 'Rosely',
-    body: 'The constraint-based colour palette and design system behind our work, documented and published as its own site.'
+    body: 'The constraint-based colour palette and design system behind our work, documented and published as its own site.',
+    href: 'https://rosely.hellotham.com',
+    diagram: RoselySystem
   }
 ]
 ---
@@ -118,17 +142,50 @@ const builds = [
       </div>
       {
         builds.map((b) => (
-          <div class="dark:border-ink-soft border-line grid gap-2 border-t py-6 lg:grid-cols-12 lg:gap-12">
-            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed uppercase">
+          <div class="dark:border-ink-soft border-line grid items-center gap-6 border-t py-8 lg:grid-cols-12 lg:gap-12">
+            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed uppercase lg:col-span-2">
               {b.label}
             </div>
-            <div>
+            <div class="lg:col-span-6">
               <div class="text-ink dark:text-cream mb-1.5 font-serif text-xl font-medium">
                 {b.title}
               </div>
-              <div class="dark:text-fog text-slate max-w-3xl text-base leading-relaxed">
-                {b.body}
-              </div>
+              <div class="dark:text-fog text-slate text-base leading-relaxed">{b.body}</div>
+              <a
+                href={b.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                class="dark:text-quartz text-ink hover:text-mulberry mt-3 inline-block font-mono text-xs tracking-widest uppercase dark:hover:text-white"
+              >
+                Visit site →
+              </a>
+            </div>
+            <div class="lg:col-span-4">
+              {b.diagram ? (
+                <img
+                  src={b.diagram.src}
+                  width={b.diagram.width}
+                  height={b.diagram.height}
+                  alt={b.title + ' overview diagram'}
+                  class="border-line dark:border-ink-soft w-full border bg-white object-contain p-3"
+                  loading="lazy"
+                />
+              ) : (
+                <>
+                  <Image
+                    src={b.shotLight!}
+                    alt={b.title + ' screenshot'}
+                    width={720}
+                    class="border-line dark:border-ink-soft w-full border object-cover dark:hidden"
+                  />
+                  <Image
+                    src={b.shotDark!}
+                    alt=""
+                    width={720}
+                    class="dark:border-ink-soft hidden w-full border object-cover dark:block"
+                  />
+                </>
+              )}
             </div>
           </div>
         ))

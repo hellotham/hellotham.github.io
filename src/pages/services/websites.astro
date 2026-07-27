@@ -10,7 +10,46 @@ import HelloThamDark from '../../assets/apps/hellotham-dark.png'
 import HelloAstroLight from '../../assets/apps/helloastro-light.png'
 import HelloAstroDark from '../../assets/apps/helloastro-dark.png'
 import SpotliteShot from '../../assets/apps/spotlite.png'
+import SakyadhitaShot from '../../assets/sites/sakyadhita.png'
+import HmgShot from '../../assets/sites/hmg.png'
+import AirShot from '../../assets/sites/air.png'
 import RoselySystem from '../../assets/apps/rosely-system.svg'
+
+interface Site {
+  label: string
+  title: string
+  body: string
+  href: string
+  repo: string
+  shot: ImageMetadata
+}
+
+const sites: Site[] = [
+  {
+    label: 'Non-profit',
+    title: 'Sakyadhita International',
+    body: 'The International Association of Buddhist Women, which since 1987 has brought together laywomen, monastics and scholars from across all Buddhist traditions. Rebuilt as an Astro static site covering conferences, resources, branches and membership.',
+    href: 'https://sakyadhita.org',
+    repo: 'https://github.com/sakyadhita/sakyadhita.github.io',
+    shot: SakyadhitaShot
+  },
+  {
+    label: 'Community business',
+    title: 'HMG International',
+    body: 'Hills Makan Group International — a food, business and community network with chapters across Australia, Indonesia, Japan, Malaysia and New Zealand. An Astro site organised by region, with membership, partnership and contact flows.',
+    href: 'https://hmginternational.com',
+    repo: 'https://github.com/HillsMakan/sydneyhillsmakan',
+    shot: HmgShot
+  },
+  {
+    label: 'Member association',
+    title: 'AIR Sydney Hills',
+    body: 'The Sydney Hills branch of Australian Independent Retirees. An Astro site carrying branch news, monthly meeting programmes and an article archive with categories and tags, deployed on Netlify.',
+    href: 'https://airsydneyhills.netlify.app',
+    repo: 'https://github.com/AIR-SydneyHills/airshb',
+    shot: AirShot
+  }
+]
 
 const baseUrl = import.meta.env.BASE_URL
 
@@ -194,6 +233,60 @@ const builds: Build[] = [
                   />
                 </>
               )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="dark:bg-ink bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-14 lg:py-16">
+      <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+        <h2 class="text-ink dark:text-cream font-serif text-3xl font-medium">
+          Sites we have built
+        </h2>
+        <span class="text-slate dark:text-fog font-mono text-xs tracking-widest uppercase">
+          Every one open source
+        </span>
+      </div>
+      {
+        sites.map((s) => (
+          <div class="dark:border-ink-soft border-line grid items-center gap-6 border-t py-8 lg:grid-cols-12 lg:gap-12">
+            <div class="dark:text-aqua text-slate font-mono text-xs leading-relaxed uppercase lg:col-span-2">
+              {s.label}
+            </div>
+            <div class="lg:col-span-6">
+              <div class="text-ink dark:text-cream mb-1.5 font-serif text-xl font-medium">
+                {s.title}
+              </div>
+              <div class="dark:text-fog text-slate text-base leading-relaxed">{s.body}</div>
+              <div class="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+                <a
+                  href={s.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="dark:text-quartz text-ink hover:text-mulberry inline-block font-mono text-xs tracking-widest uppercase dark:hover:text-white"
+                >
+                  Visit site →
+                </a>
+                <a
+                  href={s.repo}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="text-slate dark:text-fog hover:text-mulberry dark:hover:text-quartz inline-block font-mono text-xs tracking-widest uppercase"
+                >
+                  Source →
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-4">
+              <Image
+                src={s.shot}
+                alt={s.title + ' website screenshot'}
+                width={720}
+                class="border-line dark:border-ink-soft w-full border object-cover"
+              />
             </div>
           </div>
         ))
